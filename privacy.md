@@ -133,7 +133,7 @@ region it is served from the phone and no request is made.
 No API key is used and no account exists, so nothing links one session to
 another beyond what an IP address implies.
 
-### 3. Address search — the one place a position is sent
+### 3. Address search
 
 Typing a place name into the search box sends that text to OpenStreetMap's
 Nominatim service at `https://nominatim.openstreetmap.org/search`.
@@ -142,18 +142,21 @@ What is sent:
 
 - the text you typed,
 - a `User-Agent` of `TrailBlazer/0.1 (offline green-lane navigation)`, which
-  Nominatim's usage policy requires,
-- **and, if the app currently knows your position, a `viewbox`: a box one degree
-  of latitude and longitude either side of you.** It is sent only so that nearby
-  results are offered first.
+  Nominatim's usage policy requires.
 
-One degree is roughly 110 km north to south, so the box is about the size of a
-couple of counties, not a pinpoint. It is nonetheless derived from where you are,
-and it is the only case anywhere in the app in which anything derived from your
-position is transmitted. If that is not acceptable to you, do not use the
-address search: grid references, coordinates, your own marks, rides and plans,
-and the names of lanes in the packs you carry are all searched entirely on the
-phone.
+**Your position is not sent.** It used to be: a `viewbox` a degree of latitude
+and longitude either side of you, so that nearby results came back first. That
+has been removed. The app asks for a wider set of results and sorts them by
+distance from you *on the phone*, which gives the same answer without telling
+anybody where you are.
+
+This is not a claim that the request is anonymous. It carries the text you
+typed and, like any request to any server, your IP address, which implies a
+town. What it no longer carries is a box drawn around where you are standing.
+
+Grid references, coordinates, postcodes, your own marks, rides and plans, and
+the names of lanes in the packs you carry are all searched entirely on the
+phone and send nothing at all.
 
 A request is only made when you have typed at least three characters, and typing
 is debounced by 600 ms, so a typed word is one request rather than fifteen.
@@ -270,10 +273,18 @@ route between points you pick by hand, and import and export GPX.
 
 ### Is your location ever transmitted?
 
-Once, in one narrow case, and nowhere else: the approximately one-degree
-`viewbox` sent to Nominatim when you use the address search, described in §3
-above. Your position is not sent when you record, when you download, when you
-route, when you plan, or when you buy anything.
+No.
+
+Your position is not sent when you record, when you download, when you route,
+when you plan, when you search, or when you buy anything. The one case that
+used to exist — a coarse box around you, sent to Nominatim to bias address
+results — was removed once it became clear the sorting it helped with was
+already being done on the phone.
+
+The qualification that belongs here: any request to any server carries your IP
+address, and an IP implies a town. That is true of downloading a map pack as
+much as of searching, and it is not something an app can prevent. What it can
+do is not send anything sharper, and it does not.
 
 Offline routing runs entirely on the phone through a routing engine compiled
 into the app — that is why routing tiles are downloaded rather than a route
