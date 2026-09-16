@@ -134,16 +134,30 @@ lane is shut.
 
 ### If you are colour-blind
 
-Read width and dashes. They carry the same information and do not depend on
-hue at all.
+**Settings → Accessibility → Lane colours** has a second palette, chosen so the
+two states stay apart for red-green colour blindness. It is worth a look even
+if you are not sure: the samples are drawn the way the map draws them, so you
+can simply look at the two lines rather than read their names.
 
-Around one man in twelve cannot separate red from green, so hue is never the
-only channel. A lane you may not ride is red **and** dashed tight **and** drawn
-at 55% opacity, and its class is still carried by line width. Three channels,
-two of which survive colour blindness.
+Beyond that, hue is never the only channel. Around one man in twelve cannot
+separate red from green, and this map is telling you what is legal, so:
+
+- **Colour** says whether you may ride it.
+- **Dashes** say closed or seasonal.
+- **Width** says the access class.
+
+A lane you may not ride today is drawn dashed and faded as well as coloured.
+Width is a separate channel from all of that — it says which class of way a
+lane is, **not** whether it is open — so do not read the boldest line as the
+most open one.
 
 A lane you have starred gets an amber halo drawn underneath it, wider than the
-line. That is deliberately not one of the three legal channels.
+line. That is deliberately not one of the legal channels.
+
+**If you use Android's own colour correction**, leave this setting on Standard.
+The phone is already transforming these colours on their way to the screen, and
+changing them here as well corrects them twice. The app cannot detect that
+setting — no Android API exposes it — so this one is on you.
 
 ### Tapping a lane
 
@@ -247,15 +261,24 @@ or not you have bought the app.
 
 ## Waypoints
 
-Mark a gate, a ford, a parking spot or a wrong turn. A mark is named
-automatically — "Waypoint 4" — and you can give it a real name and a note
-afterwards.
+Mark a gate, a ford, a parking spot or a wrong turn.
 
-Marking works by voice, which is the point: "mark this" with gloves on, and the
-app says back which one it made, so several marks in an afternoon can be told
-apart before you look at the screen.
+**Three ways to make one:**
 
-Waypoints come out in the GPX export alongside your rides.
+- **Hold a finger on the map** and choose **Save a waypoint here**. This is the
+  one for somewhere you can see but are not standing in — a gate spotted from
+  the road, a parking spot on the far side of a valley. It asks you to name it.
+- **By voice** — "mark this", with gloves on, and the app says back which one it
+  made, so several marks in an afternoon can be told apart before you look at
+  the screen.
+- **The mark button** on the ride screen, which marks where you are now.
+
+Naming is asked for rather than assumed, because "Waypoint 7" in a list of nine
+is something you have to go and look at on the map to identify. Leave the box
+empty and you get the number anyway, so you are never held up.
+
+Waypoints come out in the GPX export alongside your rides, and place search
+finds them by name.
 
 ---
 
@@ -284,6 +307,29 @@ published one stays as published for the next person.
 
 Each stop carries the style for the leg to the next one, so a plan can run out
 on the fast road and back over the lanes.
+
+### Trying another way
+
+**Try another way** asks the engine for a genuinely different route, not the
+same road redrawn: it searches again while avoiding the roads the last answer
+used. The button counts what it has found — "2 of 3" — and cycles round.
+
+Between two points close together there may honestly be only one sensible way.
+When that happens it says so rather than pretending, and leaves you on the
+route you had.
+
+Each new way costs a full extra search, so the first press on a long route
+takes a moment. Going **back** to one you have already seen is instant.
+
+### Looking before you commit
+
+**Show on map** shrinks this panel to a strip so you can see the route on the
+map behind it. **Start** and **Another way** stay on the strip, so you can
+decide without opening anything back up. Drag the strip up, or tap it, for the
+full options again.
+
+Dismissing the panel without choosing anything clears the line off the map, so
+a route you decided against does not follow you around.
 
 ### What you are travelling on
 
@@ -323,6 +369,49 @@ sign-in or purchase, and it needs no download at all.
 
 ---
 
+## Sharing with other riders
+
+The plan is the part that takes the work — a route through lanes somebody has
+actually checked — so it is the part worth handing over.
+
+### Plans
+
+**Long-press a plan** in the Plans list to start selecting, then tap to add
+more. The bar at the top gives you **Share** and **Save**, and **Select all**.
+
+- **Share** hands one file to whatever your phone shares with — a message, an
+  email, a drive.
+- **Save** writes it where you choose, which is the one you want for a copy on
+  a computer or a cable at a campsite with no signal.
+
+Several plans go in **one file**, because six attachments in a group chat is
+how a plan goes missing. A single plan can also be shared straight from its own
+menu without selecting anything, and the journey you are riding right now can
+be shared from the road book.
+
+Plans travel as `.tbplan` files. That is our own format rather than GPX, and
+deliberately: a GPX route carries points and nothing else, while a plan also
+carries how you chose to ride each leg — fastest, fun, or lanes — and whether
+to divert through your own tracks. As GPX those choices vanish silently and
+your mate gets a line that looks right and rides differently.
+
+**Importing** is the download button in the same bar. Anything that arrives is
+a **copy**: it gets its own id so it can never overwrite a plan you already
+have, and a name clash is numbered rather than duplicated, so two "Sunday loop"
+entries are tellable apart.
+
+### Rides
+
+Tracks work the same way — long-press to select, then share or save. Several
+rides go out as **one GPX file** containing all of them, which every GPX reader
+worth the name understands.
+
+A selection stays put after you share or save it. Nothing here clears it except
+the Cancel button, so you can send these to a mate **and** keep a copy without
+picking them all twice.
+
+---
+
 ## Following a route
 
 Start a plan, or follow one of your own tracks, and the app shows distance
@@ -340,6 +429,31 @@ reads as "still guiding me".
 
 When the fix goes quiet, the figures go to dashes rather than freezing on a
 stale number.
+
+---
+
+## The road book
+
+Every turn of the journey you are riding, as a list: the instruction, the
+distance to it, and where it sits in the whole route.
+
+**Getting to it:** while a journey is running there is a **road book button in
+the map's control column**, and tapping the turn strip at the top of the map
+opens it too. If you live in it, **Settings → Accessibility → Road book tab**
+gives it a tab of its own. That is off by default — the road book means nothing
+when you are not riding, and a permanent tab that is empty most of the time is
+wasted width on the one bar you press with gloves on.
+
+**It follows you.** The line you are on is highlighted and the list scrolls to
+it as you pass each turn. Scroll it yourself to read ahead and it stops
+following, so it will not drag you back mid-sentence — the button in the top
+bar shows which state it is in, and one tap changes it. That choice lasts until
+you change it, including if you leave the screen and come back.
+
+**Sharing the ride you are on.** The share button in the road book sends the
+journey you are currently riding, which is exactly when somebody asks you where
+you are going. A journey started by holding the map has no row in Plans, so
+this is the only way to pass one on.
 
 ---
 
@@ -417,6 +531,12 @@ Tap the padlock on the map to lock the screen. **Every touch in the app is
 blocked**, including the Android back button and the back gesture, until you
 deliberately undo it.
 
+Locking also puts the map back on you at a riding zoom. That matters because a
+locked screen is the one place the camera cannot be changed — if you had
+pinched out to look at the whole valley and then locked, you would be riding a
+county-level map with no way to fix it. If you were already zoomed in close, it
+leaves you there.
+
 To unlock, **press and hold for 900 ms** on the control at the bottom. A ring
 fills so you can see how long is long enough. A tap will not do it, because a
 tap is exactly what rain produces.
@@ -490,13 +610,41 @@ tile then fills green, amber and red as you use it up.
 
 ## Settings
 
-- **Units** — miles or kilometres. Miles by default.
-- **Theme** — day, night or follow the system.
+**Accessibility**
+
+- **Road book tab** — off by default. Gives the road book a tab of its own. See
+  above for why it is not on to begin with.
+- **Which hand** — puts the map controls, the record button and the lock on the
+  side you actually reach with. Asked at first run too.
+- **Lane colours** — the standard pair, or a colour-blind-friendly pair. The
+  samples are drawn the way the map draws them.
+- **Text size** follows your phone rather than having its own slider here. Turn
+  it up in Android Settings under Display and everything follows, including the
+  speed on the map.
+
+**Riding**
+
+- **What you ride** — changes which lanes you see and which packs download.
 - **Keep the screen awake** — on by default. If your phone overrules it, the
   screen tells you rather than pretending.
 - **Lock screen automatically** — off by default. See above.
 - **Map view** — Auto, Always show or Minimal.
-- **What you ride** — changes which lanes you see and which packs download.
+
+**The map**
+
+- **Theme** — day, night or follow the system. "Auto" follows the phone, which
+  is not the same as following the sun: if your phone is not set to switch at
+  sunset, pin it here.
+- **Hill shading**, **height colours** and **3D buildings** — all off by
+  default, because each one repaints the map and that should be your decision.
+  3D buildings need nothing downloaded and work anywhere already cached. Hill
+  shading and height colours need a ground-height download, **and those are not
+  published yet** — the app will tell you so for your area rather than turning
+  on a switch that does nothing.
+
+**Data**
+
+- **Units** — miles or kilometres. Miles by default.
 - **Update schedule** and **only check on wifi**.
 - **Map updates** — what you have bought and how long it runs.
 

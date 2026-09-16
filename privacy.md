@@ -15,10 +15,13 @@ your phone and stay there. They are not uploaded to us, they are not uploaded
 to anyone else, and they are excluded from Android's own cloud backup on
 purpose.
 
-The app does use the network for five things, and only those five: downloading
+The app does use the network for six things, and only those six: downloading
 map data, drawing the online basemap, looking up an address you type, speech
-recognition, and Google Play billing. Each is described below, including
-exactly what the other end can see.
+recognition, Google Play billing, and - only if you switch it on - the weather.
+Each is described below, including exactly what the other end can see.
+
+The weather is the only one of the six that involves where you are, it is off
+until you turn it on, and what it sends is rounded to about 28 km. See section 6.
 
 We do not operate a server that receives anything from the app. There is
 nowhere for us to store your data even if we wanted to.
@@ -193,6 +196,39 @@ verified on the device only. What the app writes down locally is described under
 Google's handling of a Play purchase is covered by the
 [Google Privacy Policy](https://policies.google.com/privacy).
 
+### 6. The weather, if you switch it on
+
+**Off until you turn it on**, under Settings -> Weather. Nothing below happens
+until you do, and turning it off stops it.
+
+This is the only part of the app that involves where you are, and the only part
+that needs a connection to be useful at all. It exists because rainfall over the
+past week is what decides whether a byway is rutted or a ford is up, and a
+forecast on its own does not tell you that.
+
+What is sent, to `api.open-meteo.com`:
+
+- a latitude and longitude **rounded to a quarter of a degree** - about 28 km -
+  so it identifies a region, not you, and not your lane;
+- the fixed strings naming which daily figures are wanted, how many days back
+  and forward, and the timezone `Europe/London`.
+
+That is the whole request. There is no account, no identifier, no device name,
+no timestamp of your own and no header this app has added. A test in the source
+asserts that your actual coordinates appear nowhere in the URL.
+
+What comes back is daily rainfall and temperature for that region. It is held in
+memory for a few hours and written nowhere.
+
+The qualification from the section below applies here as it does everywhere: the
+request carries your IP address, and an IP implies a town. Rounding the position
+to 28 km means the app is not telling them anything sharper than that.
+
+Open-Meteo was chosen partly because it needs no account and no API key - there
+is no key to ship inside the app, and nothing that could identify you even by
+accident. Their own terms are at
+[open-meteo.com/en/terms](https://open-meteo.com/en/terms).
+
 ---
 
 ## What does not happen
@@ -221,7 +257,7 @@ Verified against the source and the dependency lockfile:
 | `latlong2` | Coordinate arithmetic | No |
 | `gpx`, `xml` | Reading and writing GPX files | No |
 | `cryptography`, `crypto`, `convert` | Decrypting downloaded packs; hashing the purchase token | No |
-| `http` | Fetching the data index, packs and address search | Yes (see §1, §3) |
+| `http` | Fetching the data index, packs, address search and the weather | Yes (see §1, §3, §6) |
 | `background_downloader` | Hands pack downloads to the OS so they survive the app closing | Yes (see §1) |
 | `shared_preferences` | Settings, on the device | No |
 | `sqflite`, `path_provider`, `path` | Local storage | No |
@@ -273,13 +309,22 @@ route between points you pick by hand, and import and export GPX.
 
 ### Is your location ever transmitted?
 
-No.
+Only if you switch the weather on, and then only rounded to about 28 km.
 
 Your position is not sent when you record, when you download, when you route,
-when you plan, when you search, or when you buy anything. The one case that
-used to exist — a coarse box around you, sent to Nominatim to bias address
-results — was removed once it became clear the sorting it helped with was
-already being done on the phone.
+when you plan, when you search, or when you buy anything. An earlier case — a
+coarse box around you, sent to Nominatim to bias address results — was removed
+once it became clear the sorting it helped with was already being done on the
+phone.
+
+The weather, added in September 2026, is the single exception and is described
+in full in section 6. It is off unless you turn it on; what leaves the phone is
+a position rounded to a quarter of a degree, which is a region rather than a
+lane; and nothing else about you goes with it.
+
+This section used to say "No", flatly, and that was true when it was written.
+It is recorded here rather than quietly rewritten because a privacy policy that
+edits its own history is not worth reading.
 
 The qualification that belongs here: any request to any server carries your IP
 address, and an IP implies a town. That is true of downloading a map pack as
