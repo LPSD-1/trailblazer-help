@@ -6,8 +6,9 @@ signal.
 
 - **[Guide](guide.md)** — how the map reads, downloads, recording, planning,
   the voice button, and what to do when something is not working.
-- **[Privacy policy](privacy.md)** — what stays on your phone, the six places
-  anything is sent, and what Google Play receives.
+- **[Privacy policy](privacy.md)** — what stays on your phone, the five places
+  anything is sent, and what Google Play receives. Your position is not one of
+  them.
 - **[Controller profile](controller.md)** — the open specification for handlebar
   controllers, so anyone can build hardware that works with the app.
 
