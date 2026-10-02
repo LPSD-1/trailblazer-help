@@ -1,14 +1,16 @@
 # Trail Blazer
 
-Offline green-laning maps for UK motorcyclists. Rights of way from local
-highway authority definitive maps, carried on the phone so they work with no
-signal.
+Offline green-laning maps for motorbikes and 4x4s in England and Wales. Rights
+of way from local highway authority definitive maps, carried on the phone so
+they work with no signal.
 
 - **[Guide](guide.md)** — how the map reads, downloads, recording, planning,
-  the voice button, and what to do when something is not working.
-- **[Privacy policy](privacy.md)** — what stays on your phone, the five places
-  anything is sent, and what Google Play receives. Your position is not one of
-  them.
+  group rides, the voice button, and what to do when something is not working.
+- **[Privacy policy](privacy.md)** — what stays on your phone, the six things
+  the app uses the network for, and what Google Play receives. And group ride:
+  if you switch it on, your position and the name you chose go to the riders
+  in your group, end-to-end encrypted, and to nobody else; so does any plan or
+  ride you choose to send them.
 - **[Controller profile](controller.md)** — the open specification for handlebar
   controllers, so anyone can build hardware that works with the app.
 
@@ -22,11 +24,12 @@ building hardware, not for riders.
 Lane data contains public sector information licensed under the
 [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
 
-Traffic Regulation Orders **are** now included, from the Department for
-Transport's D-TRO service, rebuilt four times a day. That is a change: this page
-used to say they were not.
+Traffic Regulation Orders are carried where the council publishes them to the
+Department for Transport's D-TRO service. That is a change: this page used to
+say the app had none.
 
-**Check signage before you ride anyway.** An order only reaches the app once the
-authority has published it to D-TRO, not every authority publishes promptly,
+**Check signage before you ride anyway.** Not every council publishes there -
+roughly half do not - so an empty map can mean nothing has been published, not
+that nothing is in force. An order reaches the app only once it is published,
 and a sign nailed to a gate this morning is in nobody's database. The app makes
 you better informed; it does not make the sign wrong.

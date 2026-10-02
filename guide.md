@@ -3,21 +3,30 @@
 Offline green-lane navigation for the UK. This guide covers everything from
 first run to what to do when something will not work.
 
+> **New to green laning?** Read **Green laning — what you need to know**
+> first: what the classes mean, what to do if you are challenged, and how to
+> keep lanes open. It is the other guide in Settings → Help, and it is the one
+> that stops people getting prosecuted. This one is about working the app.
+
 - [What it is for](#what-it-is-for)
 - [The thing to read before you ride](#the-thing-to-read-before-you-ride)
 - [First run](#first-run)
 - [Reading the map](#reading-the-map)
 - [Downloading data](#downloading-data)
 - [Recording a ride](#recording-a-ride)
+- [Safety check-in](#safety-check-in)
 - [Waypoints](#waypoints)
 - [Planning a route](#planning-a-route)
+- [Sharing with other riders](#sharing-with-other-riders)
 - [Following a route](#following-a-route)
+- [The road book](#the-road-book)
 - [The voice button](#the-voice-button)
+- [Handlebar remote](#handlebar-remote)
 - [Screen lock](#screen-lock)
 - [Controls that get out of the way](#controls-that-get-out-of-the-way)
 - [The dashboard](#the-dashboard)
 - [Settings](#settings)
-- [Trial and purchase](#trial-and-purchase)
+- [Free app, paid map updates](#free-app-paid-map-updates)
 - [Troubleshooting](#troubleshooting)
 - [Privacy](#privacy)
 
@@ -29,8 +38,8 @@ Trail Blazer shows the green lanes of England and Wales over a map, records
 where you rode, and works with no signal. You download the areas you ride
 before you go, and after that the phone needs nothing from the network.
 
-It also imports and follows your own GPX, drives a rider's dashboard, and can
-be worked hands-free with gloves on.
+It also imports and follows your own GPX, KML, KMZ, GeoJSON and FIT tracks,
+drives a rider's dashboard, and can be worked hands-free with gloves on.
 
 Nothing is bundled inside the app. You carry the ground you want and no more.
 
@@ -42,23 +51,61 @@ Lane data comes from **local highway authority definitive maps** — the legal
 record of public rights of way — obtained via [rowmaps.com](https://www.rowmaps.com)
 and used under the Open Government Licence v3.0.
 
-**Traffic Regulation Orders and temporary closures are not in that data.**
+**Traffic Regulation Orders are not in that data, and the app gets them from
+somewhere else — but only where they are published.**
 
 The definitive map records that a right of way exists and what class it is. It
 does not record that a byway is shut this winter, or that a TRO bans motor
-vehicles on it. A lane shown here as a byway open to all traffic may still be
-closed to you today.
+vehicles on it.
 
-The app says the same thing against every pack of official data:
+Orders come separately, from the Department for Transport's D-TRO service,
+refreshed several times a day. Where a council publishes there, the app draws
+the closure and names the order, its dates and the authority that made it.
 
-> From the official record. Temporary closures and Traffic Regulation Orders
-> are NOT included — check signage.
+**That refreshing stops when downloads do.** Orders are map data like the
+lanes: for the first 30 days, and after that only while an update pack is
+running, the phone fetches them again several times a day. Without either, the
+closures on the phone stay as they were on the day they last came in, however
+many weeks ago that was. **Map updates** in Settings says how old they are.
 
-Where a country has no official register, the app draws community-mapped tracks
-instead and labels them differently:
+**Roughly half of councils do not publish there at all.** For those areas the
+app has nothing — and an empty map means *nothing has been published*, not that
+nothing is in force. There is also always a gap between an order being made and
+it appearing, and a sign going up on a gate is not a publication event.
 
-> Community-mapped tracks. This shows where they are, NOT whether you may
-> legally ride them. Check local rules and signage.
+Once the order data on your phone records which councils publish to D-TRO, the
+lane sheet, the order sheet and What's shut near you name the council and say
+whether it publishes there. Where it does not, an empty map there tells you
+nothing. Where it does, the line gives the date of its newest order in the feed
+— which still does not mean every order it has made is here. Until the data
+records it, or if the app cannot tell which council a lane belongs to, it says
+nothing either way, and no council line is not a sign that the council
+publishes.
+
+So a lane shown here as a byway open to all traffic may still be closed to you
+today, and the app cannot always tell you. **Signage on the ground beats this
+app, every time.**
+
+The app says the same thing above your lane packs, under **What is on this
+phone** on the Downloads screen:
+
+> Rights of way recorded by the local highway authority. Traffic orders are
+> carried separately and only where the council publishes them — about half
+> do — so always check signage before you ride.
+
+Every lane pack you reach by **Browse** also says where it came from:
+**Official rights of way** for the legal record, or **Tracks (community
+mapped)** where a country has no official register and the tracks were mapped
+by volunteers instead. A community-mapped track shows where it is, NOT whether
+you may legally ride it — check local rules and signage.
+
+**Unclassified roads are not on this map.** The app draws byways open to all
+traffic from the definitive map. Unclassified roads (UCRs), and other public
+roads whose rights are not recorded anywhere the app can read, are left off on
+purpose, because no record says who may use them. A road with no line on it may
+still be one you can ride. The council's List of Streets is the place to check:
+it shows a road is publicly maintained, not what you may ride on it. See
+[What the classes mean](guide-green-laning.md#unclassified-road-ucr-or-white-road).
 
 Check signage on the ground and your local authority's TRO register before you
 ride. This data is guidance, not permission.
@@ -69,8 +116,10 @@ ride. This data is guidance, not permission.
 
 The app asks three things, in this order, and explains each one before asking.
 
-1. **What do you ride?** Lane data is published per vehicle, and this decides
-   which lanes you are shown and which packs get downloaded. Change it later in
+1. **What do you ride?** A motorbike or a 4x4. This decides which lanes the map
+   shows as open to you, and which machine a route is worked out for. It does
+   not change what you download: every lane carries whether a motorbike and a
+   4x4 may use it, so both download the same packs. Change it later in
    Settings.
 2. **Location permission.** It is used on the phone to work out which country
    and area to suggest. You can refuse and pick a country by hand.
@@ -80,30 +129,56 @@ The app asks three things, in this order, and explains each one before asking.
 Two ways out of the sheet are always available: **Browse all countries** to
 pick ground yourself, and **Not now** to go straight to the map.
 
-Downloading the country or the area also fetches the background map for that
-ground. You need both: lanes are drawn on top of the map, so lanes without a
-map is lanes over a blank screen.
+Either choice also fetches the background map — but only for about 25 miles
+(40 km) around where you are standing when you say yes, not for the whole
+country or area. The data you ticked covers everything you chose; the drawn map under it
+covers the ground around you. You need both: lanes are drawn on top of the map,
+so lanes without a map is lanes over a blank screen. Before riding further
+afield with no signal, add the map for that ground from **Offline maps**, or
+with one of the one-tap choices on **Downloads**, which fetch the map for all of
+their ground. With no position fix, first run fetches no background map at all.
 
 ---
 
 ## Reading the map
 
 A lane is drawn with three separate visual channels. Each one carries different
-information, and you can read any of them on its own.
+information, and you can read any of them on its own. Only what the map carries
+is drawn: unclassified roads are not, so no line is not the same as no road you
+may ride.
 
 ### Colour says whether you may ride it
 
-Two colours, and only two.
+A lane is drawn in two colours, and only two.
 
 | Colour | Meaning |
 |---|---|
 | **Green** | You may ride this today |
 | **Red** | You may not ride this today |
 
-That is the only question colour answers. There is no colour code for lane
-class, because a byway with a Traffic Regulation Order running on it used to
-draw in full-access green — dashed and faded, but green, which is the one
+That is the only question a lane's colour answers. There is no colour code for
+lane class, because a byway with a Traffic Regulation Order running on it used
+to draw in full-access green — dashed and faded, but green, which is the one
 colour on this map that means go.
+
+**Traffic orders are drawn in colours of their own.** They are orders, not
+lanes: lines laid over the map along the stretch an order covers, on whatever
+road it is made for, often as a straight line between its two ends. An order
+made at a single spot, such as a bridge, is a dot in the same colour.
+
+| Order | Drawn as |
+|---|---|
+| Closure | Heavy red bars — a different red from a lane's, and bars, not tight dashes |
+| One-way | Blue dash and dot |
+| Weight or width limit | Orange dots |
+| Speed limit | Teal dashes |
+
+So at country zoom a county with many closures shows a red patch: that is
+orders, not red lanes. The order colours stay the same on the colour-blind
+palette, where a one-way's blue is close to the lane blue and a limit's orange
+to the lane amber, so there an order is told by its pattern. **Layers & lanes → Traffic orders** chooses which kinds are drawn, or
+only the orders on lanes, and tapping one opens a sheet saying what the order
+is and when it runs.
 
 ### Width says the access class
 
@@ -154,31 +229,61 @@ most open one.
 A lane you have starred gets an amber halo drawn underneath it, wider than the
 line. That is deliberately not one of the legal channels.
 
+<!-- android -->
 **If you use Android's own colour correction**, leave this setting on Standard.
 The phone is already transforming these colours on their way to the screen, and
 changing them here as well corrects them twice. The app cannot detect that
 setting — no Android API exposes it — so this one is on you.
+<!-- /android -->
+<!-- ios
+**If you use the iPhone's own Colour Filters**, leave this setting on Standard.
+The phone is already transforming these colours on their way to the screen, and
+changing them here as well corrects them twice. The app is not told whether
+Colour Filters are on, so this one is on you.
+-->
 
 ### Tapping a lane
 
 Tap any lane for its access, designation, which vehicles may use it, and why it
 is restricted if it is.
 
+### Lanes when zoomed out
+
+**Layers & lanes → Zoomed out** chooses whether lanes are drawn when the map is
+zoomed right out. **Show lanes at every zoom** is the default. **Show lanes when
+zoomed in** keeps an older phone quick when it holds a great many lanes: wider
+than about a 20 km view the map then shows only the ground, with a notice
+saying the lanes appear as you zoom in. Everything is still downloaded.
+
 ---
 
 ## Downloading data
 
-Open **Downloads**. Four one-tap choices, smallest first:
+Open **Downloads**. Under **Get what you need** there are four one-tap
+choices, in this order. The area and the country show their real names — "South
+West", say — once the phone knows where you are.
 
-- **Just where I am standing** — for when the signal is about to go
-- **The area I am in**
-- **The country I am in**
+- **The area I am in** — lanes and the routing that covers them
+- **The country I am in** — ride anywhere in it without thinking about
+  downloads again
+- **Just where I am standing** — the least that will work here, for when the
+  signal is about to go. It is third, below the area, because it is the
+  smaller of the two and not the one to reach for first
 - **Everything** — every country published; check the size and use wifi
 
+<!-- android -->
 Above 1 GB you get a confirmation showing the size and the number of packs.
 Downloads are handed to the operating system, so they carry on when you close
 the app and survive the phone being locked or the app being killed. You can
 close the app and come back.
+<!-- /android -->
+<!-- ios
+Above 1 GB you get a confirmation showing the size and the number of packs.
+Downloads are handed to the operating system, so they carry on when you leave
+the app and survive the phone being locked. **Do not swipe Trail Blazer away in
+the app switcher while it downloads**: on iPhone that cancels the downloads, and
+you may need to start them again.
+-->
 
 ### The kinds of data
 
@@ -209,13 +314,36 @@ footpaths. An area with nothing for your vehicle is not listed.
 On an area, **Get all** takes only what is missing or out of date, and says how
 much that is.
 
+### Along a plan or a ride
+
+To get what one day's riding needs, open a plan's menu in **Plans** and choose
+**Download along this plan**, or a ride's or an imported GPX's menu in
+**Tracks** and choose **Download along this track**. A plan needs two stops
+first, and a track at least two points; until then the item is greyed out and
+says why. It works for the ride you are recording now, too.
+
+The sheet asks **How far either side**: **2 km**, **5 km** or **10 km** (on
+miles, **1 mile**, **3 miles** or **6 miles**), and says which regions the
+strip takes in. Lanes, routing, place names, height and satellite come a whole
+region at a time, so every region the strip touches is included whatever the
+width; the width mostly changes the drawn map, which is fetched for the strip
+only. Satellite comes if **Include satellite imagery** is on, and you can
+untick any kind before you download — the same sizes, free-space check and
+over-a-gigabyte warning as **Get all**.
+
+For a plan the strip is measured from straight lines between your stops, since
+a saved plan keeps its stops and not the route between them. If your route
+wanders, choose a wider strip. The map comes down in pieces named **Along**
+and the plan or ride's name, listed under **Offline maps**.
+
 ### The background map
 
 The lanes are drawn over a map, and the map needs downloading too. The one-tap
 buttons do both halves. To add more ground later, open **Offline maps**:
 
 - Pick a **named region**, or
-- **Around my position** at 10 km, 25 km or 50 km, each quoting its real size.
+- **Around my position** at 10 km, 25 km or 50 km (on miles, 6 miles, 16
+  miles or 31 miles), each quoting its real size.
 
 Above 100 MB you are asked to confirm. Re-downloading a region replaces it
 rather than resuming, so retry and refresh both ask first — on a weak
@@ -224,8 +352,19 @@ connection you can end up with less than you have now.
 ### Updates
 
 Each kind of data has its own re-check interval, published with the index and
-overridable by you. There is an **only check on wifi** switch, and it is
-honoured by the operating system rather than by the app.
+overridable by you, in **Settings → Map updates**. There is no single wifi
+switch: each kind has its own **What to download over** choice beside its
+interval — **Wi-Fi only** or **Wi-Fi or mobile** — because 3 MB of traffic
+orders that go stale within hours and hundreds of megabytes of aerial photos
+should not share one answer. The choice is honoured by the operating system
+rather than by the app. It appears only for a kind the check downloads by
+itself, so not for one set to **Only when I ask**, and never for the drawn map.
+
+The check itself is tiny and always runs, on any connection — knowing your lane
+data is three months old matters most where there is no wifi. Only what it finds
+waits for the connection you chose. The drawn map is different: a map area is
+fetched when you tap Download, on whatever connection you have, and its size is
+shown first.
 
 ---
 
@@ -240,22 +379,218 @@ The record button sits on the map.
 - **Tap** while recording to finish. You are asked "Finish this ride?" before
   anything stops.
 
+<!-- android -->
 While recording, Android runs a foreground service with an ongoing "Recording
 your ride" notification. That is what keeps the track being logged with the
 screen off and the phone in a tank bag. Without it Android throttles background
 location to a few updates an hour and you get a straight line across country.
+<!-- /android -->
+<!-- ios
+While recording, the iPhone shows a blue location indicator at the top of the
+screen. That is what keeps the track being logged with the screen off and the
+phone in a tank bag. Trail Blazer only asks for your location while you are
+using the app; a ride you start in the app carries on with the screen off, and
+the blue indicator is the phone telling you so.
+-->
 
 The ride autosaves as it goes, so a flat battery costs you the last few points
 rather than the day. If the position stream goes dead for 15 minutes the ride
 is ended and saved by itself.
+
+<!-- android -->
+**Start recording when you ride off** (Settings > Riding, off by default)
+starts a ride for you once the phone can feel you moving and you have gone
+about 250 m at riding speed. The first 250 m are not in the ride, though the
+trail the app keeps whether or not you are recording still has them. A phone
+lying on a table never starts one, however far its GPS drifts, and neither does
+a walk. It tells you on screen, and aloud if **Say when recording starts or
+offers to finish** is on. It works while Trail Blazer is open, or in the
+background during a journey or a group ride; with the app closed and nothing
+else running, Android will not let it start. It will also record the drive to
+the lanes if the app is open in the van. When you have been stopped for 20
+minutes it offers to finish the ride, and never finishes by itself. After you
+finish a ride it will not start another until the phone has lain still for 5
+minutes, so the drive home is not a second ride.
+<!-- /android -->
+<!-- ios
+**Start recording when you ride off** (Settings > Riding, off by default)
+starts a ride for you once the phone can feel you moving and you have gone
+about 250 m at riding speed. The first 250 m are not in the ride, though the
+trail the app keeps whether or not you are recording still has them. A phone
+lying on a table never starts one, however far its GPS drifts, and neither does
+a walk. It tells you on screen, and aloud if **Say when recording starts or
+offers to finish** is on. It works while Trail Blazer is open, or in the
+background during a journey or a group ride; with the app closed, the iPhone
+will not let it start. It will also record the drive to the lanes if the app is
+open in the van. When you have been stopped for 20 minutes it offers to finish
+the ride, and never finishes by itself. After you finish a ride it will not
+start another until the phone has lain still for 5 minutes, so the drive home
+is not a second ride.
+-->
 
 Recording ignores fixes that are too close together, too soon after the last
 one, or impossibly fast. A gap of more than two minutes breaks the track into a
 new segment rather than drawing a straight line through it, which is what
 happens in a tunnel.
 
+While the phone lies still, nothing is recorded, however far its GPS fix
+wanders: a phone left on a table does not gain miles. Finish a recording that
+has kept nothing and you are told so - "Nothing has been recorded - the phone
+has not moved" - rather than asked to save an empty ride. If the phone has not
+moved for 2 hours, the ride pauses itself and lets go of the GPS to save the
+battery: "Recording paused — the phone had not moved for 2 hours". Tap
+**Resume recording** to carry on the same ride.
+
+**Forgot to press Record?** The day is not lost. The app keeps a trail of where
+you have been whether or not you are recording, and the Tracks screen offers
+it: "Riding since 09:12 · About 6.7 mi. Keep it as a ride?". **Keep it** saves
+it as a ride like any other. It offers the last 12 hours of riding, no more,
+so keep it the same day. A kept trail is not a recording. It has a point about
+every 15 m rather than every second, so the distance is a little short of the
+ground you covered, and it carries no speed or height. Where the phone lost its
+fix the line is left broken.
+
 Your rides are yours. Export any of them to GPX from the Tracks screen, whether
 or not you have bought the app.
+
+---
+
+## Safety check-in
+
+<!-- android -->
+A back-by time, for riding alone. Set it from the **Where am I?** screen (tap
+the grid reference on the dashboard), in the **Safety check-in** card under
+**If you need help** - or from **Settings > Safety check-in**. The sheet starts with this, and it means it:
+
+> Set the time you expect to be back. If you haven't told the app you're safe by then, your phone sounds an alarm and gets a text ready with where you are. You still have to press Send. This app cannot send a text by itself, and it has no server to raise the alarm for you. If you can't reach your phone, nobody is told, so tell someone at home your back-by time as well.
+
+**Setting one**
+
+1. Tap **Set a back-by time**.
+2. **Back by** starts empty: the button reads **Choose a time** and the line
+   under it "No time set yet". Tap **Choose a time** and pick when you expect
+   to be back, then OK. **Start check-in** and **Tell them now** stay off until
+   you do; shutting the picker with Cancel does not count. A time earlier than
+   now means tomorrow, and the line under it says "Today at" or "Tomorrow at"
+   so you can see which. It must be at least 10 minutes away.
+3. **Who to text (optional)** - a phone number, typed. It is kept on this phone
+   to fill in next time. With no number, the app offers the share sheet instead.
+4. **Start check-in**. The app asks to show notifications if it has not
+   already; if you say no it does not set the check-in, and says why.
+5. **Tell them now** sends the person at home the back-by time you chose and
+   where you are, before you set off, so they hold the same time as the alarm.
+   It works only once a time is picked. Do it.
+
+While it is set the card says "Check-in set for 17:00", with **I'm back safe**,
+**+1 hour** and **Change**. Android shows its alarm-clock icon in the status bar.
+
+**What happens**
+
+- **15 minutes before**: a notification, "Check-in in 15 minutes", with
+  **I'm OK** and **+1 hour**. If the app is open, the same line is at the top of
+  the screen.
+- **At the time**: an alarm sound and "Are you OK? Your 17:00 check-in has
+  passed", with **I'm OK**, **Text** your number (or **Send my position**) and
+  **+30 min**. It sounds again every 5 minutes for half an hour, then stays up
+  quietly until you answer it.
+- **Text** opens your messaging app with the text written: that you have not
+  checked in, your grid reference read out letter by letter, latitude and
+  longitude, when that position was taken and how old it is, the lane you were
+  nearest, whether you are on a motorbike or in a 4x4, and to call 999 and ask
+  for the police. **You press Send.**
+- Opening the app shows "Your 17:00 check-in has passed. Are you OK?" with
+  **I'm OK** and **Send my position**, which uses where you are now if the phone
+  has a fresh fix.
+- Finishing a ride with a check-in still set asks "Back safe?" with **Cancel
+  check-in**.
+
+**What it cannot do**
+
+- It cannot send a text by itself. Android and Google Play do not let it, and
+  it has no server to do it for you.
+- If you cannot reach your phone, nobody is told. That is why **Tell them now**
+  is there.
+- Force-stopping the app (Settings > Apps > Force stop) cancels the alarm until
+  the app next opens. A phone switched off past the time cannot sound it at
+  the time: it sounds once the phone is switched back on and unlocked.
+  Swiping the app away from recent apps does not cancel it. Some phones'
+  battery savers (Samsung's "deep sleeping apps") can delay or stop it: leave
+  Trail Blazer off those lists.
+- It may sound up to 10 minutes late unless alarms are allowed for Trail
+  Blazer. From Android 14 they are not allowed by default; the sheet says so and
+  **Allow alarms** opens the right page.
+- The position in the text is the last one the phone had. If the app was not
+  running it may be old, and the text says how old.
+- Your number never leaves the phone except in a text you send. The position
+  is kept only while a check-in is set, and deleted when you answer it.
+<!-- /android -->
+<!-- ios
+A back-by time, for riding alone. Set it from the **Where am I?** screen (tap
+the grid reference on the dashboard), in the **Safety check-in** card under
+**If you need help** - or from **Settings > Safety check-in**. The sheet starts with this, and it means it:
+
+> Set the time you expect to be back. If you haven't told the app you're safe by then, your phone sounds an alarm and gets a text ready with where you are. You still have to press Send. This app cannot send a text by itself, and it has no server to raise the alarm for you. If you can't reach your phone, nobody is told, so tell someone at home your back-by time as well.
+
+**Setting one**
+
+1. Tap **Set a back-by time**.
+2. **Back by** starts empty: the button reads **Choose a time** and the line
+   under it "No time set yet". Tap **Choose a time** and pick when you expect
+   to be back, then OK. **Start check-in** and **Tell them now** stay off until
+   you do; shutting the picker with Cancel does not count. A time earlier than
+   now means tomorrow, and the line under it says "Today at" or "Tomorrow at"
+   so you can see which. It must be at least 10 minutes away.
+3. **Who to text (optional)** - a phone number, typed. It is kept on this phone
+   to fill in next time. With no number, the app offers the share sheet instead.
+4. **Start check-in**. The iPhone asks whether Trail Blazer may send you
+   notifications, if it has not already; if you say no the app does not set
+   the check-in, and says why.
+5. **Tell them now** sends the person at home the back-by time you chose and
+   where you are, before you set off, so they hold the same time as the alarm.
+   It works only once a time is picked. Do it.
+
+While it is set the card says "Check-in set for 17:00", with **I'm back safe**,
+**+1 hour** and **Change**.
+
+**What happens**
+
+The iPhone holds the alarms as notifications, so they come with Trail Blazer
+closed or swiped away. Press and hold one to see its buttons.
+
+- **15 minutes before**: a notification, "Check-in in 15 minutes", with
+  **I'm OK** and **+1 hour**.
+- **At the time**: "Are you OK? Your 17:00 check-in has passed", with
+  **I'm OK**, **Text** your number (or **Send my position**) and **+30 min**,
+  with the notification sound. It comes again every 5 minutes for half an
+  hour.
+- **Text** opens Messages with the text written: that you have not checked in,
+  your grid reference read out letter by letter, latitude and longitude, when
+  that position was taken and how old it is, the lane you were nearest,
+  whether you are on a motorbike or in a 4x4, and to call 999 and ask for the
+  police. **You press Send.** An iPhone that cannot send texts offers the share
+  sheet instead.
+- Opening the app shows "Your 17:00 check-in has passed. Are you OK?" with
+  **I'm OK** and **Send my position**, which uses where you are now if the phone
+  has a fresh fix.
+- Finishing a ride with a check-in still set asks "Back safe?" with **Cancel
+  check-in**.
+
+**What it cannot do**
+
+- It cannot send a text by itself. The iPhone does not let an app do that, and
+  it has no server to do it for you.
+- If you cannot reach your phone, nobody is told. That is why **Tell them now**
+  is there.
+- It is a notification, not an alarm clock. With the Ring/Silent switch on
+  silent it only vibrates, and a Focus or Do Not Disturb can hold it back: add
+  Trail Blazer to the apps allowed in the Focus you ride with. If notifications
+  for Trail Blazer are turned off in Settings, nothing comes at all.
+- A phone switched off past the time cannot sound it at the time.
+- The position in the text is the last one the phone had. If the app was not
+  running it may be old, and the text says how old.
+- Your number never leaves the phone except in a text you send. The position
+  is kept only while a check-in is set, and deleted when you answer it.
+-->
 
 ---
 
@@ -263,15 +598,15 @@ or not you have bought the app.
 
 Mark a gate, a ford, a parking spot or a wrong turn.
 
-**Three ways to make one:**
+**Two ways to make one:**
 
 - **Hold a finger on the map** and choose **Save a waypoint here**. This is the
   one for somewhere you can see but are not standing in — a gate spotted from
   the road, a parking spot on the far side of a valley. It asks you to name it.
-- **By voice** — "mark this", with gloves on, and the app says back which one it
-  made, so several marks in an afternoon can be told apart before you look at
-  the screen.
-- **The mark button** on the ride screen, which marks where you are now.
+- **By voice** — press the voice button and say "mark this", with gloves on,
+  and the app marks where you are now and says back which one it made, so
+  several marks in an afternoon can be told apart before you look at the
+  screen. This is the way to mark the spot you are standing on.
 
 Naming is asked for rather than assumed, because "Waypoint 7" in a list of nine
 is something you have to go and look at on the map to identify. Leave the box
@@ -303,10 +638,17 @@ published one stays as published for the next person.
 |---|---|
 | **Fastest** | Main roads, quickest way there |
 | **Fun** | Back roads and bends. Still tarmac |
-| **Green lanes** | Includes byways and unsurfaced tracks |
+| **Green lanes** | Prefers the byways open to you, unless they make the ride much slower |
 
 Each stop carries the style for the leg to the next one, so a plan can run out
 on the fast road and back over the lanes.
+
+**Regroup here** is a chip on every stop in the middle of a plan (not the first,
+not the last). Tick it on the stops where a group riding the plan should wait for
+everyone. It changes nothing about the route; the road book says "Regroup here"
+at that stop, and a group riding a shared plan sees how many have arrived there
+(see **To your group ride** below). Like any change, it asks before you leave
+the editor without saving.
 
 ### Trying another way
 
@@ -331,14 +673,46 @@ full options again.
 Dismissing the panel without choosing anything clears the line off the map, so
 a route you decided against does not follow you around.
 
+### Steep stretches
+
+Where the route is steep, its line is drawn **darker and thicker**: a darker
+plum for moderate, darker still and wider for hard, near-black and widest for
+severe. The thickness says it as well as the colour, so it reads in sun and
+for colour-blind eyes. A flat route looks exactly as it always has. This is on
+the main map for a **Route here** route and a plan you are riding, in the plan
+editor as each leg is worked out, and on the byways of a day-out preview, so a
+steep day shows the night before.
+
+These are **not lane colours**. They say how steep the ground is, nothing about
+whether you may ride it; that is still the colour of the lane itself.
+
+Where you have downloaded the **height pack** for the area, the steepness comes
+from that, measured along the route every 25 metres as the gradient over the
+steepest 125 metres or so, never one spiky reading. Elsewhere it comes from the
+lane's own measured gradient, which is one figure for the whole lane: the whole
+lane is drawn at its steepest, even if the steep bit is only part of it. A road
+with no lane and no height pack under it has not been measured. It looks like
+flat ground but is not claimed as flat. Nor is the dashed straight line across
+a stretch no route was found for: nobody knows how steep a way nobody worked
+out is, so it is never drawn as steep or warned about.
+
+When a route has a hard or severe stretch, the panel says where under the
+climb figure, for example "Steepest: Hard - sustained steep climb, 4.2 mi in".
+
 ### What you are travelling on
 
-Car, motorbike, bicycle or walking. This changes the time estimate rather than
-the route, so the journey is timed for the thing you are actually on instead of
+Motorbike or 4x4. It starts as what you told the app you ride, and **On what**
+on a journey changes it — you usually take the 4x4 out, say, and today you are
+on the bike. That pick is remembered until you change **What you ride** in
+Settings, and then journeys follow the new answer.
+
+It changes the route as well as the time. Each machine is routed with its own
+rules — fords, gates and barriers, and whether it fits the width at a chicane —
+and timed for how it actually goes over the surface of each stretch, instead of
 for a car crawling over a byway at 1 km/h.
 
-It is a separate question from the vehicle your lane filter is set to. Your
-filter can say 4x4 while you go for a walk this afternoon.
+Picking a machine for one journey does not change which lanes the map shows as
+open to you. That is **What you ride**.
 
 ### The day-out planner
 
@@ -362,10 +736,111 @@ names it rather than slipping it in:
 The starting point is pinned to where you were when you opened the sheet, so
 the suggestion does not rewrite itself while you are reading it.
 
-### Your own GPX
+### Weather and daylight
 
-Import tracks, routes and waypoints from any GPX file. This is never gated by
-sign-in or purchase, and it needs no download at all.
+Once a plan has been worked out, the plan editor warns you if it gets you back
+close to sunset or after it, or starts in the dark. The day-out sheet and its
+preview always say when the loop gets you back, and the same warnings. Times
+are counted from now.
+
+Under that is the forecast for the same hours, from MET Norway (on the day-out
+sheet it is at the foot, under **Keep it**):
+
+> Forecast for 11:00–17:00: 8.0 mm of rain, heaviest 4.0 mm in an hour around
+> 13:00; 3–7°C, wind up to 27 mph.
+>
+> Advisory, from MET Norway, updated 3 hours ago. Weather changes; look again
+> before you go.
+
+It looks at every stop on the plan (for a day out, the start and its stops) and
+gives the worst of them: the most rain, the strongest wind and the coldest
+hour. The forecast is for grid points about 28 km apart, so it is a guide to
+the area, not to the lane. Wind is in your units, from Settings.
+
+It says **dry** only when every hour of the ride is forecast with no rain. If
+the forecast is missing any hour, it says **rain not known for part of this
+ride** instead, and if the ride runs past the end of the forecast it says where
+the forecast stops.
+
+The line turns red, with its own icon, when the forecast is for:
+
+- **10 mm of rain or more** over the ride - "Wet ride forecast."
+- **Wind of 30 mph (48 km/h) or more** - "Strong wind forecast."
+- **1°C or colder** - "Near freezing: ice is possible in ruts and puddles."
+
+The app does not tell you to go or not to go. That is your decision.
+
+When there is no forecast, it says so rather than saying nothing:
+
+- **No forecast for this ride: none has been fetched for this area yet** - it
+  needs a signal once.
+- **The last forecast for this area is N hours old, too old to use** - a
+  forecast over 12 hours old shows no figures at all.
+- **No forecast for this place** - the plan is outside England and Wales, or
+  the list of downloadable areas has not loaded yet.
+
+On a lane's page, a lane with a rain gauge also gets the rain forecast for the
+next 24 hours under the rain that has already fallen: "Forecast: about 6.0
+mm more over the next 24 hours." If adding the two would put the lane in a
+wetter band it says which one, as "would", because the oldest rain drops out of
+the count as new rain falls. Nothing is shown when the forecast is old or
+missing an hour.
+
+The forecast is fetched only while one of these screens is open, as one file
+for the whole region. Your position and your stops are not sent: the app picks
+out the grid points near your stops on the phone. Your phone never contacts MET
+Norway itself.
+
+### Your own tracks
+
+Import tracks, routes and waypoints from GPX, KML, KMZ, GeoJSON and FIT files -
+several at once from Tracks > **Import**, or by opening the file from another
+app. This is never gated by sign-in or purchase, and it needs no download at
+all. A KML that links to data elsewhere on the internet brings in only what is
+in the file itself.
+
+- **KML and KMZ** (Google Earth, Google My Maps, rowmaps): each line is a ride
+  named after its placemark, and each point a waypoint. A line in several parts
+  is one ride with the gaps left out.
+- **GeoJSON** (`.geojson`, or `.json`): lines are rides and points are
+  waypoints. Areas are left out. A `.json` that is not GeoJSON is said to be
+  not GeoJSON.
+- **FIT** (Garmin, Wahoo and other bike computers, or Strava's "Export
+  original"): the ride, split where the timer was stopped. A FIT course brings
+  its course points in as waypoints.
+- A file over 64 MB is refused before it is read; split it and import the
+  parts. When you import several, the message counts what came in and names
+  any file that did not, and why.
+
+**Check this track** tells you what a track rides over before you ride it. Tap
+the track on the map and choose **Check this track**, or pick it first in the
+track's menu in Tracks - or tap **Check it** on the message after importing a
+single track. It checks for what you ride (change it in Settings) on the day you
+pick from the chips: Today, Tomorrow or a day this week. Picking a day here picks
+it for your plan and the orders list too. It all happens on your phone.
+
+- **Green** (blue on Blue and amber): an open byway.
+- **Red** (amber on Blue and amber): shut or restricted that day - by an order,
+  by the byway's own record, or for your machine, such as a width limit on a
+  4x4.
+- **Pale grey**: a byway with no status recorded - no finding either way - or a
+  stretch that is **not a byway in our data**. That is not a claim it is
+  illegal: our data is byways only, and a road, a permissive way or a private
+  track all look the same to it.
+- **Dark slate**: a tarmac road, when the routing data for the area is on your
+  phone. Without it roads cannot be told apart, and those stretches stay "not a
+  byway in our data".
+- **Not checked**: the lane data for that place is not on this phone. **Get
+  lane data** fetches it.
+
+A byway where riders are asked to keep off for the season counts as open, with
+a note. Tap a problem stretch to open its byway or its order, or to see it on
+the map. **Show on map** colours the track by what it rides until you **Clear
+colours**. **Reroute round them** opens a plan that follows the track and keeps
+off every problem stretch - a saved plan does not keep that, so check the track
+again before you ride. The check reads the traffic orders on your phone, which
+are not every council's, and for a day ahead it can only say an order's dates
+cover it. The signs on the road are the law.
 
 ---
 
@@ -395,6 +870,18 @@ carries how you chose to ride each leg — fastest, fun, or lanes — and whethe
 to divert through your own tracks. As GPX those choices vanish silently and
 your mate gets a line that looks right and rides differently.
 
+For another navigator — a Garmin, or the tablet that is your backup when the
+phone dies — every plan's menu has **Export as GPX, for another navigator**.
+The GPX carries the stops and the road between them as the app works it out
+**today**, on this phone's data, for the vehicle you are on and round the
+plan's avoid area. What it loses is the choices: the style of each leg and
+whether to go through your own tracks are not in it, and the line stays as it
+was the day you exported it, where a `.tbplan` is worked out afresh each time
+it is opened. Where no way could be worked out for a stretch, the GPX has a
+gap there, and with no routing data on the phone at all it holds only the
+stops; either way the app tells you after sending, because another navigator
+will pick its own roads across a gap.
+
 **Importing** is the download button in the same bar. Anything that arrives is
 a **copy**: it gets its own id so it can never overwrite a plan you already
 have, and a name clash is numbered rather than duplicated, so two "Sunday loop"
@@ -410,6 +897,93 @@ A selection stays put after you share or save it. Nothing here clears it except
 the Cancel button, so you can send these to a mate **and** keep a copy without
 picking them all twice.
 
+### To your group ride
+
+<!-- android -->
+In a group ride with sharing on, **Share a plan with the group** in the group
+card (on the dashboard, and in Settings > Group ride) sends one of your plans to
+everyone in the group, over the same link as your position: phone to phone, and
+through the group's relay if it has one. Nothing goes through a server of ours.
+<!-- /android -->
+<!-- ios
+In a group ride with sharing on, **Share a plan with the group** in the group
+card (on the dashboard, and in Settings > Group ride) sends one of your plans to
+everyone in the group, over the same link as your position: on iPhone that is
+the group's relay, which the group needs anyway. Nothing goes through a server
+of ours.
+-->
+Pick the plan (the one you are riding comes first), or one of your tracks - a
+mate's GPX you are following comes next - then **Send**. A track goes as a plan
+along it, with stops at its ends and bends, and the track itself as the line
+the group is judged against. A track whose parts do not join up goes without
+that line, and the question before it goes says so: nobody is told when they
+leave it. The card
+counts the parts as they go - "Sending Sunday loop: 6 of 14 parts." - and then
+says it is sent. Through a relay a plan goes at about one part every two
+seconds, so a long one takes a minute or two. Riders who come into range later
+get it then, and so does a rider who joins through the relay later: once their
+phone is heard, the plan goes onto the relay again for them, from your phone or
+from anyone who has it. If the link drops part way, the card says the send
+stopped and how far it got; send it again once the link is back. Anyone on an
+older Trail Blazer will not see it, and you cannot see who took it. The others' phones take at most one plan from you each half minute, so
+after sending the wrong one, wait 30 seconds before sending the right one. A
+plan too long for the group link is refused: send it as a file from Plans
+instead. With sharing off, the row says to switch it on first:
+receiving needs sharing on too, because the group's link is off otherwise.
+
+The plan goes with the line you worked out, for **your** machine. When someone
+sends you a plan, one quiet line says who and what, and the plan waits in the
+group card: **Take it** adds a copy to your plans (a clashing name is numbered)
+and makes its line the group's **shared route** on your phone; **Ignore** adds
+nothing. **Ride it** starts it the usual way, asking where to join it, and
+**Put it away** stops the off-route alerts (the plan stays in Plans). The
+shared route also goes when you leave the group, and 12 hours after you took
+it.
+
+With a shared route, a rider more than 250 m from it for 2 minutes gets one
+quiet line - "Dave is off the shared route, 400 m from it." - and it goes when
+they are back within 100 m. Only riders who have been on the line count, so
+nobody is flagged on the way to the start. Everyone is judged against the one
+line the sender worked out, so a 4x4 whose own route would avoid a narrow lane
+on it reads as off the shared route there. With regroup points on the plan the
+card says "Next regroup: The ford · 3.1 km", and at one, "At The ford: 3 of 4
+here. Still to come: Dave, 1.2 km."
+
+### When someone in the group needs help
+
+**I need help** is the red button in the group card (on the dashboard, and in
+Settings > Group ride). It switches sharing on if it was off, and your call
+goes out with every position you send until **you** cancel it. Your own phone
+shows a red line saying whether it has gone - "Your group is being told you
+need help", or that no rider is in range yet and to call 999 if you need help
+now - and **Cancel help**, in the card and on the line.
+
+Every other phone in the group then sounds an alarm: a buzz and a voice saying
+who and where, "Dave needs help, 1.1 km north of you". It says it again every
+20 seconds until it is silenced on that phone. A red banner reads the same,
+with **Go to**, which centres the map on them and offers a route there, and
+**Silence**, and their marker on the map turns red. **Silence** stops the noise on that phone only. The
+banner and the red marker stay, the others' phones keep sounding, and the rider
+who asked is told nothing: silencing is not an answer. Only the rider who
+asked can end the call, with **Cancel help**; then the others read "Dave no
+longer needs help." A call stays up even when their phone goes out of touch,
+because the last word heard from it still asks for help.
+
+Everything else the group tells you is **one quiet notice, with no sound and
+no voice**, because a group loses touch over every hill and a phone that makes
+a noise at each one stops being listened to:
+
+- "Dave has been stopped for 8 minutes" - about 8 minutes into a stop, and only
+  while someone else in the group is moving. When everyone has stopped it is a
+  lunch break and nothing is said.
+- "Dave is 2 km behind the group" (or ahead of it, or away from it) - after 2
+  minutes outside the group.
+- "Lost contact with Dave, last seen 3.1 km south-west of you" - after 10
+  minutes with nothing heard from them.
+- "Dave left the group."
+
+Each goes by itself once it is no longer true.
+
 ---
 
 ## Following a route
@@ -418,17 +992,82 @@ Start a plan, or follow one of your own tracks, and the app shows distance
 remaining, percentage done, and estimated arrival time on a 24-hour clock.
 
 If you leave the line by more than about 40 metres you get told plainly, with
-the direction back:
+how far it is and which way. On a journey the strip turns red, in three lines:
 
-> Off route — 210 m away to the NE
+> Off the route · 210 m away · The route is to the NE
+
+On one of your own tracks it reads "Off route — 210 m away to the NE". Either
+way that is the compass point to the nearest part of the line, not a road to it.
 
 The app re-plans by itself, at most once every 15 seconds, from where you are
 now to the stops you have not reached yet — not back to the start. If it cannot
 work out a new route it says so and keeps the old line drawn, because silence
-reads as "still guiding me".
+reads as "still guiding me": "No new route from here — old one still shown",
+and under it which way the old line is, "The old route is to the NE". A stop
+you have left behind on purpose - the lane to it was flooded or gated - is
+still one it has not reached, so it keeps turning you back to it: **Skip the
+next stop** in the road book drops it (see **The road book** below).
 
 When the fix goes quiet, the figures go to dashes rather than freezing on a
 stale number.
+
+**Steep ground.** Before a hard or severe stretch of the route, you hear "Steep
+climb ahead, 200 metres", "Steep descent ahead", or "Steep ground ahead" when
+the route cannot tell which way it goes. The steepest band adds "Expect to need
+low range". It is said once per stretch, about 12 seconds out at your speed
+(between 150 and 400 metres), and never for moderate ground. The turn strip
+shows the same thing, "Steep climb · in 200 m", and "Steep climb · 120 m to go"
+while you are on it, whether the voice is on or off. A closure on the way ahead
+takes that line, because whether you may go on matters more than how hard it
+is. Where the steepness comes from the lane's record, the warning comes at the
+start of the lane rather than at the slope itself. Turn the voice off with
+**Warn of steep ground ahead** in **Settings → Voice** or the road book's voice
+menu. Recorded tracks you follow are not coloured for steepness and get no
+steep warning: a track is the line somebody rode, not a route the app worked
+out, so there is no worked-out route to measure.
+
+**Following one of your own tracks** gets the same warnings as a planned
+journey: the byway coming up, the byway ending or shut beyond, and a closure on
+a byway ahead. They are spoken under the same switches in **Settings → Voice**.
+It also gets turn cues: where the track meets another way, on a sharp corner
+between straights, and where it turns back on itself. Ordinary bends get no
+cue. The map only carries byways, so it cannot see where one road meets
+another; do not count on a cue at every junction. The next turn, the byway
+ahead and any closure show in the follow strip at the top of the map. With
+screen-off navigation on, the turns are spoken too, and the end is announced as
+"End of the track". The track is read in the direction you ride it, so
+following it from its far end runs it backwards.
+
+Every one of your tracks is drawn on the map as its own line, and when you
+are zoomed in it carries small **arrows** (">") along it pointing the way it
+was recorded — useful on a mate's GPX, where you cannot otherwise tell which
+end it starts. Follow a track the other way and its arrows turn round, so
+they point the way you are riding it.
+
+Until you have been on the track you are on your way to it - up the lane
+from the lay-by to the trailhead - not off it, so the strip stays quiet,
+not red. It says how far the start is and which way, "To the start — 1.0 km
+away to the N", or "To the track — 300 m away to the E" when the nearest part
+of the track is not its start, and offers **Route to the start** (or **Route to
+the track**): a legal route there, as a journey. Once you have been on the
+track, leaving it is the red "Off route" below. Ridden to its end, the strip
+says "End of the track", quietly, however far you then ride home.
+
+Leave the track and the strip turns red with "Off route" and the direction of
+the line, and offers **Route back to the track**. That is not the compass
+point across the fields: it works out a legal route, as a journey, to the
+track about 100 m ahead of where you left it, past whatever you went round.
+The track waits while that journey steers you, and picks up again when it
+ends. If there is no GPS fix yet it says so and routes nothing.
+
+Ride back down the track the way you came - you turned round at a gate, or
+you are riding it the other way on purpose - and after about 50 m going
+backwards the strip turns red with **Wrong way** and "Riding the track
+backwards". It offers **Follow it the other way**, which turns the track round
+from where you are, so the turns, the distance to go and the road book follow
+you. **Follow it the other way** is in the Tracks menu too, beside **Follow this
+track**, for starting it reversed. Start a journey while following and the
+journey takes over; when it ends, the track picks up again.
 
 ---
 
@@ -450,6 +1089,18 @@ following, so it will not drag you back mid-sentence — the button in the top
 bar shows which state it is in, and one tap changes it. That choice lasts until
 you change it, including if you leave the screen and come back.
 
+**Regroup here.** A stop marked **Regroup here** in the plan reads "Regroup
+here" in the road book, with its own icon, in place of the plain "Continue" of
+any other stop the day goes on from. The turn voice says it too.
+
+**Skip the next stop.** While you are riding a journey with more than one stop
+still ahead, the road book's top line has a **Skip the next stop** button. It
+drops that stop and re-plans from where you are to the stop after it - "Skipped
+The ford. The route now goes on from here to the stop after it." - with
+**Undo** on that message for a few seconds, because it is one tap a glove can
+make by mistake. It is not offered for the last stop (that is **Stop this
+journey**), nor while there is no fresh GPS fix to re-plan from.
+
 **Sharing the ride you are on.** The share button in the road book sends the
 journey you are currently riding, which is exactly when somebody asks you where
 you are going. A journey started by holding the map has no row in Plans, so
@@ -463,10 +1114,15 @@ One large round button on the map, sized to be hit in winter gloves without
 looking. Press it and speak. Recognition runs on the device where the platform
 supports it, so it works with no signal.
 
+With a handlebar remote, **F2** says the last thing again - a closure warning
+a lorry drowned out as well as the mic's last answer - and **F5** turns the
+spoken guidance off and on. See **Handlebar remote** below.
+
 ### What you can say
 
 | Say | What happens |
 |---|---|
+| "am I allowed down here", "can I ride here", "is this legal", "is this a byway", "what is this lane" | Judges the lane you are on for your vehicle, out loud. With no fix, an old or rough one, or no lane here in your maps, it says it cannot tell and why - never a yes or a no |
 | "start recording", "record ride", "start ride", "begin recording" | Starts recording |
 | "stop recording", "end ride", "finish ride" | Stops recording |
 | "pause recording", "pause ride" | Pauses recording |
@@ -521,21 +1177,146 @@ instead of a minus sign.
 
 ---
 
+## Handlebar remote
+
+A Bluetooth remote on the bars, so you can zoom, mark a gate or start a ride
+without taking a glove off. It is free.
+
+Pair it in your phone's own Bluetooth settings, the way you would pair a
+keyboard. The app needs no permission for it and sends nothing anywhere: it
+reads the buttons the way any app reads a keyboard. Turn it off in
+**Settings → User choices → Handlebar remote** if you pair a keyboard for
+something else.
+
+Remotes built to the **Trail Blazer Controller Profile** work straight away.
+Any other remote works once you have taught it (see Learn, below).
+
+### The buttons
+
+Press a button, or hold it for a moment (600 ms) where it says so.
+
+| Button | Press | Hold |
+|---|---|---|
+| Arrow Right | Next screen | |
+| Arrow Left | Previous screen | |
+| Arrow Up | Zoom in | |
+| Arrow Down | Zoom out | |
+| Enter | Confirm | Back to me |
+| Escape | Back | |
+| F1 | Mark this spot | Mark this spot and add a note |
+| F2 | Say that again | |
+| F3 | Back to me | |
+| F4 | Start or stop recording | Throw the ride away |
+| F5 | Spoken guidance on or off | |
+
+- **Next and Previous screen** go round the map, the Dashboard and, while
+  you are riding a journey, the road book. **Back** goes from the Dashboard
+  or the road book to the map; on the map it does nothing, so it can never
+  take you out of the app.
+- **Zoom** works on the map. Hold the arrow and it keeps zooming.
+- **Mark this spot** drops a waypoint where you are and says which one -
+  "Marked, Waypoint 3" - exactly as the mic does, and shows it on screen too.
+  If the GPS has stopped giving fixes it marks nothing and says why. Held, it
+  marks and opens the waypoint so you can write what is there - except on a
+  locked screen, where nothing can be typed: there it just marks, and you can
+  add the note later from Waypoints.
+- **Start or stop recording** is the record button. A paused ride carries on.
+  Held, **Throw the ride away** asks first, with **Keep recording** chosen, so
+  a stray Enter keeps the ride; Right then Enter throws it away.
+- **Spoken guidance on or off** silences the byway ends and rights, "Byway
+  ahead", the steep ground warnings, the spoken directions and the closure
+  warnings, until you press it again or the app restarts. Closures still show on the map. The mic still
+  answers you, and another rider's call for help is never silenced. While it
+  is off, the mic button wears a crossed-out speaker (the mic button is
+  hidden while the screen is locked), and Settings says so above the voice
+  switches with a button to turn it back on.
+- Media Next and Media Previous also move between screens, on phones that
+  hand them to the app. Play/Pause and the volume buttons are left alone
+  unless you teach them.
+
+### Where buttons work
+
+- **In a text box, the remote does nothing at all**, so the arrows move the
+  cursor and nothing is marked while you type.
+<!-- android -->
+- If the on-screen keyboard stops appearing while the remote is connected,
+  that is Android treating the remote as a keyboard. Turn on **Show
+  on-screen keyboard** (on some phones **Show virtual keyboard**) in your
+  phone's physical keyboard settings.
+<!-- /android -->
+<!-- ios
+- If the on-screen keyboard stops appearing while the remote is connected,
+  that is the iPhone treating the remote as a keyboard. Disconnect the remote
+  in Settings > Bluetooth while you type.
+-->
+- On any screen other than the map, the Dashboard and the road book - and
+  whenever a box or a sheet is open - the arrows move between the buttons on
+  screen, Enter presses the one picked out and Escape closes. F1 to F5 still
+  work there.
+<!-- android -->
+- With TalkBack on, the arrows, Enter and Escape are left to TalkBack. F1 to
+  F5 still work.
+<!-- /android -->
+<!-- ios
+- With VoiceOver on, the arrows, Enter and Escape are left to VoiceOver. F1 to
+  F5 still work.
+-->
+- It keeps working while the screen is locked with the padlock: the lock
+  stops touches, and a button on the bars is not an accident.
+<!-- android -->
+- It only works while Trail Blazer is on screen. With the phone's screen off,
+  at the phone's own lock screen or with another app in front, Android gives
+  the buttons to something else, so they do nothing in the app while you
+  ride with the screen off.
+<!-- /android -->
+<!-- ios
+- It only works while Trail Blazer is on screen. With the phone's screen off,
+  at the phone's own lock screen or with another app in front, the iPhone
+  gives the buttons to something else, so they do nothing in the app while
+  you ride with the screen off.
+-->
+
+### Learn, and checking a remote
+
+Open **Settings → User choices → Handlebar remote** and press any button: the
+card shows its name, its code, what it does or **Not set**, how long you held
+it and how fast it repeats. On that page buttons are only shown, never acted
+on, so you can try them all. If a button does nothing, tap an action in the
+list and press the button you want for it - that is Learn. If the button was
+doing something else, it tells you what it took it from. The four **Move the
+map** actions are for remotes with a joystick and only work once taught.
+**Put the standard keys back** forgets everything you taught it.
+
+---
+
 ## Screen lock
 
 Rain is a stream of taps. So is a wet glove, a branch on a narrow lane, and a
 cuff resting on a tank bag. Any of them can switch tabs, stop a recording or
 throw away a route, and you would find out miles later.
 
+<!-- android -->
 Tap the padlock on the map to lock the screen. **Every touch in the app is
 blocked**, including the Android back button and the back gesture, until you
 deliberately undo it.
+<!-- /android -->
+<!-- ios
+Tap the padlock on the map to lock the screen. **Every touch in the app is
+blocked** until you deliberately undo it.
+-->
 
 Locking also puts the map back on you at a riding zoom. That matters because a
-locked screen is the one place the camera cannot be changed — if you had
-pinched out to look at the whole valley and then locked, you would be riding a
-county-level map with no way to fix it. If you were already zoomed in close, it
-leaves you there.
+locked screen is the one place you cannot change the camera by touch — if you
+had pinched out to look at the whole valley and then locked, you would be riding
+a county-level map with no way to fix it. If you were already zoomed in close,
+it leaves you there.
+
+The one thing that moves it for you is speed. At road speed the locked map
+zooms out by itself, a little from about 22 mph (35 km/h) and up to a level and
+a half by 56 mph (90 km/h), so the junction for the next byway is on screen in
+time to see it. Slow to lane pace and it comes back in to the zoom you locked
+at. A handlebar remote's zoom still works, and becomes the zoom it comes back
+to.
 
 To unlock, **press and hold for 900 ms** on the control at the bottom. A ring
 fills so you can see how long is long enough. A tap will not do it, because a
@@ -547,12 +1328,25 @@ anyway.
 Locking does not survive a restart, and that is deliberate — nothing is lost by
 starting unlocked.
 
+A handlebar remote still works while the screen is locked: the lock stops
+touches, and a button pressed on the bars is deliberate.
+
 ### Locking itself
 
-Turn on **Lock screen automatically** in Settings and the screen locks itself
-the first time you are detected moving after starting a journey. It fires once
-per journey and then leaves you alone, so stop-starting through a village does
-not relock it every time.
+Turn on **Lock the screen when you set off** in Settings → User choices and the
+screen locks itself in two cases:
+
+- **On a journey**, the first time you are detected moving after starting it.
+  It fires once per journey and then leaves you alone, so stop-starting through
+  a village does not relock it every time.
+- **With no journey at all**, the first time you pass about 16 mph (25 km/h).
+  Somebody riding at that speed with nothing loaded is riding, not browsing,
+  and is exactly who the lock is for. It is set above anything done on foot or
+  pushing, so a technical section taken slowly keeps its touchscreen.
+
+Unlock it yourself and it stays unlocked until you start another journey: a
+hand unlock is you saying no, and the app does not argue by locking you out
+again at the next gate.
 
 It is off by default. A screen that locks itself is a surprise the first time,
 and a surprise on a motorbike is worth avoiding.
@@ -580,8 +1374,8 @@ stays until you hide it yourself; no timer takes it away.
 
 ## The dashboard
 
-Say "dashboard", or open it from the map. Twelve gauges, glove-sized and
-high-contrast, that survive doubled system text:
+Say "dashboard", or open it from the map. Twelve gauges to start with,
+glove-sized and high-contrast, that survive doubled system text:
 
 Speed · Clock · Trip · Moving time · Altitude · Heading · Grid reference ·
 Max speed · Average moving speed · Tilt · Gradient · Odometer
@@ -606,9 +1400,128 @@ it.
 mark the tank as full. Double-tap it to set how far you get on a tank, and the
 tile then fills green, amber and red as you use it up.
 
+**Trip A and Trip B** are two more trip meters you can add. Recording does not
+zero them. Long-press one to reset it (Undo is on the message). Tap it to nudge
+it by 0.01 of a km or mile, or to set it to an exact distance, which is how you
+keep in step with a road book. They always read in hundredths of a km or mile,
+the way a road book prints its distances, and show "—" rather than a negative
+number if they cannot be worked out.
+
+**More gauges** are in **Choose which numbers** at the top of the dashboard,
+among them these two:
+
+- **Pitch** is nose up or down ("12° up", "8° down"), off the same sensor as
+  Tilt. Until you give it a level it shows "— hold to level": with the bike
+  standing **on flat ground**, long-press the tile. The level is kept, so take
+  it on the flat — taken on a slope, every reading after it is out by that
+  slope. Undo is on the message if a glove landed on it by mistake, and if you
+  move the phone on its mount, level it again.
+- **GPS accuracy** reads "± 8 m" (in feet, on miles): how far out your position
+  may be. Every other number here, and the grid reference you would read out
+  to a recovery truck, is only as good as this; under trees in a holloway it
+  can be 30 to 60 m. It goes to a dash with the rest when the fix is old, and
+  says "not reported" on a phone that does not give one.
+
+**Two layouts, Lanes and Road.** The swap button at the top of the dashboard
+switches between them; each keeps its own gauges and order. Lanes is the one
+you already had. Road starts with Speed, Clock, Trip A, Trip B, Odometer,
+Moving time, Average moving speed, Heading and Grid reference. The title says
+which one is showing.
+
 ---
 
 ## Settings
+
+Settings is a list of shut sections, in this order. Tap one to open it.
+
+**Maps and downloads**
+
+- The Downloads page itself — see **Downloading data** above.
+
+**Map updates**
+
+<!-- android -->
+- What you have bought and how long it runs, and **Restore purchases from
+  Google Play**.
+<!-- /android -->
+<!-- ios
+- What you have bought and how long it runs, and **Restore purchases**.
+-->
+- For each kind of data, **How often to check** and **What to download over**,
+  then **Check now**. See **Updates** above.
+
+**Location**
+
+- Whether this phone can find you, and a button to fix it if not. It also says
+  why the app never asks for background location.
+
+**Group ride**
+
+- **Your name on the map** — the name the others in your group see beside you.
+<!-- android -->
+- **Start a group**, then **Show the code** for the riders you are with to
+  scan. To join someone else's, **Scan a code**, or **Paste a code** for one
+  sent to you as text. Phones talk to each other directly over Bluetooth and
+  Wi-Fi; nothing goes through a server of ours, and it is free.
+<!-- /android -->
+<!-- ios
+- **Start a group**, then **Show the code** for the riders you are with to
+  scan. To join someone else's, **Scan a code**, or **Paste a code** for one
+  sent to you as text. On iPhone your position goes through a relay one of you
+  runs, over mobile data, so the group needs one and you need a signal; nothing
+  goes through a server of ours, and it is free.
+-->
+- Once you are in a group: **Share my position on this ride** and **I need
+  help** (these are at the top of the dashboard too; **When someone in the
+  group needs help**, under Sharing with other riders, says what the others'
+  phones do), who is in the group,
+  **Start a new group** and **Leave the group**. Nobody can be removed from a
+  group — there is no server to remove them from — so to leave someone out,
+  start a new group and have everyone else scan its code.
+<!-- android -->
+- **Use your own relay** — optional: an internet relay one of you runs, for
+  riders out of radio range. It goes into the group's code, so the others get
+  it by scanning. **Setting up a group relay**, under Help, says how.
+<!-- /android -->
+<!-- ios
+- **Use your own relay** — needed on iPhone: an internet relay one of you runs,
+  which carries everyone's position. It goes into the group's code, so the
+  others get it by scanning. Sharing is refused in a group whose code has no
+  relay. **Setting up a group relay**, under Help, says how.
+-->
+- **Share a plan with the group** — in the group card, under the share switch.
+  See **To your group ride** under Sharing with other riders.
+
+**Safety check-in**
+
+- A back-by time, and a text ready if you don't check in. The same card as on
+  the **Where am I?** screen. See **Safety check-in** above.
+
+**User choices**
+
+- **Units** — miles or kilometres. Miles by default.
+- **Appearance** — Auto, Day or Night. "Auto" follows the phone, which is not
+  the same as following the sun: if your phone is not set to switch at sunset,
+  pin it here. While **Unlit lane** is on (under Accessibility) the screen stays
+  dark whatever this says, and the section tells you so.
+- **Voice** — **What you can say**, and a switch for each thing the app says
+  aloud, including **Warn of steep ground ahead** (on by default) and **Say
+  when recording starts or offers to finish** (on by default; it only speaks
+  when **Start recording when you ride off** is on).
+- **Handlebar remote** — whether the app answers a Bluetooth remote (on by
+  default), what each button does, Learn for a remote that needs teaching,
+  and **Put the standard keys back**. See **Handlebar remote** above.
+- **Riding** — **What you ride** (motorbike or 4x4: which lanes the map shows as
+  open to you and which machine a route is worked out for; both download the
+  same packs), **Avoid closures when routing**, **Keep screen on** (on by
+  default; if your phone overrules it, the screen tells you rather than
+  pretending), **Lock the screen when you set off** (off by default; see
+  above) and **Start recording when you ride off** (off by default; see
+  **Recording a ride**).
+- **Map view** — Auto, Always show or Minimal, the speed, trip and clock strip
+  on the map, and which numbers the dashboard shows. The chooser edits the
+  layout that is showing (Lanes or Road); swap on the dashboard to edit the
+  other.
 
 **Accessibility**
 
@@ -616,66 +1529,82 @@ tile then fills green, amber and red as you use it up.
   above for why it is not on to begin with.
 - **Which hand** — puts the map controls, the record button and the lock on the
   side you actually reach with. Asked at first run too.
+- Screen brightness, or **Let the phone set the brightness**, and **Screen for
+  the conditions** — Normal, Bright sun or Unlit lane.
 - **Lane colours** — the standard pair, or a colour-blind-friendly pair. The
   samples are drawn the way the map draws them.
+<!-- android -->
 - **Text size** follows your phone rather than having its own slider here. Turn
   it up in Android Settings under Display and everything follows, including the
   speed on the map.
+<!-- /android -->
+<!-- ios
+- **Text size** follows your phone rather than having its own slider here. Turn
+  it up in Settings under Display & Brightness, Text Size, and everything
+  follows, including the speed on the map.
+-->
 
-**Riding**
+**Your own data**
 
-- **What you ride** — changes which lanes you see and which packs download.
-- **Keep the screen awake** — on by default. If your phone overrules it, the
-  screen tells you rather than pretending.
-- **Lock screen automatically** — off by default. See above.
-- **Map view** — Auto, Always show or Minimal.
+- **Back up what you have put in** — your rides, waypoints, plans, lane notes
+  and starred lanes, in one file. Photographs are not in it: they are far too
+  big for a file you can keep and send.
+- **Restore from a backup** — adds everything in the file to this phone.
 
-**The map**
+**Help**
 
-- **Theme** — day, night or follow the system. "Auto" follows the phone, which
-  is not the same as following the sun: if your phone is not set to switch at
-  sunset, pin it here.
-- **Hill shading**, **height colours** and **3D buildings** — all off by
-  default, because each one repaints the map and that should be your decision.
-  3D buildings need nothing downloaded and work anywhere already cached. Hill
-  shading and height colours need a ground-height download, **and those are not
-  published yet** — the app will tell you so for your area rather than turning
-  on a switch that does nothing.
+- **Green laning**, **Show the first-run tour again**, this guide (**Using the
+  app**), **Setting up a group relay** and **Privacy**, in that order. The
+  documents are carried in the app, so they open with no signal; the relay
+  guide's link to the full steps online is copied for you to open.
 
-**Data**
-
-- **Units** — miles or kilometres. Miles by default.
-- **Update schedule** and **only check on wifi**.
-- **Map updates** — what you have bought and how long it runs.
+Hill shading, height colours and 3D buildings are not in Settings: they are on
+the map, in **Layers & lanes** under Height & 3D. 3D buildings are on by default
+— they need nothing downloaded and work anywhere already cached, so you see
+them and can turn them off. Hill shading and height colours are off by default:
+they need the ground-height download for your area, which is under that area in
+**Downloads**. Until it is on the phone the two switches stay greyed out, and
+the sheet says where to get it rather than turning on a switch that does
+nothing.
 
 ---
 
-## Trial and purchase
+## Free app, paid map updates
 
-The app installs free and everything works for **30 days**. No account, no
-sign-in, nothing to fill in.
+**The app is free**, and stays free. No account, no sign-in, nothing to fill
+in, and nothing about the app itself ever locks.
 
-After that there is a **one-time purchase**. One payment, no subscription,
-nothing to cancel. Google Play handles it, and it restores on any device you
-sign into with the same account.
+For your first **30 days** after installing, downloading maps is free too, so
+you can fill the phone with what you ride.
 
-Map data is sold separately as **update packs**: a one-off payment buying one,
-three, six or twelve months during which you can download new and corrected
-lane data as councils publish it. These stack — buy a year and then a month and
-the month runs from the end of the year, so renewing early never destroys time
-you have paid for. Nothing recurs and nothing needs cancelling.
+After that, what is sold is **fresh map data**, as **update packs**: a one-off
+payment buying one, three, six or twelve months during which you can download
+new and corrected lane data as councils publish it. These stack — buy a year
+and then a month and the month runs from the end of the year, so renewing early
+never destroys time you have paid for. Nothing recurs and nothing needs
+cancelling.
 
-When an update window runs out, **everything you have already downloaded keeps
-working**. Only new downloads stop.
+Without an update pack running, **everything you have already downloaded keeps
+working**, and so does the rest of the app. Only new map downloads wait — and
+the closures are map data too. **The traffic orders on the phone stop being
+refreshed** once the 30 days are over and no pack is running: they stay as they
+were when they last came in, and **Map updates** in Settings says how old they
+are. Fresher closures are what an update pack buys.
 
-The trial is measured from when the app was installed, read from Android's own
-records and from a receipt file. That receipt is the one thing backed up to your
-Google account, so changing phone keeps what you paid for.
+<!-- android -->
+The 30 days are measured from when the app was installed, read from Android's
+own records and from a receipt file. That receipt is the one thing backed up to
+your Google account, so changing phone keeps what you paid for.
+<!-- /android -->
+<!-- ios
+The 30 days are measured from when the app first ran, kept in a receipt file
+on this phone. That receipt is the one thing of Trail Blazer's in your iCloud
+Backup, so a new iPhone set up from that backup keeps what you paid for.
+-->
 
-**Your rides are yours either way.** If you do not buy the app, the paywall
-screen has an export that writes out every ride, waypoint and plan as GPX. An
-app that took your own recordings away would earn exactly the review it
-deserves.
+**Your rides are yours.** Any ride exports as GPX from Tracks, and **Back up
+what you have put in** in Settings writes out your rides, waypoints, plans and
+lane notes in one file.
 
 ---
 
@@ -687,16 +1616,23 @@ deserves.
   The app shows a banner with a button straight to the right settings screen.
 - Indoors or in a valley a first fix can take several minutes. The dashboard
   keeps your last known position and labels how old it is.
+<!-- android -->
 - If you refused location permanently, Android will not ask again. Use the
   **Open settings** button on the banner.
 - Recording still works without the notification permission. You lose the
   ongoing indicator, not the ride.
+<!-- /android -->
+<!-- ios
+- If you refused location, your iPhone will not ask again. Use the
+  **Open settings** button on the banner.
+-->
 
 ### The map is blank
 
-An empty map has five different causes and they are not the same problem. The
-app tells you which one it is, and tapping the notice takes you where it is
-undone:
+An empty map has five different causes in what is on the phone and how it is
+set, two more in how far out you are zoomed, and one in your vehicle. They are
+not the same problem. The app tells you which one it is, and tapping the notice
+takes you where it is undone:
 
 - **"No lane data for where you are"** — nothing is downloaded here. This does
   not mean there is no right of way. Download the area.
@@ -707,6 +1643,30 @@ undone:
   a right of way.
 - **"The lane pack for here is on the phone but could not be loaded"** —
   re-download it.
+
+Zoomed out over lanes you **have** downloaded, one of two notices. Neither is
+a reason to download anything again:
+
+- **"Zoom in to see your lanes — what is on the phone does not draw them this
+  far out"** — your lanes are there and are drawn from closer in. Zoom in.
+- **"Lanes appear as you zoom in — you chose that to keep the map quick"** —
+  **Layers & lanes → Zoomed out** is set to **Show lanes when zoomed in**. Zoom
+  in, or set it back to **Show lanes at every zoom**.
+
+And one for your vehicle:
+
+- **"Every way here is off your map: each one is excluded for your vehicle by an
+  order or a surveyed obstruction"** — a weight or width order that bites a 4x4
+  and not a bike, say. That is evidence, not missing data, and no filter undoes
+  an order. Where only some ways are off, the notice says "Some ways here are
+  off your map" and the rest are drawn.
+
+The notice speaks for where you are standing, once the phone has a fix, not
+for wherever you have moved the map to. If it gives no reason and this area is
+downloaded, nothing here is a byway the app carries. Unclassified roads and
+other roads with unrecorded rights are never drawn; check the council's List
+of Streets. Tap a notice to read all of it: under its own words it says the
+same. The key under **Access class** in **Layers & lanes** says it too.
 
 If the **background** is blank rather than the lanes, you have lanes but no
 map tiles for this ground. Open **Offline maps** and download the region. With
@@ -733,7 +1693,7 @@ downloaded file, not a lost signal.
 
 Almost everything works. With the area downloaded you get the map, the lanes,
 lane detail, routing, recording, the dashboard, the voice button and your own
-GPX.
+tracks.
 
 Two things need a connection:
 
@@ -742,6 +1702,9 @@ Two things need a connection:
   phone. Only typed place names and addresses need the network, and the app
   says so rather than showing an empty list.
 - **Downloading anything new.**
+
+The rain readings and the weather forecast need a signal to update. With none,
+the last ones fetched are shown with their age until they are too old to use.
 
 If you are about to lose signal, **Just where I am standing** on the Downloads
 screen is the fastest way to get what you need.
@@ -779,6 +1742,10 @@ v3.0.
 
 Basemap: OpenStreetMap data under the ODbL, served by OpenFreeMap. Routing
 tiles published by [brouter.de](https://brouter.de).
+
+Weather forecasts: MET Norway (api.met.no), CC BY 4.0,
+https://creativecommons.org/licenses/by/4.0/. Figures are summarised for the
+ride window.
 
 Lane information is guidance only. Always check signage and current Traffic
 Regulation Orders before riding.
