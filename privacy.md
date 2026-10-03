@@ -3,12 +3,15 @@
 **Trail Blazer — Offline maps**
 Application id `com.trailblazerofflinemaps`
 
-Last updated: 2 October 2026
+Last updated: 3 October 2026
 
 ## The short version
 
 Trail Blazer has no user accounts, no sign-in, no analytics, no crash
-reporting, no advertising and no tracking identifiers of any kind.
+reporting, no advertising and no tracking identifiers of any kind. Two Google
+components it uses, Play billing and the Nearby Connections service behind
+group ride, send Google their own performance figures, as they do in any app;
+see sections 5 and 7. None of that reaches us.
 
 Your rides, your waypoints, your saved plans and your settings are written to
 your phone and stay there. They are never uploaded to us, and they are
@@ -67,7 +70,7 @@ app can read it, and none of it is transmitted.
 | Saved plans | `app_flutter/user_content/plans/<id>.json` | The stops in a planned route |
 | Lane notes | `app_flutter/user_content/lane_notes.json` | What you wrote about a lane, whether you mean to ride it, and when |
 | Lane photographs | `app_flutter/user_content/lane_photos/<lane>/` | Copies of the pictures you attached to a lane note, as they were, including any location and date the camera wrote into them |
-| Imported files (GPX, KML, KMZ, GeoJSON, FIT) | Same as rides and waypoints | Whatever was in the file you imported: read on the phone; a KML network link is never followed |
+| Imported files (GPX, KML, KMZ, GeoJSON, FIT, TCX) | Same as rides and waypoints | Whatever was in the file you imported: read on the phone; a KML network link is never followed |
 | Downloaded map data | App support directory: `lane-packages/`, `routing/segments/`, `trips/`, `basemaps/` | Public map data. Nothing about you |
 | Rain and river readings | App support directory: `conditions/wet/<region>.json`, `conditions/rivers/<region>.json` | The last rain and river feed fetched for each region, kept so it can be shown with no signal. Public data, but the file names say which regions you have opened lanes in |
 | Weather forecast | App support directory: `conditions/forecast/<region>.json` | The last forecast file fetched for each region, kept so it can be shown with no signal. Public data, but the file names say which regions you have planned rides or opened lanes in |
@@ -177,7 +180,10 @@ The complete set of keys is:
 - Display and the map: `settings.theme_mode`, `settings.units`,
   `settings.keep_awake`, `settings.auto_lock`, `settings.auto_record`,
   `settings.brightness`,
-  `settings.screen_mode`, `settings.roadbook_tab`, `map.basemap`,
+  `settings.screen_mode`, `settings.screen_mode.after_dark` (whether the
+  screen goes unlit by itself after sunset, and whether it last did so for
+  dark or for light - no place and no time), `settings.roadbook_tab`,
+  `map.basemap`,
   `map.chrome_mode`, `map.show_gauges`, `map.orientation`, `map.lane_filters`,
   `map.lane_overview_mode`, `map.tro_filter`, `map.hillshade`,
   `map.heightColours`, `map.multidirectional`, `map.terrainExaggeration`,
@@ -191,11 +197,18 @@ The complete set of keys is:
   codes; nothing else about the remote, and nothing about where you were).
 - Lanes and vehicle: `lanes.favourites` (the lanes you starred), `lanes.scope`,
   `rider.vehicle`, `packages.vehicle`.
+- Recording by itself: `auto_record.stand_down_since` (the time you last
+  finished a ride, so the drive home after it is not recorded as another -
+  a time, not a place; removed once the phone has lain still, and not used
+  more than four hours after).
 - Downloads and updates: `downloads.includeImagery`, `downloads.imageryDetail`,
   `updates.policy`, `updates.wifi_only`, `updates.connections`,
   `updates.last_checked` (dates), `updates.held` (which kinds of map data have
   an update waiting until your downloads are covered), `backup.last_written`
-  (a date).
+  (a date), and `regions.plannedPieces`: the map areas of a download still in
+  progress (each area's name and the rectangle it covers, which for a download
+  along a plan follows that plan), so a download stopped by the app being
+  closed can carry on; each area is removed when it finishes or you stop it.
 - Routing and planning: `routing.style`, `routing.includeTracks`,
   `routing.avoid_closures`, `journey.travel_mode`, `journey.travel_mode.rides`,
   `dayout.km`, `dayout.lanes`, `plan.editor.draft` (see above), and one
@@ -210,10 +223,19 @@ The complete set of keys is:
   above), and `ride.active.alive` (the time a ride in progress was last
   started, changed or seen moving - a time, not a place - so a ride brought
   back more than two hours later waits for you to move before it uses the
-  GPS; removed when the ride ends).
+  GPS; removed when the ride ends). `follow.active` is the track you are
+  following (which saved track, which way round, the part being ridden and
+  the parts skipped - the track's line stays in the track itself), and
+  `follow.active.alive` the time that follow was last started, changed or
+  seen moving, for the same reason as `ride.active.alive`; both are removed
+  when you stop following.
 - Safety check-in: `checkin.dueUtcMs`, `checkin.contact` and
-  `checkin.snapshot` (a place, only while a check-in is set). See "Safety
-  check-in" above.
+  `checkin.snapshot` (a place, only while a check-in is set), and
+  `checkin.cancelling` (a flag, set only while a cancel is being made, so a
+  cancel the app was closed in the middle of is finished next time) with
+  `checkin.cancelling.phoneDueMs` (the due time the phone held when that
+  cancel was asked for - a time, not a place - removed with the flag). See
+  "Safety check-in" above.
 - Hints already shown: `setup.seen`, `welcome.seen`, `walkthrough.seen`,
   `coach.restricted_byway`, `coach.riding_mode`.
 - Group ride: `group_ride.display_name` (the name the riders in your group see
@@ -223,8 +245,12 @@ The complete set of keys is:
   `group_ride.started_group`, the id of a group this phone started, so it
   can be renamed when you change your name; and `group_ride.code_copied`,
   a flag that you copied the group's code, so leaving knows to take it off
-  the clipboard (the code itself is not kept here). None of those is a
-  place. `group_ride.shared_route.v1` IS a list of places: the line of a plan
+  the clipboard (the code itself is not kept here); and
+  `group_ride.answered_offers.v1`, the plans offered to you that you took or
+  ignored (the group's id and, for each, the sender's id in the group, a
+  random number and when you answered), so the same plan is not offered again after a restart; cleared
+  when you leave the group, each answer going after 12 hours. None of those
+  is a place. `group_ride.shared_route.v1` IS a list of places: the line of a plan
   you sent to your group or took from another rider, its regroup points,
   the plan's name, the display name of the rider who sent it, the group's id
   (so a route from another group is never used) and a reference to the offer
@@ -382,6 +408,10 @@ what your account already owns so that a reinstall restores it. Purchases are
 verified on the device only. What the app writes down locally is described under
 "What the receipt holds" above.
 
+Google's billing library also sends Google its own diagnostic figures about
+how the purchase screens performed, as it does in every app that sells through
+Play. We never receive them.
+
 Google's handling of a Play purchase is covered by the
 [Google Privacy Policy](https://policies.google.com/privacy).
 
@@ -467,6 +497,10 @@ position on this ride"**, and being in a group is not the same as sharing.
   to you as text can be pasted instead.
 - **How it travels.** Phone to phone, over Bluetooth and Wi-Fi, using Google's
   Nearby Connections, which runs inside Google Play services on your phone.
+  Google says Nearby Connections sends Google performance figures: how fast
+  and reliably connections are made, the phone model, the country, the Play
+  services version and the app's package name. That goes from Play services to
+  Google, carries no position or anything you share, and never reaches us.
   Positions are passed along through the group, so a rider at the back of a
   long line still sees the one at the front. **Nothing goes through a server of
   ours: there is no server of ours.**
@@ -586,7 +620,7 @@ they are for.
 
 Verified against the source and the dependency lockfile:
 
-- **No analytics or telemetry.** There is no Firebase, no Crashlytics, no
+- **No analytics or telemetry of ours.** There is no Firebase, no Crashlytics, no
   Sentry, no Amplitude, no Mixpanel, no Segment, no PostHog, no Bugsnag and no
   App Center anywhere in the project. Nor is there Google's ML Kit, which
   Google says reports usage and performance metrics to Google: the group code
@@ -599,7 +633,7 @@ Verified against the source and the dependency lockfile:
   or files.** The safety check-in's number is typed, and its text is sent
   by you from your own messaging app: the app holds no permission to read or
   send messages. The app sees only a file you pick yourself in Android's picker: a
-  track file to import (GPX, KML, KMZ, GeoJSON or FIT), or a photograph to
+  track file to import (GPX, KML, KMZ, GeoJSON, FIT or TCX), or a photograph to
   attach to a lane note, which is copied
   into the app's private storage (see "Lane photographs").
 - **No server of ours.** Every network destination named above belongs to a
@@ -624,7 +658,7 @@ Verified against the source and the dependency lockfile:
 | `geolocator` | Position fixes and the recording foreground service | No |
 | `sensors_plus`, `flutter_compass` | Roll, gradient, compass heading, and whether the phone is moving or lying still | No |
 | `latlong2` | Coordinate arithmetic | No |
-| `gpx`, `xml` | Reading and writing GPX files, and reading KML. A KML's network link is never followed | No |
+| `gpx`, `xml` | Reading and writing GPX files, and reading KML and TCX. A KML's network link is never followed | No |
 | `cryptography`, `crypto`, `convert` | Decrypting downloaded packs; hashing the purchase token | No |
 | `http` | Fetching the data index, packs, address search, the rain and river readings and the weather forecast | Yes (see §1, §3, §6) |
 | `background_downloader` | Hands pack downloads to the OS so they survive the app closing | Yes (see §1) |
@@ -634,10 +668,10 @@ Verified against the source and the dependency lockfile:
 | `permission_handler` | Asks for the notification permission when a ride starts, "Nearby devices" (and, up to Android 12, location) when group sharing first starts, and the camera when you tap Scan a code | No |
 | `wakelock_plus` | Keeps the screen awake while riding | No |
 | `battery_plus` | Reads the battery level and whether it is charging, so the app can do less when the battery is low | No |
-| `file_picker` | Choosing track files to import (GPX, KML, KMZ, GeoJSON, FIT), or a photograph for a lane note | No |
+| `file_picker` | Choosing track files to import (GPX, KML, KMZ, GeoJSON, FIT, TCX), or a photograph for a lane note | No |
 | `share_plus` | Sharing a GPX file you exported | No |
 | `flutter_secure_storage` | Keeps the group ride's key and this install's group secret in Android's encrypted storage (§7) | No |
-| `nearby_connections` | Group ride, phone to phone, through Google Nearby Connections in Play services (§7) | No. Bluetooth and Wi-Fi between phones, never the internet |
+| `nearby_connections` | Group ride, phone to phone, through Google Nearby Connections in Play services (§7) | Your positions: no, Bluetooth and Wi-Fi between phones. Play services sends Google its own connection statistics (§7) |
 | `pretty_qr_code` | Draws the group ride's code on screen | No |
 | ZXing (`com.journeyapps:zxing-android-embedded`, `com.google.zxing:core`; an Android library, Apache-2.0) | Reads a group ride's code through the camera, on the phone, when you tap Scan a code | No |
 | `speech_to_text`, `flutter_tts` | The voice button and spoken replies | Platform-dependent (see §4) |
@@ -749,7 +783,7 @@ required, so the app still installs on a device without one.
 The app keeps working. You get a banner explaining what is missing, with a
 button to the relevant system settings. You cannot see your position or record a
 ride, but you can still browse the map, download data, read lane detail, plan a
-route between points you pick by hand, import GPX, KML, KMZ, GeoJSON and FIT,
+route between points you pick by hand, import GPX, KML, KMZ, GeoJSON, FIT and TCX,
 and export GPX.
 
 ### Is your location ever transmitted?

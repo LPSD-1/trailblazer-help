@@ -38,8 +38,8 @@ Trail Blazer shows the green lanes of England and Wales over a map, records
 where you rode, and works with no signal. You download the areas you ride
 before you go, and after that the phone needs nothing from the network.
 
-It also imports and follows your own GPX, KML, KMZ, GeoJSON and FIT tracks,
-drives a rider's dashboard, and can be worked hands-free with gloves on.
+It also imports and follows your own GPX, KML, KMZ, GeoJSON, FIT and TCX
+tracks, drives a rider's dashboard, and can be worked hands-free with gloves on.
 
 Nothing is bundled inside the app. You carry the ground you want and no more.
 
@@ -93,11 +93,10 @@ phone** on the Downloads screen:
 > carried separately and only where the council publishes them — about half
 > do — so always check signage before you ride.
 
-Every lane pack you reach by **Browse** also says where it came from:
-**Official rights of way** for the legal record, or **Tracks (community
-mapped)** where a country has no official register and the tracks were mapped
-by volunteers instead. A community-mapped track shows where it is, NOT whether
-you may legally ride it — check local rules and signage.
+Every lane pack you reach by **Browse** also says where it came from. Today
+every one reads **Official rights of way**: the legal record kept by the local
+highway authority, which says who may use a way — and, as above, not whether an
+order has shut it since.
 
 **Unclassified roads are not on this map.** The app draws byways open to all
 traffic from the definitive map. Unclassified roads (UCRs), and other public
@@ -182,16 +181,16 @@ is and when it runs.
 
 ### Width says the access class
 
-The line is drawn thicker or thinner according to what class of way it is.
+Every lane the app carries today is a byway open to all traffic, so every lane
+is drawn at the same, boldest width.
 
 | Width | Class |
 |---|---|
 | Boldest | Full access — byway open to all traffic |
-| Normal | Everything else |
-| Thinnest | Restricted |
 
-Lines get thicker as you zoom in, but the ratio between classes holds at every
-zoom.
+Lines get thicker as you zoom in. Only a lane pack downloaded before September
+2026, and not replaced since, can still hold other classes of way: those are
+drawn thinner, and the thinnest of them are restricted.
 
 ### Dashes say closed or seasonal
 
@@ -199,13 +198,13 @@ zoom.
 |---|---|
 | Solid | Nothing extra to know |
 | Tight short dashes, faded | Closed to you — reads as a barrier |
-| Long dashes | Seasonal restraint — a caution, not a barrier |
 
-**A seasonal lane is drawn green on purpose.** A seasonal restraint is a
-request, not an order, and riding one is not an offence. Colouring it red would
-tell you something untrue in the other direction. It gets long dashes instead,
-so it still reads as "there is something to know here" without claiming the
-lane is shut.
+No lane the app carries today is marked seasonal. Only an older lane pack can
+still draw a lane in **long dashes**: a seasonal restraint, a caution and not a
+barrier. That lane is drawn green on purpose. A seasonal restraint is a request,
+not an order, and riding one is not an offence. Colouring it red would tell you
+something untrue in the other direction. The long dashes say "there is
+something to know here" without claiming the lane is shut.
 
 ### If you are colour-blind
 
@@ -218,13 +217,12 @@ Beyond that, hue is never the only channel. Around one man in twelve cannot
 separate red from green, and this map is telling you what is legal, so:
 
 - **Colour** says whether you may ride it.
-- **Dashes** say closed or seasonal.
-- **Width** says the access class.
+- **Dashes** say closed to you (or, on an older lane pack, seasonal).
 
 A lane you may not ride today is drawn dashed and faded as well as coloured.
-Width is a separate channel from all of that — it says which class of way a
-lane is, **not** whether it is open — so do not read the boldest line as the
-most open one.
+Width does not help here, and is not meant to: it says which class of way a
+lane is, **not** whether it is open, and every lane the app carries today is
+the same class at the same width. Do not read a bold line as an open one.
 
 A lane you have starred gets an amber halo drawn underneath it, wider than the
 line. That is deliberately not one of the legal channels.
@@ -275,7 +273,15 @@ West", say — once the phone knows where you are.
 Above 1 GB you get a confirmation showing the size and the number of packs.
 Downloads are handed to the operating system, so they carry on when you close
 the app and survive the phone being locked or the app being killed. You can
-close the app and come back.
+close the app and come back. That holds unless the phone's battery settings
+restrict Trail Blazer: a restricted app's background work can wait until you
+next open it, and Xiaomi, Huawei, Oppo, Realme and Vivo phones may not run it
+at all for an app without autostart. On those phones, keep the app open until
+the download finishes.
+
+To let the downloads carry on with the app closed, allow Trail Blazer as
+[The ride, the voice or the group stopped with the screen off](#the-ride-the-voice-or-the-group-stopped-with-the-screen-off)
+says for your phone.
 <!-- /android -->
 <!-- ios
 Above 1 GB you get a confirmation showing the size and the number of packs.
@@ -384,6 +390,13 @@ While recording, Android runs a foreground service with an ongoing "Recording
 your ride" notification. That is what keeps the track being logged with the
 screen off and the phone in a tank bag. Without it Android throttles background
 location to a few updates an hour and you get a straight line across country.
+It is not enough on every phone: Samsung, Xiaomi, Huawei, Honor, OnePlus, Oppo,
+Realme and Vivo phones can stop the app, notification and all, when their
+battery settings restrict it.
+
+Before you ride, set Trail Blazer's battery use to unrestricted, as
+[The ride, the voice or the group stopped with the screen off](#the-ride-the-voice-or-the-group-stopped-with-the-screen-off)
+says for your phone.
 <!-- /android -->
 <!-- ios
 While recording, the iPhone shows a blue location indicator at the top of the
@@ -398,7 +411,8 @@ rather than the day. If the position stream goes dead for 15 minutes the ride
 is ended and saved by itself.
 
 <!-- android -->
-**Start recording when you ride off** (Settings > Riding, off by default)
+**Start recording when you ride off** (Settings > User choices > Riding, off
+by default)
 starts a ride for you once the phone can feel you moving and you have gone
 about 250 m at riding speed. The first 250 m are not in the ride, though the
 trail the app keeps whether or not you are recording still has them. A phone
@@ -410,10 +424,12 @@ else running, Android will not let it start. It will also record the drive to
 the lanes if the app is open in the van. When you have been stopped for 20
 minutes it offers to finish the ride, and never finishes by itself. After you
 finish a ride it will not start another until the phone has lain still for 5
-minutes, so the drive home is not a second ride.
+minutes, so the drive home is not a second ride. It still waits if Trail Blazer
+is restarted in the meantime, for up to 4 hours after you finish.
 <!-- /android -->
 <!-- ios
-**Start recording when you ride off** (Settings > Riding, off by default)
+**Start recording when you ride off** (Settings > User choices > Riding, off
+by default)
 starts a ride for you once the phone can feel you moving and you have gone
 about 250 m at riding speed. The first 250 m are not in the ride, though the
 trail the app keeps whether or not you are recording still has them. A phone
@@ -425,7 +441,8 @@ will not let it start. It will also record the drive to the lanes if the app is
 open in the van. When you have been stopped for 20 minutes it offers to finish
 the ride, and never finishes by itself. After you finish a ride it will not
 start another until the phone has lain still for 5 minutes, so the drive home
-is not a second ride.
+is not a second ride. It still waits if Trail Blazer is restarted in the
+meantime, for up to 4 hours after you finish.
 -->
 
 Recording ignores fixes that are too close together, too soon after the last
@@ -513,9 +530,14 @@ While it is set the card says "Check-in set for 17:00", with **I'm back safe**,
 - Force-stopping the app (Settings > Apps > Force stop) cancels the alarm until
   the app next opens. A phone switched off past the time cannot sound it at
   the time: it sounds once the phone is switched back on and unlocked.
-  Swiping the app away from recent apps does not cancel it. Some phones'
-  battery savers (Samsung's "deep sleeping apps") can delay or stop it: leave
-  Trail Blazer off those lists.
+  Swiping the app away from recent apps does not cancel it on Samsung, Pixel
+  and stock Android. On Xiaomi, Huawei, Honor, OnePlus, Oppo, Realme and Vivo
+  it does: there a swipe from recent apps, or **Clear all**, is a force-stop,
+  so lock Trail Blazer in recent apps (the padlock) and allow it autostart or
+  background activity. Some phones' battery savers (Samsung's "deep sleeping
+  apps") can delay or stop it: leave Trail Blazer off those lists. Where each
+  of these is on your phone:
+  [The ride, the voice or the group stopped with the screen off](#the-ride-the-voice-or-the-group-stopped-with-the-screen-off).
 - It may sound up to 10 minutes late unless alarms are allowed for Trail
   Blazer. From Android 14 they are not allowed by default; the sheet says so and
   **Allow alarms** opens the right page.
@@ -711,6 +733,14 @@ rules — fords, gates and barriers, and whether it fits the width at a chicane 
 and timed for how it actually goes over the surface of each stretch, instead of
 for a car crawling over a byway at 1 km/h.
 
+How big yours is, and what a route may take it through, is **Set up my
+motorbike** or **Set up my 4x4**: its width, height and weight, and whether to
+keep it out of fords, gates, steps and narrow ways. It is in **On what**, and in
+**Settings → User choices**, under **What you ride**. It is asked once and
+remembered for each machine. Until you set it, a route is worked out for a
+typical machine of that kind, so a 4x4 wider than most can still be sent
+through a chicane it will not fit.
+
 Picking a machine for one journey does not change which lanes the map shows as
 open to you. That is **What you ride**.
 
@@ -759,8 +789,20 @@ the area, not to the lane. Wind is in your units, from Settings.
 
 It says **dry** only when every hour of the ride is forecast with no rain. If
 the forecast is missing any hour, it says **rain not known for part of this
-ride** instead, and if the ride runs past the end of the forecast it says where
-the forecast stops.
+ride** instead (after **at least** the rain it does know of, if there is any),
+and if the ride runs past the end of the forecast it says where the forecast
+stops.
+
+Wind and temperature are held to the same rule. When part of the ride has no
+forecast - a stop in an area not fetched yet, an hour past the end of the
+forecast, or an hour with no figure - the temperatures and the wind come only
+from the places and hours that had one, so they follow **where known:**. The
+rest of the ride could be colder or windier. When there is no wind figure at
+all it says **wind not known**, and **temperature not known** likewise, rather
+than leaving them out:
+
+> Forecast for 11:00–16:00: rain not known for part of this ride; where known:
+> 6–9°C, wind up to 18 mph.
 
 The line turns red, with its own icon, when the forecast is for:
 
@@ -793,8 +835,8 @@ Norway itself.
 
 ### Your own tracks
 
-Import tracks, routes and waypoints from GPX, KML, KMZ, GeoJSON and FIT files -
-several at once from Tracks > **Import**, or by opening the file from another
+Import tracks, routes and waypoints from GPX, KML, KMZ, GeoJSON, FIT and TCX
+files - several at once from Tracks > **Import**, or by opening the file from another
 app. This is never gated by sign-in or purchase, and it needs no download at
 all. A KML that links to data elsewhere on the internet brings in only what is
 in the file itself.
@@ -808,6 +850,9 @@ in the file itself.
 - **FIT** (Garmin, Wahoo and other bike computers, or Strava's "Export
   original"): the ride, split where the timer was stopped. A FIT course brings
   its course points in as waypoints.
+- **TCX** (a Garmin Connect course, Basecamp, older Garmin units): each course
+  or activity is a ride, split where the timer was stopped. A course is named
+  after itself and brings its course points in as waypoints.
 - A file over 64 MB is refused before it is read; split it and import the
   parts. When you import several, the message counts what came in and names
   any file that did not, and why.
@@ -969,6 +1014,16 @@ asked can end the call, with **Cancel help**; then the others read "Dave no
 longer needs help." A call stays up even when their phone goes out of touch,
 because the last word heard from it still asks for help.
 
+<!-- android -->
+Only a phone that still has Trail Blazer running can sound. A phone whose
+battery settings have stopped the app in the background - Samsung's deep sleep,
+or the battery managers on Xiaomi, Huawei, Honor, OnePlus, Oppo, Realme and
+Vivo phones - hears nothing, and the rider asking for help cannot tell. Before
+the ride, each rider should let Trail Blazer run unrestricted, as
+[The ride, the voice or the group stopped with the screen off](#the-ride-the-voice-or-the-group-stopped-with-the-screen-off)
+says for their phone.
+<!-- /android -->
+
 Everything else the group tells you is **one quiet notice, with no sound and
 no voice**, because a group loses touch over every hill and a phone that makes
 a noise at each one stops being listened to:
@@ -1021,14 +1076,15 @@ while you are on it, whether the voice is on or off. A closure on the way ahead
 takes that line, because whether you may go on matters more than how hard it
 is. Where the steepness comes from the lane's record, the warning comes at the
 start of the lane rather than at the slope itself. Turn the voice off with
-**Warn of steep ground ahead** in **Settings → Voice** or the road book's voice
-menu. Recorded tracks you follow are not coloured for steepness and get no
+**Warn of steep ground ahead** in **Settings → User choices → Voice** or the
+road book's voice menu. Recorded tracks you follow are not coloured for steepness and get no
 steep warning: a track is the line somebody rode, not a route the app worked
 out, so there is no worked-out route to measure.
 
 **Following one of your own tracks** gets the same warnings as a planned
 journey: the byway coming up, the byway ending or shut beyond, and a closure on
-a byway ahead. They are spoken under the same switches in **Settings → Voice**.
+a byway ahead. They are spoken under the same switches in **Settings → User
+choices → Voice**.
 It also gets turn cues: where the track meets another way, on a sharp corner
 between straights, and where it turns back on itself. Ordinary bends get no
 cue. The map only carries byways, so it cannot see where one road meets
@@ -1230,9 +1286,10 @@ Press a button, or hold it for a moment (600 ms) where it says so.
   is off, the mic button wears a crossed-out speaker (the mic button is
   hidden while the screen is locked), and Settings says so above the voice
   switches with a button to turn it back on.
-- Media Next and Media Previous also move between screens, on phones that
-  hand them to the app. Play/Pause and the volume buttons are left alone
-  unless you teach them.
+- Media Next, Media Previous, Play/Pause and the volume buttons are left to
+  your music and the phone unless you teach them with Learn: untaught, the
+  skip button on a music remote skips the song and the screen stays where it
+  is.
 
 ### Where buttons work
 
@@ -1285,6 +1342,22 @@ on, so you can try them all. If a button does nothing, tap an action in the
 list and press the button you want for it - that is Learn. If the button was
 doing something else, it tells you what it took it from. The four **Move the
 map** actions are for remotes with a joystick and only work once taught.
+
+The remote can keep you in step with a road book too, but these have no
+standard key either, so they also only work once taught - F6 to F12 are spare:
+
+- **Zero Trip A** and **Zero Trip B** put that trip meter to 0.00, as holding
+  its tile does, with the same Undo, and say so.
+- **Trip A up a hundredth**, **Trip A down a hundredth**, **Trip B up a
+  hundredth** and **Trip B down a hundredth** move it 0.01 of a km or mile,
+  as the buttons on its sheet do. Hold the button and it keeps going; the
+  reading is shown once you let go.
+- **Swap dashboard layout** goes from Lanes to Road or back, as the swap
+  button on the dashboard does, and says which one it is now on.
+
+Like F1 to F5, they work on the map, the Dashboard, the road book and any
+other screen, but not on the Handlebar remote page itself.
+
 **Put the standard keys back** forgets everything you taught it.
 
 ---
@@ -1405,7 +1478,8 @@ zero them. Long-press one to reset it (Undo is on the message). Tap it to nudge
 it by 0.01 of a km or mile, or to set it to an exact distance, which is how you
 keep in step with a road book. They always read in hundredths of a km or mile,
 the way a road book prints its distances, and show "—" rather than a negative
-number if they cannot be worked out.
+number if they cannot be worked out. A handlebar remote can zero and nudge
+them as well, once you teach it the buttons (see Handlebar remote).
 
 **More gauges** are in **Choose which numbers** at the top of the dashboard,
 among them these two:
@@ -1426,7 +1500,7 @@ among them these two:
 switches between them; each keeps its own gauges and order. Lanes is the one
 you already had. Road starts with Speed, Clock, Trip A, Trip B, Odometer,
 Moving time, Average moving speed, Heading and Grid reference. The title says
-which one is showing.
+which one is showing. A taught handlebar remote button can swap them too.
 
 ---
 
@@ -1502,22 +1576,31 @@ Settings is a list of shut sections, in this order. Tap one to open it.
 - **Units** — miles or kilometres. Miles by default.
 - **Appearance** — Auto, Day or Night. "Auto" follows the phone, which is not
   the same as following the sun: if your phone is not set to switch at sunset,
-  pin it here. While **Unlit lane** is on (under Accessibility) the screen stays
-  dark whatever this says, and the section tells you so.
+  pin it here. Night only darkens the app; for riding in the dark, **Unlit
+  lane** under Accessibility keeps your night vision, and this section says
+  so. While **Unlit lane** is on the screen stays dark whatever this says, and
+  the section tells you so.
 - **Voice** — **What you can say**, and a switch for each thing the app says
-  aloud, including **Warn of steep ground ahead** (on by default) and **Say
-  when recording starts or offers to finish** (on by default; it only speaks
-  when **Start recording when you ride off** is on).
+  aloud, including **Warn of steep ground ahead** (on by default, but it
+  starts off if you updated from a version where you had turned all three
+  earlier warning voices off - **Say when the route leaves your downloaded
+  area**, **Say "Byway ahead"** and **Warn of closures ahead**; turn it on
+  here if you want it. On a map that carries restricted byways or
+  bridleways the first of those is called **Say when the byway ends**) and
+  **Say when recording starts or offers to finish** (on by default; it only
+  speaks when **Start recording when you ride off** is on).
 - **Handlebar remote** — whether the app answers a Bluetooth remote (on by
   default), what each button does, Learn for a remote that needs teaching,
   and **Put the standard keys back**. See **Handlebar remote** above.
 - **Riding** — **What you ride** (motorbike or 4x4: which lanes the map shows as
   open to you and which machine a route is worked out for; both download the
-  same packs), **Avoid closures when routing**, **Keep screen on** (on by
-  default; if your phone overrules it, the screen tells you rather than
-  pretending), **Lock the screen when you set off** (off by default; see
-  above) and **Start recording when you ride off** (off by default; see
-  **Recording a ride**).
+  same packs), **Set up my motorbike** or **Set up my 4x4** (its width,
+  height and weight, and fords, gates, steps and narrow ways, for routes; see
+  **What you are travelling on**), **Avoid closures when routing**, **Keep
+  screen on** (on by default; if your phone overrules it, the screen tells
+  you rather than pretending), **Lock the screen when you set off** (off by
+  default; see above) and **Start recording when you ride off** (off by
+  default; see **Recording a ride**).
 - **Map view** — Auto, Always show or Minimal, the speed, trip and clock strip
   on the map, and which numbers the dashboard shows. The chooser edits the
   layout that is showing (Lanes or Road); swap on the dashboard to edit the
@@ -1554,9 +1637,11 @@ Settings is a list of shut sections, in this order. Tap one to open it.
 **Help**
 
 - **Green laning**, **Show the first-run tour again**, this guide (**Using the
-  app**), **Setting up a group relay** and **Privacy**, in that order. The
-  documents are carried in the app, so they open with no signal; the relay
-  guide's link to the full steps online is copied for you to open.
+  app**), **Setting up a group relay**, **Privacy** and **Report a problem**,
+  in that order. The documents are carried in the app, so they open with no
+  signal; the relay guide's link to the full steps online is copied for you to
+  open. Reporting a problem comes last, after everything that might answer the
+  question first: see [Something else](#something-else) under Troubleshooting.
 
 Hill shading, height colours and 3D buildings are not in Settings: they are on
 the map, in **Layers & lanes** under Height & 3D. 3D buildings are on by default
@@ -1720,6 +1805,84 @@ stays up until you deal with it.
 Downloads are checked against a hash before they are published to the app. A
 file that fails is discarded rather than opened. Try it again on a better
 connection.
+
+<!-- android -->
+### The ride, the voice or the group stopped with the screen off
+
+A ride recorded as a straight line across country, or ended by itself; spoken
+directions that go quiet when the screen does; a group that stops seeing you,
+or a help call your phone never sounded; a check-in alarm that came late or not
+at all; a download that waited until you opened the app again. These are the
+phone's battery settings, not the app's. Many phones stop an app working in the
+background to save battery, even one showing a notification, and Android tells
+the app nothing.
+
+**Keep Trail Blazer running with the screen off.** Before a ride, set your
+phone to leave Trail Blazer alone. These are in the phone's own Settings app,
+not Trail Blazer's. The names below are the usual ones; they move about between
+software versions, so if one is not where it says, search the phone's Settings
+for it. dontkillmyapp.com has pictures for most models.
+
+- **Samsung**: Battery > Background usage limits: take Trail Blazer
+  out of **Sleeping apps** and **Deep sleeping apps**, and add it to
+  **Never sleeping apps**. In Apps > Trail Blazer > Battery, choose
+  **Unrestricted**.
+- **Google Pixel and stock Android**: Apps > Trail Blazer > App
+  battery usage: **Unrestricted**. Otherwise Adaptive Battery holds back an app
+  you have not opened for a while.
+- **Xiaomi, Redmi and POCO** (MIUI, HyperOS): in Apps > Manage
+  apps > Trail Blazer, turn on **Autostart**, and under Battery saver choose
+  **No restrictions**. Then lock Trail Blazer in recent apps: open recent
+  apps, press and hold Trail Blazer, and tap the padlock.
+- **Huawei and Honor** (EMUI, MagicOS): Battery > App launch: set
+  Trail Blazer to **Manage manually** and leave **Auto-launch**,
+  **Secondary launch** and **Run in background** on. Lock it in recent apps
+  as well.
+- **OnePlus** (OxygenOS): Apps > Trail Blazer > Battery usage: turn
+  on **Allow background activity**, and lock Trail Blazer in recent apps.
+- **Oppo and Realme** (ColorOS, Realme UI): Apps > Trail Blazer >
+  Battery usage: turn on **Allow background activity** and
+  **Allow auto launch**, and lock Trail Blazer in recent apps.
+- **Vivo** (Funtouch OS, OriginOS): Battery > Background power
+  consumption management: set Trail Blazer to
+  **Allow high background power consumption**, and turn on **Autostart** for
+  it.
+
+On Xiaomi, Huawei, Honor, OnePlus, Oppo, Realme and Vivo phones, swiping Trail
+Blazer away from recent apps, or **Clear all**, stops it as a force-stop does:
+the recording, the group link and the check-in alarm go with it until you open
+the app again. Lock it in recent apps first. On Samsung, Pixel and stock
+Android a swipe from recent apps is not a force-stop.
+<!-- /android -->
+
+### Something else
+
+If your problem is not here, or one of these answers did not fix it, please
+report it: the app has no crash reporting and no analytics, so a fault you do
+not tell us about is one nobody will know of.
+
+<!-- android -->
+Use **Settings → Help → Report a problem**. **Write report** opens your share
+sheet with a report already started: the app's version, your phone's make and
+model, and its Android version.
+<!-- /android -->
+<!-- ios
+Use **Settings → Help → Report a problem**. **Write report** opens your share
+sheet with a report already started: the app's version and your iPhone's iOS
+version.
+-->
+
+Pick your email app, send it to the address the screen shows, and say what went
+wrong and what you were doing just before. Nothing is sent until you send it.
+
+The app's fault-finding file goes with the report only if you tick **Attach the
+fault-finding file**. It says which maps are open, your map settings, and the
+names of the lanes near where the app last had a fix, with its verdict on each.
+It holds no coordinates, but those lane names do say roughly where you were.
+
+If you cannot reach Settings, write to
+Lucaspottersoftwaredevelopment@gmail.com — the same address as in the privacy
+policy.
 
 ---
 
