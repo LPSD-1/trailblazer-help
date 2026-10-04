@@ -6,7 +6,7 @@ Application id `com.trailblazerofflinemaps`
 Last updated: 4 October 2026
 
 These terms are a legal agreement between you and the developer of Trail
-Blazer named on the app's Google Play listing ("we", "us"). Please read them.
+Blazer named on the app's Google Play listing ("we", "us"). **Please read them all the way to the end** before you accept them.
 By tapping **I agree** in the app you accept them. If you do not accept them,
 you cannot use the app.
 
