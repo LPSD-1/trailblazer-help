@@ -1612,6 +1612,10 @@ Settings is a list of shut sections, in this order. Tap one to open it.
   above for why it is not on to begin with.
 - **Which hand** — puts the map controls, the record button and the lock on the
   side you actually reach with. Asked at first run too.
+- **Map controls size** — Small to Large. Makes the buttons, gauges and notices
+  over the map smaller or bigger; the map itself is not changed. The same
+  slider is on the map, in **Layers & lanes** under How the map looks, so you
+  can watch the buttons change as you move it.
 - Screen brightness, or **Let the phone set the brightness**, and **Screen for
   the conditions** — Normal, Bright sun or Unlit lane.
 - **Lane colours** — the standard pair, or a colour-blind-friendly pair. The
@@ -1683,8 +1687,14 @@ your Google account, so changing phone keeps what you paid for.
 <!-- /android -->
 <!-- ios
 The 30 days are measured from when the app first ran, kept in a receipt file
-on this phone. That receipt is the one thing of Trail Blazer's in your iCloud
-Backup, so a new iPhone set up from that backup keeps what you paid for.
+on this phone. iCloud Backup takes that receipt, so a new iPhone set up from
+that backup keeps what you paid for. Your maps, rides, notes and saved plans
+are kept out of iCloud Backup (**Back up what you have put in** is how you
+move those), and so are where you are and the number a safety check-in would
+text. The app's settings, and a few small things it remembers between runs,
+such as a plan you are still drawing or the route you are following, are kept
+where iOS keeps every app's settings, and iCloud Backup takes those with the
+rest.
 -->
 
 **Your rides are yours.** Any ride exports as GPX from Tracks, and **Back up

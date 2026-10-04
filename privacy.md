@@ -179,7 +179,8 @@ The complete set of keys is:
 
 - Display and the map: `settings.theme_mode`, `settings.units`,
   `settings.keep_awake`, `settings.auto_lock`, `settings.auto_record`,
-  `settings.brightness`,
+  `settings.brightness`, `settings.map_ui_scale` (how big the map's buttons
+  are drawn),
   `settings.screen_mode`, `settings.screen_mode.after_dark` (whether the
   screen goes unlit by itself after sunset, and whether it last did so for
   dark or for light - no place and no time), `settings.roadbook_tab`,
@@ -249,8 +250,12 @@ The complete set of keys is:
   `group_ride.answered_offers.v1`, the plans offered to you that you took or
   ignored (the group's id and, for each, the sender's id in the group, a
   random number and when you answered), so the same plan is not offered again after a restart; cleared
-  when you leave the group, each answer going after 12 hours. None of those
-  is a place. `group_ride.shared_route.v1` IS a list of places: the line of a plan
+  when you leave the group, each answer going after 12 hours; and
+  `group_ride.sharing.v1`, written while you are sharing your location with
+  your group: the group's id and when the share started (a time, not a
+  place), so that if Android closes the app mid-share the next launch can
+  tell you the share ended. Removed when you stop sharing, or at that next
+  launch. None of those is a place. `group_ride.shared_route.v1` IS a list of places: the line of a plan
   you sent to your group or took from another rider, its regroup points,
   the plan's name, the display name of the rider who sent it, the group's id
   (so a route from another group is never used) and a reference to the offer
@@ -411,6 +416,12 @@ verified on the device only. What the app writes down locally is described under
 Google's billing library also sends Google its own diagnostic figures about
 how the purchase screens performed, as it does in every app that sells through
 Play. We never receive them.
+
+When the app opens, it asks the Play Store app on your phone whether a newer
+version of Trail Blazer is available, using Google's in-app updates library.
+That question goes to Play, not to us, and if you tap Update, Play downloads
+and installs the new version as it would from the store. We never receive
+anything from it.
 
 Google's handling of a Play purchase is covered by the
 [Google Privacy Policy](https://policies.google.com/privacy).
