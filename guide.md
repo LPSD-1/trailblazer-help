@@ -1,15 +1,16 @@
 # Trail Blazer — rider's guide
 
-Offline green-lane navigation for the UK. This guide covers everything from
-first run to what to do when something will not work.
+Trail Blazer shows the green lanes of England and Wales on a map you carry
+on your phone. Download your area at home and it works with no signal. This
+guide covers the lot, from first run to what to do when something won't work.
 
 > **New to green laning?** Read **Green laning — what you need to know**
-> first: what the classes mean, what to do if you are challenged, and how to
-> keep lanes open. It is the other guide in Settings → Help, and it is the one
-> that stops people getting prosecuted. This one is about working the app.
+> first. It's the other guide in Settings → Help. It explains what the classes
+> mean, what to do if you're challenged and how to keep lanes open, and it's
+> the one that keeps people out of trouble. This one is about working the app.
 
-- [What it is for](#what-it-is-for)
-- [The thing to read before you ride](#the-thing-to-read-before-you-ride)
+- [What Trail Blazer does](#what-trail-blazer-does)
+- [Before you ride](#before-you-ride)
 - [First run](#first-run)
 - [Reading the map](#reading-the-map)
 - [Downloading data](#downloading-data)
@@ -26,37 +27,181 @@ first run to what to do when something will not work.
 - [Controls that get out of the way](#controls-that-get-out-of-the-way)
 - [The dashboard](#the-dashboard)
 - [Settings](#settings)
+- [Updating the app](#updating-the-app)
 - [Free app, paid map updates](#free-app-paid-map-updates)
 - [Troubleshooting](#troubleshooting)
 - [Privacy](#privacy)
 
 ---
 
-## What it is for
+## What Trail Blazer does
 
-Trail Blazer shows the green lanes of England and Wales over a map, records
-where you rode, and works with no signal. You download the areas you ride
-before you go, and after that the phone needs nothing from the network.
+A quick run through everything in the app and where to find it. Each part
+has its own section further down.
 
-It also imports and follows your own GPX, KML, KMZ, GeoJSON, FIT and TCX
-tracks, drives a rider's dashboard, and can be worked hands-free with gloves on.
+### Maps and lanes
 
-Nothing is bundled inside the app. You carry the ground you want and no more.
+- The map shows byways open to all traffic in England and Wales, drawn over a
+  road map or satellite photos. Green means the council's record and the
+  orders on your phone say a lane is open to your vehicle today. Red means
+  they say it isn't. See [Reading the map](#reading-the-map).
+- Tap a lane to see what it is, who may use it by the record, any order on it
+  and, where the data says, which council it belongs to. From the same sheet
+  you can star it and add your own note and photos.
+- **Layers & lanes**, the layers button on the map, is where you choose what
+  is drawn: your vehicle, which traffic orders, map or satellite, hill shading
+  and 3D buildings.
+- You download the areas you ride from **Downloads**, in Settings under Maps
+  and downloads. After that the map works without a signal. See
+  [Downloading data](#downloading-data).
+
+### Closures and traffic orders
+
+- Closures, one-way orders, weight and width limits and speed limits are drawn
+  over the map in their own colours, where the council publishes them to the
+  Department for Transport's D-TRO service. Tap one to see what it is, who
+  made it and when it runs.
+- **Layers & lanes → Traffic orders** picks which kinds are drawn. On an
+  order's sheet, **What else is shut near here** lists the others round you,
+  for today or a day you pick.
+- Not every closure is on the map. Read [Before you ride](#before-you-ride).
+
+### Keeping up to date
+
+- The app checks for new lane data and fresh closures by itself, each on its
+  own timetable. **Settings → Map updates** sets how often, and whether a kind
+  may come over mobile data. It also tells you how old your closures are.
+- New data is free for your first 30 days. After that it needs an update pack
+  (see below).
+<!-- android -->
+- When a new version of Trail Blazer is on Google Play, a note on the map
+  offers it. See [Updating the app](#updating-the-app).
+<!-- /android -->
+
+### Planning and days out
+
+- **Plans** is where you build routes from stops. Each leg can be
+  **Fastest**, **Fun** or **Green lanes**, and the route is worked out on the
+  phone for your machine. See [Planning a route](#planning-a-route).
+- **A day out from here** builds a loop of byways around you to fit the time
+  you have, from a morning to a long day. It's in the map's control column
+  and in Plans.
+- A worked-out plan tells you if you'll be back near dark, and shows the
+  forecast for the hours you're out.
+- **Check this track** looks at any track before you ride it and marks the
+  stretches that are shut, or that the app can't say anything about.
+
+### Navigation and the locked riding screen
+
+- Start a plan, or hold a finger on the map and route there, and you get
+  turn-by-turn directions, spoken if you like, with a road book listing every
+  turn. Go wrong and it works out a new route from where you are. See
+  [Following a route](#following-a-route) and [The road book](#the-road-book).
+- The padlock on the map locks the screen so rain and gloves can't press
+  anything. Locked, the map follows you at the zoom you chose, turns so
+  straight up is the way you're going, and keeps your arrow low on the screen
+  so you see the road ahead. Press and hold **Hold** to unlock. See
+  [Screen lock](#screen-lock).
+- The voice button takes spoken commands, and a Bluetooth handlebar remote
+  works the main controls with gloves on.
+- The dashboard is a screen of big, clear gauges: speed, trip meters, heading,
+  grid reference and more.
+
+### Recording and tracks
+
+- The record button on the map records your ride, with the screen off too.
+  Your rides and the tracks you import live in **Tracks**, where you can
+  follow, check, share or export them.
+- Forgot to press record? The app keeps a rough trail of the last 12 hours
+  that you can save as a ride.
+- Waypoints mark a gate, a ford or where you parked. Hold a finger on the map,
+  or press the voice button and say "mark this".
+
+### Group ride and check-ins
+
+- Group ride puts the riders you're with on your map. One of you shows a code
+  and the others scan it. **I need help** sets off an alarm on the other
+  riders' phones. It's in **Settings → Group ride** and on the dashboard.
+- Safety check-in is a back-by time for riding alone. Miss it and your phone
+  sounds an alarm and writes a text saying where you are, ready for you to
+  send. It's in **Settings → Safety check-in** and on the **Where am I?**
+  screen.
+- Neither is an emergency service. In an emergency, call 999 or 112.
+
+### Your settings and accessibility
+
+- **Settings** is the last tab. It holds units, what you ride, the voice, the
+  handlebar remote, map updates, group ride and backing up your own data.
+- **Settings → Accessibility** has a colour-blind lane palette, which side the
+  controls sit on, **Map controls size** for bigger or smaller buttons over the
+  map, screen modes for bright sun and unlit lanes, and a tab of its own for
+  the road book. Text size follows your phone's setting.
+
+### Update packs
+
+- The app is free, and every download is free for your first 30 days. After
+  that, an update pack keeps new lanes and closures coming for one, three, six
+  or twelve months. You pay once and it doesn't renew. Without one, everything
+  you've downloaded keeps working, but your closures stop being refreshed. See
+  [Free app, paid map updates](#free-app-paid-map-updates).
 
 ---
 
-## The thing to read before you ride
+## Before you ride
+
+Please read this part. It's short, and it matters more than anything else in
+the guide.
+
+- The map is a guide, not permission. It shows what the council's record and
+  the published traffic orders say. It can't give you the right to ride or
+  drive anywhere.
+- Not every closure is shown. About half of councils publish their traffic
+  orders to D-TRO, and some of those publish late. Where a council doesn't
+  publish, the map has nothing to show, and that doesn't mean nothing is in
+  force. A lane with no closure drawn on it may still be shut.
+- The signs on the ground and the law come first. If a sign, a gate or a
+  notice says something different from the app, go by the sign. You're
+  responsible for where you ride, and for any fine or prosecution that follows.
+- Don't hold or use your phone while you're riding or driving. Set your route
+  up before you go, keep the phone in a proper mount, and do anything
+  fiddly once you've stopped somewhere safe.
+- Group ride and check-ins are not an emergency service. They depend on
+  batteries, signal and other people, and they can fail without warning. In an
+  emergency, call 999 or 112.
+- What's on your phone is only as fresh as its last update. **Map updates**
+  in Settings says how old your closures are.
+
+The full [terms of use](terms.md) are also in the app, under **Settings → Help
+→ Terms of use**. You agreed to them when you first opened the app. This guide
+explains how the app works; where it seems to say something different from the
+terms, the terms are what count.
+
+### Where the lanes come from
 
 Lane data comes from **local highway authority definitive maps** — the legal
 record of public rights of way — obtained via [rowmaps.com](https://www.rowmaps.com)
 and used under the Open Government Licence v3.0.
 
-**Traffic Regulation Orders are not in that data, and the app gets them from
-somewhere else — but only where they are published.**
-
 The definitive map records that a right of way exists and what class it is. It
 does not record that a byway is shut this winter, or that a TRO bans motor
-vehicles on it.
+vehicles on it. The record can also be wrong, out of date or under challenge.
+
+The app says this above your lane packs, under **What is on this phone** on
+the Downloads screen:
+
+> Rights of way recorded by the local highway authority. Traffic orders are
+> carried separately and only where the council publishes them — about half
+> do — so always check signage before you ride.
+
+Every lane pack you reach by **Browse** also says where it came from. Today
+every one reads **Official rights of way**: the legal record kept by the local
+highway authority, which says who may use a way. It doesn't say whether an
+order has shut it since.
+
+### Where closures come from
+
+**Traffic Regulation Orders are not in that data. The app gets them from
+somewhere else, and only where they are published.**
 
 Orders come separately, from the Department for Transport's D-TRO service,
 refreshed several times a day. Where a council publishes there, the app draws
@@ -69,9 +214,9 @@ closures on the phone stay as they were on the day they last came in, however
 many weeks ago that was. **Map updates** in Settings says how old they are.
 
 **Roughly half of councils do not publish there at all.** For those areas the
-app has nothing — and an empty map means *nothing has been published*, not that
-nothing is in force. There is also always a gap between an order being made and
-it appearing, and a sign going up on a gate is not a publication event.
+app has nothing, and an empty map means *nothing has been published*, not that
+nothing is in force. There is usually a gap between an order being made and it
+appearing, too, and a sign going up on a gate is not a publication event.
 
 Once the order data on your phone records which councils publish to D-TRO, the
 lane sheet, the order sheet and What's shut near you name the council and say
@@ -83,20 +228,10 @@ nothing either way, and no council line is not a sign that the council
 publishes.
 
 So a lane shown here as a byway open to all traffic may still be closed to you
-today, and the app cannot always tell you. **Signage on the ground beats this
-app, every time.**
+today, and the app can't always tell you. **The signs on the ground come
+first.**
 
-The app says the same thing above your lane packs, under **What is on this
-phone** on the Downloads screen:
-
-> Rights of way recorded by the local highway authority. Traffic orders are
-> carried separately and only where the council publishes them — about half
-> do — so always check signage before you ride.
-
-Every lane pack you reach by **Browse** also says where it came from. Today
-every one reads **Official rights of way**: the legal record kept by the local
-highway authority, which says who may use a way — and, as above, not whether an
-order has shut it since.
+### Roads that are not on the map
 
 **Unclassified roads are not on this map.** The app draws byways open to all
 traffic from the definitive map. Unclassified roads (UCRs), and other public
@@ -113,7 +248,23 @@ ride. This data is guidance, not permission.
 
 ## First run
 
-The app asks three things, in this order, and explains each one before asking.
+The first thing you see is the terms of use. You can't use the app until
+you've agreed to them, and you'll be asked again if they change.
+
+1. Read the short summary at the top. It covers the same ground as
+   [Before you ride](#before-you-ride).
+2. Tap **Open the full terms** and scroll all the way to the end. The bar at
+   the bottom tells you when you've got there.
+3. Come back, tick **I have read the full terms of use**, then tap
+   **I agree**.
+
+The box can't be ticked until you've read to the end, and **I agree** stays
+off until it's ticked. If you'd rather not agree, you can't use the app, and
+you're free to uninstall it. You can read the terms again any time in
+**Settings → Help → Terms of use**.
+
+After that, the app asks three things, in this order, and explains each one
+before asking.
 
 1. **What do you ride?** A motorbike or a 4x4. This decides which lanes the map
    shows as open to you, and which machine a route is worked out for. It does
@@ -146,19 +297,22 @@ information, and you can read any of them on its own. Only what the map carries
 is drawn: unclassified roads are not, so no line is not the same as no road you
 may ride.
 
-### Colour says whether you may ride it
+### Colour says open or shut
 
 A lane is drawn in two colours, and only two.
 
 | Colour | Meaning |
 |---|---|
-| **Green** | You may ride this today |
-| **Red** | You may not ride this today |
+| **Green** | Open to your vehicle today, going by the record and the orders on your phone |
+| **Red** | Shut to your vehicle today, or not open to it at all |
 
-That is the only question a lane's colour answers. There is no colour code for
-lane class, because a byway with a Traffic Regulation Order running on it used
-to draw in full-access green — dashed and faded, but green, which is the one
-colour on this map that means go.
+That is the only question a lane's colour answers, and it can only answer from
+what the app has been told. A closure nobody has published leaves a lane green,
+so green is not permission: see [Before you ride](#before-you-ride).
+
+There is no colour code for lane class, because a byway with a Traffic
+Regulation Order running on it used to draw in full-access green: dashed and
+faded, but green, the one colour on this map that means open.
 
 **Traffic orders are drawn in colours of their own.** They are orders, not
 lanes: lines laid over the map along the stretch an order covers, on whatever
@@ -214,18 +368,19 @@ if you are not sure: the samples are drawn the way the map draws them, so you
 can simply look at the two lines rather than read their names.
 
 Beyond that, hue is never the only channel. Around one man in twelve cannot
-separate red from green, and this map is telling you what is legal, so:
+separate red from green, and this map is telling you whether a lane is open or
+shut, so:
 
-- **Colour** says whether you may ride it.
+- **Colour** says open or shut.
 - **Dashes** say closed to you (or, on an older lane pack, seasonal).
 
-A lane you may not ride today is drawn dashed and faded as well as coloured.
+A lane shut to you today is drawn dashed and faded as well as coloured.
 Width does not help here, and is not meant to: it says which class of way a
 lane is, **not** whether it is open, and every lane the app carries today is
 the same class at the same width. Do not read a bold line as an open one.
 
 A lane you have starred gets an amber halo drawn underneath it, wider than the
-line. That is deliberately not one of the legal channels.
+line. That is deliberately not one of the open-or-shut channels.
 
 <!-- android -->
 **If you use Android's own colour correction**, leave this setting on Standard.
@@ -253,13 +408,37 @@ zoomed in** keeps an older phone quick when it holds a great many lanes: wider
 than about a 20 km view the map then shows only the ground, with a notice
 saying the lanes appear as you zoom in. Everything is still downloaded.
 
+The roads on the drawn map stay visible as you zoom out, well past the zoom a
+locked screen uses, so you can still see how to get from one lane to the next.
+
+### Which way is up
+
+One button in the map's control column, a compass or an arrow depending on
+the mode you're in, switches between three ways of turning the map. Each press
+moves on to the next.
+
+- **North up**: north stays at the top.
+- **Heading up**: the map turns with the way you're travelling. It needs you
+  to be moving, because the GPS gives no direction when you're stood still.
+- **Compass up**: faces the way you're going too. On the move it follows your
+  direction of travel, smoothed so a rutted lane doesn't rock the map from side
+  to side. When you stop, it holds the way you were going, and only turns if
+  you turn the phone round more than 90 degrees and keep it there for 2
+  seconds. Turn round at a gate and the map turns with you; a bump or a lean
+  doesn't. It's only offered on phones with a compass.
+
+When the phone is hot or the battery is low, the app may hold the map north up
+to save power, and the button says so. Locking the screen also turns a north-up
+map to heading up while it's locked: see [Screen lock](#screen-lock).
+
 ---
 
 ## Downloading data
 
-Open **Downloads**. Under **Get what you need** there are four one-tap
-choices, in this order. The area and the country show their real names — "South
-West", say — once the phone knows where you are.
+Open **Downloads**, in Settings under Maps and downloads. Under
+**Get what you need** there are four one-tap choices, in this order. The area
+and the country show their real names ("South West", say) once the phone knows
+where you are.
 
 - **The area I am in** — lanes and the routing that covers them
 - **The country I am in** — ride anywhere in it without thinking about
@@ -468,7 +647,7 @@ ground you covered, and it carries no speed or height. Where the phone lost its
 fix the line is left broken.
 
 Your rides are yours. Export any of them to GPX from the Tracks screen, whether
-or not you have bought the app.
+or not you have an update pack.
 
 ---
 
@@ -755,7 +934,7 @@ long you have:
 - **A long one** — 160 km
 
 It chains lanes near you into a loop within that budget, ignoring anything under
-250 m. Open lanes are always preferred; a restricted one is used only if that
+250 m. Open lanes come first; a restricted one is used only if that
 would otherwise leave you with nothing, and when one is in the loop the app
 names it rather than slipping it in:
 
@@ -1105,13 +1284,13 @@ from the lay-by to the trailhead - not off it, so the strip stays quiet,
 not red. It says how far the start is and which way, "To the start — 1.0 km
 away to the N", or "To the track — 300 m away to the E" when the nearest part
 of the track is not its start, and offers **Route to the start** (or **Route to
-the track**): a legal route there, as a journey. Once you have been on the
+the track**): a route there, worked out as a journey. Once you have been on the
 track, leaving it is the red "Off route" below. Ridden to its end, the strip
 says "End of the track", quietly, however far you then ride home.
 
 Leave the track and the strip turns red with "Off route" and the direction of
 the line, and offers **Route back to the track**. That is not the compass
-point across the fields: it works out a legal route, as a journey, to the
+point across the fields: it works out a route, as a journey, to the
 track about 100 m ahead of where you left it, past whatever you went round.
 The track waits while that journey steers you, and picks up again when it
 ends. If there is no GPS fix yet it says so and routes nothing.
@@ -1130,7 +1309,9 @@ journey takes over; when it ends, the track picks up again.
 ## The road book
 
 Every turn of the journey you are riding, as a list: the instruction, the
-distance to it, and where it sits in the whole route.
+distance to it, and where it sits in the whole route. Roundabout arrows here
+and in the turn strip on the map go round clockwise, the way roundabouts work
+in Britain.
 
 **Getting to it:** while a journey is running there is a **road book button in
 the map's control column**, and tapping the turn strip at the top of the map
@@ -1178,7 +1359,7 @@ spoken guidance off and on. See **Handlebar remote** below.
 
 | Say | What happens |
 |---|---|
-| "am I allowed down here", "can I ride here", "is this legal", "is this a byway", "what is this lane" | Judges the lane you are on for your vehicle, out loud. With no fix, an old or rough one, or no lane here in your maps, it says it cannot tell and why - never a yes or a no |
+| "am I allowed down here", "can I ride here", "is this legal", "is this a byway", "what is this lane" | Says out loud what the record and the orders on your phone say about the lane you are on, for your vehicle. It is not permission, and signs on the ground come first. With no fix, an old or rough one, or no lane here in your maps, it says it cannot tell and why - never a yes or a no |
 | "start recording", "record ride", "start ride", "begin recording" | Starts recording |
 | "stop recording", "end ride", "finish ride" | Stops recording |
 | "pause recording", "pause ride" | Pauses recording |
@@ -1378,22 +1559,33 @@ Tap the padlock on the map to lock the screen. **Every touch in the app is
 blocked** until you deliberately undo it.
 -->
 
-Locking also puts the map back on you at a riding zoom. That matters because a
-locked screen is the one place you cannot change the camera by touch — if you
-had pinched out to look at the whole valley and then locked, you would be riding
-a county-level map with no way to fix it. If you were already zoomed in close,
-it leaves you there.
+Locking is the app's cue that you're riding, so it sets the map up for it:
 
-The one thing that moves it for you is speed. At road speed the locked map
-zooms out by itself, a little from about 22 mph (35 km/h) and up to a level and
-a half by 56 mph (90 km/h), so the junction for the next byway is on screen in
-time to see it. Slow to lane pace and it comes back in to the zoom you locked
-at. A handlebar remote's zoom still works, and becomes the zoom it comes back
-to.
+- **It follows you, at your locked zoom.** However far you'd pinched in or
+  out, locking puts the map back on you at the zoom set by **Locked map zoom**,
+  in **Layers & lanes → How the map looks**. The slider runs from zoom 12
+  (**Further out**) to 18 (**Closer**), and 15 is the standard. On a tablet
+  the app adjusts it so you see the same stretch of ground as on a phone. This
+  matters because you can't pinch a locked screen: lock while looking at the
+  whole valley and you'd otherwise be riding a county-sized map.
+- **Straight up is the way you're going.** A north-up map turns to **Heading
+  up** while it's locked, and goes back to north up when you unlock, unless
+  you changed it in between. If it was already heading up or compass up, it's
+  left alone.
+- **Most of the screen is the road ahead.** Your arrow sits low on the screen,
+  about nine tenths of the way down, but kept above the **Hold** button so
+  it isn't hidden behind it.
 
-To unlock, **press and hold for 900 ms** on the control at the bottom. A ring
-fills so you can see how long is long enough. A tap will not do it, because a
-tap is exactly what rain produces.
+The one thing that moves the zoom for you is speed. At road speed the locked
+map zooms out by itself, a little from about 22 mph (35 km/h) and up to a level
+and a half by 56 mph (90 km/h), so the junction for the next byway is on
+screen in time to see it. Slow to lane pace and it comes back in to the zoom
+you locked at. A handlebar remote's zoom still works, and becomes the zoom it
+comes back to.
+
+To unlock, **press and hold for 900 ms** on the **Hold** button at the bottom.
+A ring fills so you can see how long is long enough. A tap won't do it,
+because a tap is exactly what rain produces.
 
 While locked, the map hides its controls. Nothing on screen could be pressed
 anyway.
@@ -1442,6 +1634,17 @@ speeds stop them flickering at a crawl.
 
 You can always pull them back with the handle at the edge. A manual reveal
 stays until you hide it yourself; no timer takes it away.
+
+When the column of map buttons holds more than fits on the screen, it
+scrolls. An arrow at the top of the column shows there are more above, and the
+first time it happens after you open the app, the column gives a little nudge
+to show it moves. Drag it to reach the rest.
+
+If the buttons are too big or too small for your screen, **Map controls size**
+changes them, from **Small** to **Large** (50% to 130%). It resizes the
+buttons, gauges and notices over the map, not the map itself. It's in
+**Settings → Accessibility**, and in **Layers & lanes → How the map looks**,
+where you can watch the buttons change as you move the slider.
 
 ---
 
@@ -1612,10 +1815,10 @@ Settings is a list of shut sections, in this order. Tap one to open it.
   above for why it is not on to begin with.
 - **Which hand** — puts the map controls, the record button and the lock on the
   side you actually reach with. Asked at first run too.
-- **Map controls size** — Small to Large. Makes the buttons, gauges and notices
-  over the map smaller or bigger; the map itself is not changed. The same
-  slider is on the map, in **Layers & lanes** under How the map looks, so you
-  can watch the buttons change as you move it.
+- **Map controls size** — Small to Large (50% to 130%). Makes the buttons,
+  gauges and notices over the map smaller or bigger; the map itself is not
+  changed. The same slider is on the map, in **Layers & lanes** under How the
+  map looks, so you can watch the buttons change as you move it.
 - Screen brightness, or **Let the phone set the brightness**, and **Screen for
   the conditions** — Normal, Bright sun or Unlit lane.
 - **Lane colours** — the standard pair, or a colour-blind-friendly pair. The
@@ -1641,27 +1844,49 @@ Settings is a list of shut sections, in this order. Tap one to open it.
 **Help**
 
 - **Green laning**, **Show the first-run tour again**, this guide (**Using the
-  app**), **Setting up a group relay**, **Privacy** and **Report a problem**,
-  in that order. The documents are carried in the app, so they open with no
-  signal; the relay guide's link to the full steps online is copied for you to
-  open. Reporting a problem comes last, after everything that might answer the
-  question first: see [Something else](#something-else) under Troubleshooting.
+  app**), **Setting up a group relay**, **Privacy**, **Terms of use** and
+  **Report a problem**, in that order. The documents are carried in the app,
+  so they open with no signal; the relay guide's link to the full steps online
+  is copied for you to open. Reporting a problem comes last, after everything
+  that might answer the question first: see [Something else](#something-else)
+  under Troubleshooting.
 
 Hill shading, height colours and 3D buildings are not in Settings: they are on
-the map, in **Layers & lanes** under Height & 3D. 3D buildings are on by default
-— they need nothing downloaded and work anywhere already cached, so you see
-them and can turn them off. Hill shading and height colours are off by default:
-they need the ground-height download for your area, which is under that area in
-**Downloads**. Until it is on the phone the two switches stay greyed out, and
-the sheet says where to get it rather than turning on a switch that does
-nothing.
+the map, in **Layers & lanes → How the map looks**, under Height & 3D. So is
+**Locked map zoom** (see [Screen lock](#screen-lock)). 3D buildings are on by
+default — they need nothing downloaded and work anywhere already cached, so you
+see them and can turn them off. Hill shading and height colours are off by
+default: they need the ground-height download for your area, which is under
+that area in **Downloads**. Until it is on the phone the two switches stay
+greyed out, and the sheet says where to get it rather than turning on a switch
+that does nothing.
+
+---
+
+## Updating the app
+
+<!-- android -->
+When a new version of Trail Blazer is on Google Play, a note appears at the
+top of the map: "A new version of Trail Blazer is ready." Tap **Update** and
+it downloads in the background while you carry on using the app. When it's
+done the note says so; tap **Restart** and the app opens again on the new
+version a few seconds later.
+
+You don't have to do it there and then. Close the note with its cross and it
+stays away until you next open the app, and you can always update from the
+Play Store instead. The note isn't shown while you're recording a ride or the
+screen is locked, so it stays out of the way on the move. It only appears if you installed Trail Blazer from Google Play.
+<!-- /android -->
+<!-- ios
+Trail Blazer updates through the App Store, like any other app.
+-->
 
 ---
 
 ## Free app, paid map updates
 
-**The app is free**, and stays free. No account, no sign-in, nothing to fill
-in, and nothing about the app itself ever locks.
+**The app is free.** No account, no sign-in, nothing to fill in, and nothing
+about the app itself ever locks.
 
 For your first **30 days** after installing, downloading maps is free too, so
 you can fill the phone with what you ride.
@@ -1898,10 +2123,11 @@ policy.
 
 ## Privacy
 
-The short version: no account, no analytics, no tracking, and your rides never
-leave the phone. The full policy — including the one narrow case in which
-anything derived from your position is transmitted — is in
-[privacy.md](privacy.md).
+The short version: no account, no analytics, no tracking, and your rides stay
+on the phone unless you send them somewhere yourself. The full policy,
+including the one narrow case in which anything derived from your position is
+transmitted, is in [privacy.md](privacy.md). The terms you agreed to are in
+[terms.md](terms.md).
 
 ---
 
