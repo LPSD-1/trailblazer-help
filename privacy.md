@@ -180,6 +180,7 @@ The complete set of keys is:
 - Display and the map: `settings.theme_mode`, `settings.units`,
   `settings.keep_awake`, `settings.auto_lock`, `settings.auto_record`,
   `terms.accepted` (which version of the terms of use you agreed to),
+  `settings.locked_zoom` (how close the map goes when you lock the screen),
   `settings.brightness`, `settings.map_ui_scale` (how big the map's buttons
   are drawn),
   `settings.screen_mode`, `settings.screen_mode.after_dark` (whether the
