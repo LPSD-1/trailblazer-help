@@ -670,6 +670,7 @@ Verified against the source and the dependency lockfile:
 | `maplibre_gl` | Renders the map and stores offline regions | Fetches map tiles (see §2) |
 | `pmtiles` | Reads downloaded satellite imagery archives | No |
 | `geolocator` | Position fixes and the recording foreground service | No |
+| `in_app_update` | Asks the Play Store on the phone whether a newer version is available, and installs it when you tap Update | Talks to the Play Store app on the phone, not to us |
 | `sensors_plus`, `flutter_compass` | Roll, gradient, compass heading, and whether the phone is moving or lying still | No |
 | `latlong2` | Coordinate arithmetic | No |
 | `gpx`, `xml` | Reading and writing GPX files, and reading KML and TCX. A KML's network link is never followed | No |
