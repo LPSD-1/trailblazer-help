@@ -853,7 +853,15 @@ published one stays as published for the next person.
 |---|---|
 | **Fastest** | Main roads, quickest way there |
 | **Fun** | Back roads and bends. Still tarmac |
-| **Green lanes** | Prefers the byways open to you, unless they make the ride much slower |
+| **Green lanes** | Prefers the byways open to you and links up ones along the way, unless they make the ride much slower |
+
+On **Green lanes**, between two of your own stops (or on **Route here**), the
+app looks for byways open to you today a short way either side of the route,
+heading the way you're going, and links them in where they fit without
+sending you miles round or making the ride much slower. Byways are slow, so
+on a short ride there is often no room for one. If nothing fits, you get the
+ordinary route. It leaves alone the legs to and along lanes you or a day out
+chose.
 
 Each stop carries the style for the leg to the next one, so a plan can run out
 on the fast road and back over the lanes.
