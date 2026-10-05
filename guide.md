@@ -434,10 +434,11 @@ moves on to the next.
 - **Heading up**: the map turns with the way you're travelling. It needs you
   to be moving, because the GPS gives no direction when you're stood still.
 - **Compass up**: faces the way you're going too. On the move it follows your
-  direction of travel, smoothed so a rutted lane doesn't rock the map from side
-  to side. When you stop, it holds the way you were going, and only turns if
-  you turn the phone round more than 90 degrees and keep it there for 2
-  seconds. Turn round at a gate and the map turns with you; a bump or a lean
+  direction of travel all the time, round every corner, smoothed so a rutted
+  lane doesn't rock the map from side to side. When you stop, the GPS can't
+  tell which way you're facing, so it holds the way you were going and only
+  turns if you turn the phone more than about 35 degrees and keep it there for
+  a second. Turn round at a gate and the map turns with you; a bump or a lean
   doesn't. It's only offered on phones with a compass.
 
 When the phone is hot or the battery is low, the app may hold the map north up
