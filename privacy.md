@@ -181,6 +181,7 @@ The complete set of keys is:
   `settings.keep_awake`, `settings.auto_lock`, `settings.auto_record`,
   `terms.accepted` (which version of the terms of use you agreed to),
   `settings.locked_zoom` (how close the map goes when you lock the screen),
+  `tips.map_settings_seen` (that you put away the tip about those settings),
   `settings.brightness`, `settings.map_ui_scale` (how big the map's buttons
   are drawn),
   `settings.screen_mode`, `settings.screen_mode.after_dark` (whether the
