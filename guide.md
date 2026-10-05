@@ -1586,7 +1586,7 @@ Locking is the app's cue that you're riding, so it sets the map up for it:
 - **It follows you, at your locked zoom.** However far you'd pinched in or
   out, locking puts the map back on you at the zoom set by **Locked map zoom**,
   in **Layers & lanes → How the map looks**. The slider runs from zoom 12
-  (**Further out**) to 18 (**Closer**), and 15 is the standard. On a tablet
+  (**Further out**) to 18 (**Closer**), and 16 is the standard. On a tablet
   the app adjusts it so you see the same stretch of ground as on a phone. This
   matters because you can't pinch a locked screen: lock while looking at the
   whole valley and you'd otherwise be riding a county-sized map.
