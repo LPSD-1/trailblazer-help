@@ -411,18 +411,18 @@ saying the lanes appear as you zoom in. Everything is still downloaded.
 The roads on the drawn map stay visible as you zoom out, well past the zoom a
 locked screen uses, so you can still see how to get from one lane to the next.
 
-### The light blue line
+### The line behind you
 
-A bright light blue line is the way back. It's drawn from your own trail, so
-it's the one line on the map you know you can get through: you've just ridden
-it. It shows when you've left the route you were following, and when there's
-no route it runs back along the way you came.
+The dotted line behind you is your trail: where you've been since the app
+started following you.
 
-Tap it to see what it is. **Remove this line** takes that one off the map if
-you'd rather have a tidy screen. A new one appears if you leave a route again.
+If you leave a route you're following, the stretch since you left it turns
+light blue. That's the way back. It's drawn from your own trail, so it's the
+one line on the map you know you can get through. With no route, there's no
+way back to show, so you just see the dots.
 
-The faint pink dots behind you are your trail while you're recording. Those
-aren't the way back.
+Tap either line to see what it is. **Clear from the map** tidies it away. Your
+recording isn't changed, and the trail carries on from where you are.
 
 ### Which way is up
 
