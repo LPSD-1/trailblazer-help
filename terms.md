@@ -3,10 +3,10 @@
 **Trail Blazer — Offline maps**
 Application id `com.trailblazerofflinemaps`
 
-Last updated: 4 October 2026
+Last updated: 7 October 2026
 
 These terms are a legal agreement between you and the developer of Trail
-Blazer named on the app's Google Play listing ("we", "us"). **Please read them all the way to the end** before you accept them.
+Blazer named on the app's store listing ("we", "us"). **Please read them all the way to the end** before you accept them.
 By tapping **I agree** in the app you accept them. If you do not accept them,
 you cannot use the app.
 
@@ -77,13 +77,63 @@ not ours. We do not check them and are not responsible for them. Only share
 your position or your rides with people you trust, and do not use these
 features to follow, harass or harm anyone.
 
-## 6. Paid update packs
+## 6. Subscription
 
-Update packs are bought through Google Play, and Google's terms apply to the
-payment. What a pack includes is described in the app. Refunds are handled
-under Google Play's refund policy and your legal rights. Your rights as a
-consumer, including under the Consumer Rights Act 2015, are not affected by
-these terms.
+**6.1** Trail Blazer is free to download and use. Downloading map data (new
+maps, lane updates and closures) needs a subscription. Maps already on your
+phone keep working whether you subscribe or not.
+
+**6.2** The subscription is monthly. The price is shown in the app and by the
+store before you pay, and includes VAT. It renews automatically and you are
+charged every month until you cancel.
+
+<!-- android -->
+**6.3** The first month is free, once per Google account. When the free month
+ends, the subscription carries on at the monthly price unless you have
+cancelled it. If you cancel during the free month, you are not charged.
+<!-- /android -->
+<!-- ios
+**6.3** The first month is free, once per Apple ID. When the free month ends,
+the subscription carries on at the monthly price unless you have cancelled it.
+If you cancel at least 24 hours before the free month ends, you are not
+charged.
+-->
+
+<!-- android -->
+**6.4** You can cancel at any time, in the app under **Settings >
+Subscription > Manage subscription**, or in the Google Play app under
+Payments and subscriptions. Cancel before your renewal date to avoid being
+charged for the next month.
+<!-- /android -->
+<!-- ios
+**6.4** You can cancel at any time, in the app under **Settings >
+Subscription > Manage subscription**, or in your iPhone's Settings under your
+name > Subscriptions. Cancel at least 24 hours before your renewal date to
+avoid being charged for the next month.
+-->
+
+**6.5** When you cancel, you keep map updates until the end of the month you
+have already paid for. Then new downloads stop; nothing already on your phone
+is removed. We do not refund part of a month, except where the law says we
+must.
+
+<!-- android -->
+**6.6** Payments are taken by Google Play, and Google's terms apply to them.
+Refunds are handled under Google Play's refund policy and your legal rights.
+We never see your card or bank details.
+<!-- /android -->
+<!-- ios
+**6.6** Payments are taken by Apple through the App Store, and Apple's terms
+apply to them. Refunds are handled under Apple's refund policy and your legal
+rights. We never see your card or bank details.
+-->
+
+**6.7** If the price changes, the store tells you before the new price
+applies, and asks you to agree to it where its rules say so. If you don't
+agree, your subscription ends at the end of the month you have paid for.
+
+**6.8** Your rights as a consumer, including under the
+Consumer Rights Act 2015, are not affected by these terms.
 
 ## 7. Our liability
 
@@ -101,7 +151,7 @@ correct, up to date, uninterrupted or free of faults.
 
 **7.3** If we are found liable to you, our total liability for everything
 arising from the app is limited to the greater of the amount you paid us for
-the app and update packs in the 12 months before the claim, and £50.
+the subscription in the 12 months before the claim, and £50.
 
 **7.4** If you use the app for a business, we are not liable to you for loss
 of profit, revenue, business, contracts or goodwill, or for any indirect or

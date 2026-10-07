@@ -182,8 +182,11 @@ The complete set of keys is:
   `terms.accepted` (which version of the terms of use you agreed to),
   `settings.locked_zoom` (how close the map goes when you lock the screen),
   `tips.map_settings_seen` (that you put away the tip about those settings),
+  `subscription.intro_seen` (that you've seen the note saying map updates are
+  now a subscription),
   `settings.brightness`, `settings.map_ui_scale` (how big the map's buttons
-  are drawn),
+  are drawn), `settings.lock_button_scale` (how big the Hold button on the
+  locked screen is drawn),
   `settings.screen_mode`, `settings.screen_mode.after_dark` (whether the
   screen goes unlit by itself after sunset, and whether it last did so for
   dark or for light - no place and no time), `settings.roadbook_tab`,
@@ -275,29 +278,25 @@ route.
 
 ### What the receipt holds
 
-`files/licence/receipt.json` is the only record of what you have paid for. It
-holds four things:
+`files/licence/receipt.json` holds two dates and nothing else:
 
-- when this install was first seen,
 - the latest date this install has ever seen on the clock (so that winding the
-  phone's date back does not extend a paid window),
-- whether the app has been bought,
-- for each update pack bought: which pack, when the store said it was bought,
-  and a SHA-256 fingerprint of the store's purchase token.
+  phone's date back can't stretch the time a subscription is trusted offline),
+- when the store last said your subscription was active, so that a phone with
+  no signal keeps it for up to 7 days. It is cleared as soon as the store says
+  there is no subscription.
 
-It deliberately holds **no** account name, no email address, no device
-identifier and no raw purchase token. The purchase token is the credential
-Google's own API uses to look a purchase up, which would tie the file to a named
-Play account; the app hashes it instead, because the only question the receipt
-needs to answer is "have I already counted this payment?".
+Your subscription itself is held by the store, not by this file. The receipt
+holds **no** account name, no email address, no device identifier and no
+purchase token.
 
 ### Android backup
 
 `android:allowBackup` is on, and the backup rules are an allowlist with exactly
 one entry: `files/licence/`.
 
-That means the receipt travels to a new phone, so you do not lose what you paid
-for. **Everything else is excluded, including every recorded ride.** Your
+That means the receipt's two dates travel to a new phone. Your subscription
+doesn't need them: it belongs to your Google account. **Everything else is excluded, including every recorded ride.** Your
 location history is neither backed up to Google nor transferred device to
 device.
 
@@ -404,21 +403,41 @@ that speech would be handled under that vendor's policy, not ours. The
 microphone is declared optional in the app's manifest, and the voice button can
 simply be left alone.
 
-### 5. Google Play billing
+### 5. The subscription and billing
 
-The app is free. Buying an update pack goes through Google Play. Google receives
-whatever Google receives for any Play purchase — your Play account, your payment
-details, and the product you bought. We never see your payment details and we
-operate no server that receives anything about your purchase.
+<!-- android -->
+The app is free. The monthly subscription goes through Google Play. Google
+receives whatever Google receives for any Play subscription — your Play account,
+your payment details, and the subscription you took out. We never see your
+payment details and we operate no server that receives anything about your
+subscription.
 
-The app asks Play for the product's localised price and title, and asks Play
-what your account already owns so that a reinstall restores it. Purchases are
-verified on the device only. What the app writes down locally is described under
-"What the receipt holds" above.
+The app asks Play for the subscription's local price and title, and asks Play
+whether your account has an active subscription, when the app opens, when you
+come back to it and after you subscribe. That check happens on the phone only.
+**Manage subscription** opens your subscription page in Google Play. What the
+app writes down locally is described under "What the receipt holds" above.
 
 Google's billing library also sends Google its own diagnostic figures about
 how the purchase screens performed, as it does in every app that sells through
 Play. We never receive them.
+<!-- /android -->
+<!-- ios
+The app is free. The monthly subscription goes through Apple's App Store.
+Apple receives whatever it receives for any App Store subscription — your
+Apple ID, your payment details, and the subscription you took out. We never see
+your payment details and we operate no server that receives anything about your
+subscription.
+
+The app asks the App Store for the subscription's local price and title, and
+asks it whether your Apple ID has an active subscription, when the app opens,
+when you come back to it and after you subscribe. That check happens on the
+phone only. **Manage subscription** opens your subscriptions in the App Store.
+What the app writes down locally is described under "What the receipt holds"
+above.
+
+Apple's handling of an App Store purchase is covered by Apple's privacy policy.
+-->
 
 When the app opens, it asks the Play Store app on your phone whether a newer
 version of Trail Blazer is available, using Google's in-app updates library.
@@ -691,6 +710,7 @@ Verified against the source and the dependency lockfile:
 | ZXing (`com.journeyapps:zxing-android-embedded`, `com.google.zxing:core`; an Android library, Apache-2.0) | Reads a group ride's code through the camera, on the phone, when you tap Scan a code | No |
 | `speech_to_text`, `flutter_tts` | The voice button and spoken replies | Platform-dependent (see §4) |
 | `in_app_purchase`, `in_app_purchase_android` | Google Play billing | Yes (see §5) |
+| `in_app_purchase_storekit` | App Store billing on iPhone, including whether the free month is still open to your Apple ID | Yes, to Apple (see §5) |
 | `collection`, `intl` | Utilities and formatting | No |
 
 ---
@@ -742,8 +762,8 @@ with the rest:
 - `ACCESS_WIFI_STATE`, declared by the MapLibre map library, which watches
   whether the phone is online so it knows when it can fetch online map tiles.
   The app itself never reads which Wi-Fi network you are on.
-- `com.android.vending.BILLING`, from Google Play's billing library, for buying
-  an update pack (see §5).
+- `com.android.vending.BILLING`, from Google Play's billing library, for taking
+  out the subscription (see §5).
 
 None of these reads anything about you, and none of them sends anything.
 
@@ -860,14 +880,13 @@ serves leaves the phone.
 
 ---
 
-## The free download period, and how it is measured
+## The free month, and how it is given
 
-The app is free and never locks. For the first **30 days** from first install,
-downloading maps is free too; after that, new map downloads need an update
-pack, and everything already downloaded keeps working. The 30 days are measured
-from two records, whichever is earlier: Android's own `firstInstallTime` for the
-app, and the `firstSeen` date in the licence receipt. Both are dates. Neither
-identifies you.
+The app is free and never locks. Downloading map data needs the monthly
+subscription, and the first month of it is free. The free month is run by the
+store (Google Play or the App Store), once per account, so the app keeps no
+install date or trial clock of its own. Everything already downloaded keeps
+working whether you subscribe or not.
 
 Whether or not you ever buy anything, your data stays yours and in reach: the
 app never locks you out of your own rides, waypoints or plans.

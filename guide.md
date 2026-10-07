@@ -71,8 +71,8 @@ has its own section further down.
 - The app checks for new lane data and fresh closures by itself, each on its
   own timetable. **Settings → Map updates** sets how often, and whether a kind
   may come over mobile data. It also tells you how old your closures are.
-- New data is free for your first 30 days. After that it needs an update pack
-  (see below).
+- Downloading map data needs the subscription, and your first month of it is
+  free (see below).
 <!-- android -->
 - When a new version of Trail Blazer is on Google Play, a note on the map
   offers it. See [Updating the app](#updating-the-app).
@@ -137,13 +137,12 @@ has its own section further down.
   map, screen modes for bright sun and unlit lanes, and a tab of its own for
   the road book. Text size follows your phone's setting.
 
-### Update packs
+### Subscription
 
-- The app is free, and every download is free for your first 30 days. After
-  that, an update pack keeps new lanes and closures coming for one, three, six
-  or twelve months. You pay once and it doesn't renew. Without one, everything
-  you've downloaded keeps working, but your closures stop being refreshed. See
-  [Free app, paid map updates](#free-app-paid-map-updates).
+- The app is free. New lanes and closures come with a monthly subscription,
+  and your first month is free. Without it, everything you've downloaded keeps
+  working, but your closures stop being refreshed. You can subscribe, check your renewal or cancel in **Settings →
+  Subscription**. See [Free app, paid map updates](#free-app-paid-map-updates).
 
 ---
 
@@ -208,8 +207,8 @@ refreshed several times a day. Where a council publishes there, the app draws
 the closure and names the order, its dates and the authority that made it.
 
 **That refreshing stops when downloads do.** Orders are map data like the
-lanes: for the first 30 days, and after that only while an update pack is
-running, the phone fetches them again several times a day. Without either, the
+lanes: while you're subscribed (your free month included), the phone fetches
+them again several times a day. Without either, the
 closures on the phone stay as they were on the day they last came in, however
 many weeks ago that was. **Map updates** in Settings says how old they are.
 
@@ -491,7 +490,7 @@ you may need to start them again.
 | **Lanes** | Which tracks and byways exist, and their status |
 | **Routing** | Lets the app work out routes with no signal |
 | **Ready-made trips** | Well-known days out, ready to ride or change |
-| **Satellite imagery** | Aerial photos, to see what a track really looks like |
+| **Satellite imagery** | Aerial photos, to see the fields, woods and buildings round a lane |
 
 Satellite imagery is by a long way the largest thing published — Britain alone
 runs to hundreds of megabytes. It is **included by default**, because a rider
@@ -503,6 +502,14 @@ and turning it off removes those bytes from every size quoted on the buttons
 above it. If two or more levels of detail are published for your ground, a
 picker appears with a sample photograph of the same patch at each level, so you
 can judge detail against size by eye.
+
+**What satellite can and can't show.** The pictures come from a satellite that
+sees about 10 metres to a pixel. That is plenty for fields, woods, farms and
+villages, but not for the lane itself. Zoomed right in, as the locked riding
+map is, the picture is stretched and looks soft or blurred; the roads, lanes and
+names drawn over it are the detail. If the map turns dark with only roads on it,
+you haven't downloaded satellite for where you are: a note on the map says so
+and takes you to the download.
 
 ### Browsing by hand
 
@@ -661,7 +668,7 @@ ground you covered, and it carries no speed or height. Where the phone lost its
 fix the line is left broken.
 
 Your rides are yours. Export any of them to GPX from the Tracks screen, whether
-or not you have an update pack.
+or not you subscribe.
 
 ---
 
@@ -1668,6 +1675,11 @@ buttons, gauges and notices over the map, not the map itself. It's in
 **Settings → Accessibility**, and in **Layers & lanes → How the map looks**,
 where you can watch the buttons change as you move the slider.
 
+The **Hold** button on the locked screen has a size of its own: **Lock button
+size**, from **Small** to **Large** (50% to 150%), in the same two places. At
+its smallest it is half the size over the map, and still as easy to press with
+gloves on - a press anywhere on a 48dp patch counts.
+
 ---
 
 ## The dashboard
@@ -1737,15 +1749,23 @@ Settings is a list of shut sections, in this order. Tap one to open it.
 
 - The Downloads page itself — see **Downloading data** above.
 
-**Map updates**
+**Subscription**
 
+- Whether you're subscribed, the monthly price, and how many free days you
+  have left. **Subscribe** is there from day one, so you can see the price
+  before your free days run out.
+- **Manage subscription** opens your subscription in the store, to cancel it
+  or check when it renews.
 <!-- android -->
-- What you have bought and how long it runs, and **Restore purchases from
-  Google Play**.
+- **Restore purchases from Google Play**, if a subscription you've paid for
+  isn't showing.
 <!-- /android -->
 <!-- ios
-- What you have bought and how long it runs, and **Restore purchases**.
+- **Restore purchases**, if a subscription you've paid for isn't showing.
 -->
+
+**Map updates**
+
 - For each kind of data, **How often to check** and **What to download over**,
   then **Check now**. See **Updates** above.
 
@@ -1841,6 +1861,10 @@ Settings is a list of shut sections, in this order. Tap one to open it.
   gauges and notices over the map smaller or bigger; the map itself is not
   changed. The same slider is on the map, in **Layers & lanes** under How the
   map looks, so you can watch the buttons change as you move it.
+- **Lock button size** — Small to Large (50% to 150%). The Hold button shown
+  while the screen is locked, on its own: smaller to cover less of the road
+  behind you, bigger for a tablet on the bars. Also in **Layers & lanes**
+  under How the map looks.
 - Screen brightness, or **Let the phone set the brightness**, and **Screen for
   the conditions** — Normal, Bright sun or Unlit lane.
 - **Lane colours** — the standard pair, or a colour-blind-friendly pair. The
@@ -1875,7 +1899,8 @@ Settings is a list of shut sections, in this order. Tap one to open it.
 
 Hill shading, height colours and 3D buildings are not in Settings: they are on
 the map, in **Layers & lanes → How the map looks**, under Height & 3D. So is
-**Locked map zoom** (see [Screen lock](#screen-lock)). 3D buildings are on by
+**Locked map zoom** (see [Screen lock](#screen-lock)), and **Lock button
+size**. 3D buildings are on by
 default — they need nothing downloaded and work anywhere already cached, so you
 see them and can turn them off. Hill shading and height colours are off by
 default: they need the ground-height download for your area, which is under
@@ -1910,33 +1935,39 @@ Trail Blazer updates through the App Store, like any other app.
 **The app is free.** No account, no sign-in, nothing to fill in, and nothing
 about the app itself ever locks.
 
-For your first **30 days** after installing, downloading maps is free too, so
-you can fill the phone with what you ride.
+What is sold is **fresh map data**, as a **monthly subscription**. While you're
+subscribed you can download maps, new and corrected lane data as councils
+publish it, and your closures keep refreshing. The price is shown in **Settings
+→ Subscription** before you pay, and it's the same every month.
 
-After that, what is sold is **fresh map data**, as **update packs**: a one-off
-payment buying one, three, six or twelve months during which you can download
-new and corrected lane data as councils publish it. These stack — buy a year
-and then a month and the month runs from the end of the year, so renewing early
-never destroys time you have paid for. Nothing recurs and nothing needs
-cancelling.
+- **Your first month is free.** When you first set up the app, or any time
+  from **Settings → Subscription**, tap **Start free month**. The store asks you
+  to confirm it, as it does for any subscription. You're not charged for the
+  free month.
+- **Then it renews every month until you cancel.** Cancel before the free month
+  ends and you won't be charged at all. Cancel later and you keep updates until
+  the end of the month you've paid for. **Manage subscription** in Settings →
+  Subscription takes you straight there.
+- **One free month per account.** The free month belongs to your
+  <!-- android -->
+  Google account,
+  <!-- /android -->
+  <!-- ios
+  Apple ID,
+  -->
+  so reinstalling the app or changing phone doesn't start another one, and a
+  subscription you've paid for comes with you to a new phone.
+- **The store takes the payment**, so we never see your card details.
 
-Without an update pack running, **everything you have already downloaded keeps
+Without a subscription, **everything you have already downloaded keeps
 working**, and so does the rest of the app. Only new map downloads wait — and
 the closures are map data too. **The traffic orders on the phone stop being
-refreshed** once the 30 days are over and no pack is running: they stay as they
-were when they last came in, and **Map updates** in Settings says how old they
-are. Fresher closures are what an update pack buys.
+refreshed** when you're not subscribed: they stay as they were when they last
+came in, and **Map updates** in Settings says how old
+they are. Fresher closures are what the subscription pays for.
 
-<!-- android -->
-The 30 days are measured from when the app was installed, read from Android's
-own records and from a receipt file. That receipt is the one thing backed up to
-your Google account, so changing phone keeps what you paid for.
-<!-- /android -->
 <!-- ios
-The 30 days are measured from when the app first ran, kept in a receipt file
-on this phone. iCloud Backup takes that receipt, so a new iPhone set up from
-that backup keeps what you paid for. Your maps, rides, notes and saved plans
-are kept out of iCloud Backup (**Back up what you have put in** is how you
+Your maps, rides, notes and saved plans are kept out of iCloud Backup (**Back up what you have put in** is how you
 move those), and so are where you are and the number a safety check-in would
 text. The app's settings, and a few small things it remembers between runs,
 such as a plan you are still drawing or the route you are following, are kept
