@@ -12,10 +12,12 @@ you cannot use the app.
 
 ## The short version
 
+This is a quick summary to help you. The full terms below are the agreement.
+
 - Trail Blazer is a guide. **It is not permission to ride or drive anywhere.**
 - The map can be incomplete, wrong or out of date. **Not every closure is shown.** Only some councils publish their traffic orders, some publish late, and a lane with nothing on it may still be closed.
 - **The signs on the ground and the law always come first.** You are responsible for where you ride and drive, and for any fine, penalty or prosecution that follows.
-- Do not use your phone while riding or driving.
+- Don't hold your phone while riding or driving. Only touch it when it's safely mounted and the law allows, or when you've stopped somewhere safe.
 - Group ride and check-ins are not an emergency service. In an emergency, call 999 or 112.
 
 ## 1. Who can use the app
@@ -44,7 +46,7 @@ The app is an aid to planning and finding your way. **It is not a legal record, 
 
 You understand and accept that:
 
-- **Not every closure or restriction is shown.** About half of councils publish their traffic orders to D-TRO. Where a council does not, the app shows nothing, and that does not mean nothing is in force. Councils that do publish can publish late, or leave orders out.
+- **Not every closure or restriction is shown.** Many councils do not publish their traffic orders anywhere the app can read them, and those that do can publish late or leave orders out. Where the app shows nothing, that does not mean nothing is in force.
 - The legal status of a way can change, and the definitive map can be wrong, out of date or under challenge. A way shown as a byway may not carry public vehicular rights for your vehicle.
 - The app cannot know a way's condition: flooding, fords, fallen trees, ruts, gates, livestock, works or anything else on the day.
 - Updates need a data connection and reach your phone only when the app checks for them. What is on your phone can be days or weeks old.

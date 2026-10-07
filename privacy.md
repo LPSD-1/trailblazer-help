@@ -184,6 +184,8 @@ The complete set of keys is:
   `tips.map_settings_seen` (that you put away the tip about those settings),
   `subscription.intro_seen` (that you've seen the note saying map updates are
   now a subscription),
+  `whats_new.seen_build` (the last build whose "What's new" note you've been
+  shown, so it's shown once),
   `settings.brightness`, `settings.map_ui_scale` (how big the map's buttons
   are drawn), `settings.lock_button_scale` (how big the Hold button on the
   locked screen is drawn),
@@ -290,8 +292,9 @@ Your subscription itself is held by the store, not by this file. The receipt
 holds **no** account name, no email address, no device identifier and no
 purchase token.
 
-### Android backup
+### Backup
 
+<!-- android -->
 `android:allowBackup` is on, and the backup rules are an allowlist with exactly
 one entry: `files/licence/`.
 
@@ -299,6 +302,19 @@ That means the receipt's two dates travel to a new phone. Your subscription
 doesn't need them: it belongs to your Google account. **Everything else is excluded, including every recorded ride.** Your
 location history is neither backed up to Google nor transferred device to
 device.
+<!-- /android -->
+<!-- ios
+iCloud Backup takes the receipt. Every time the app starts, everything else it
+keeps in its own folders - maps, recorded rides, waypoints, notes, photos and
+plans - is marked to be left out of iCloud Backup; only the `licence` folder,
+which holds the receipt, is not.
+
+That means the receipt's two dates travel to a new iPhone restored from your
+backup. Your subscription doesn't need them: it belongs to your Apple ID.
+**Recorded rides are not in iCloud Backup**, so your location history is not
+sent to iCloud. The app's settings are kept where iOS keeps every app's
+settings, and iCloud Backup takes those with the rest.
+-->
 
 ---
 
@@ -709,7 +725,7 @@ Verified against the source and the dependency lockfile:
 | `pretty_qr_code` | Draws the group ride's code on screen | No |
 | ZXing (`com.journeyapps:zxing-android-embedded`, `com.google.zxing:core`; an Android library, Apache-2.0) | Reads a group ride's code through the camera, on the phone, when you tap Scan a code | No |
 | `speech_to_text`, `flutter_tts` | The voice button and spoken replies | Platform-dependent (see §4) |
-| `in_app_purchase`, `in_app_purchase_android` | Google Play billing | Yes (see §5) |
+| `in_app_purchase`, `in_app_purchase_android`, `in_app_purchase_platform_interface` | Google Play billing | Yes (see §5) |
 | `in_app_purchase_storekit` | App Store billing on iPhone, including whether the free month is still open to your Apple ID | Yes, to Apple (see §5) |
 | `collection`, `intl` | Utilities and formatting | No |
 

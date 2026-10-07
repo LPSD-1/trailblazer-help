@@ -61,6 +61,16 @@ has its own section further down.
   over the map in their own colours, where the council publishes them to the
   Department for Transport's D-TRO service. Tap one to see what it is, who
   made it and when it runs.
+- Some councils publish their byway orders and closures on their own
+  websites instead, and roadworks closures are logged in Street Manager. The
+  app shows those too, says who published each one and links to the
+  council's page where there is one. A Street Manager closure is marked as
+  roadworks or an event, so you can tell a short closure for works from a
+  lasting one.
+- A council's voluntary closure is a request to stay off a lane, often over
+  winter, not a legal closure. It is drawn in thin grey dashes, the lane
+  sheet says who is asking and until when, and the lane stays open to ride
+  and to route along.
 - **Layers & lanes → Traffic orders** picks which kinds are drawn. On an
   order's sheet, **What else is shut near here** lists the others round you,
   for today or a day you pick.
@@ -68,9 +78,10 @@ has its own section further down.
 
 ### Keeping up to date
 
-- The app checks for new lane data and fresh closures by itself, each on its
-  own timetable. **Settings → Map updates** sets how often, and whether a kind
-  may come over mobile data. It also tells you how old your closures are.
+- The app checks for new lane data and fresh closures by itself, four times a
+  day, and for everything else less often. **Settings → Map updates** lets you
+  change how often, and whether each kind may come over mobile data. It also
+  tells you how old your closures are.
 - Downloading map data needs the subscription, and your first month of it is
   free (see below).
 <!-- android -->
@@ -181,6 +192,11 @@ Lane data comes from **local highway authority definitive maps** — the legal
 record of public rights of way — obtained via [rowmaps.com](https://www.rowmaps.com)
 and used under the Open Government Licence v3.0.
 
+For some councils that publish their own rights of way map online, the app
+reads the byways from the council's map instead, because it is kept more up
+to date. Tap a lane and the **Source** line says which: "Derbyshire definitive
+map, via rowmaps.com", say, or "Essex council's own rights of way map".
+
 The definitive map records that a right of way exists and what class it is. It
 does not record that a byway is shut this winter, or that a TRO bans motor
 vehicles on it. The record can also be wrong, out of date or under challenge.
@@ -205,6 +221,13 @@ somewhere else, and only where they are published.**
 Orders come separately, from the Department for Transport's D-TRO service,
 refreshed several times a day. Where a council publishes there, the app draws
 the closure and names the order, its dates and the authority that made it.
+
+Some councils publish their byway orders and closures on their own websites
+rather than to D-TRO, and the app reads those as well. Roadworks and event
+closures come from Street Manager, the national register of street works. For
+an order or closure from either, the lane sheet and the order sheet say who
+published it, with a link to the page it came from, and a Street Manager
+closure is marked as roadworks or an event.
 
 **That refreshing stops when downloads do.** Orders are map data like the
 lanes: while you're subscribed (your free month included), the phone fetches
@@ -324,6 +347,7 @@ made at a single spot, such as a bridge, is a dot in the same colour.
 | One-way | Blue dash and dot |
 | Weight or width limit | Orange dots |
 | Speed limit | Teal dashes |
+| A council's request to keep off | Thin grey dashes, spaced well apart — a request, not a closure |
 
 So at country zoom a county with many closures shows a red patch: that is
 orders, not red lanes. The order colours stay the same on the colour-blind
@@ -1751,9 +1775,12 @@ Settings is a list of shut sections, in this order. Tap one to open it.
 
 **Subscription**
 
-- Whether you're subscribed, the monthly price, and how many free days you
-  have left. **Subscribe** is there from day one, so you can see the price
-  before your free days run out.
+- Whether you're subscribed, and the monthly price as the store gives it.
+  The button says **Start free month** when the store offers your account a
+  free first month, and **Subscribe** when it doesn't.
+- If the store can't be reached to check your subscription, this says so
+  instead, and the app asks again when you come back to it. New maps wait
+  until it answers; nothing you have already downloaded stops working.
 - **Manage subscription** opens your subscription in the store, to cancel it
   or check when it renews.
 <!-- android -->
@@ -1897,6 +1924,10 @@ Settings is a list of shut sections, in this order. Tap one to open it.
   that might answer the question first: see [Something else](#something-else)
   under Troubleshooting.
 
+Below the sections, **About** has the version and build you're running,
+**What's new** (what changed in this version and the ones before it), and the
+open-source licences.
+
 Hill shading, height colours and 3D buildings are not in Settings: they are on
 the map, in **Layers & lanes → How the map looks**, under Height & 3D. So is
 **Locked map zoom** (see [Screen lock](#screen-lock)), and **Lock button
@@ -1911,6 +1942,14 @@ that does nothing.
 ---
 
 ## Updating the app
+
+The first time you open the app after an update, a short **What's new** note
+says what changed, once. If you skipped an update or two, it lists everything
+you missed, newest first. It waits until you've finished anything the app
+needs to show you first, and it never appears while you're moving, recording,
+following a route or have the screen locked; it waits for another time you
+open the app instead. Tap **Got it**, or swipe it away, and it's gone. Read it
+again any time from **What's new**, under About at the foot of Settings.
 
 <!-- android -->
 When a new version of Trail Blazer is on Google Play, a note appears at the
@@ -1940,14 +1979,21 @@ subscribed you can download maps, new and corrected lane data as councils
 publish it, and your closures keep refreshing. The price is shown in **Settings
 → Subscription** before you pay, and it's the same every month.
 
-- **Your first month is free.** When you first set up the app, or any time
-  from **Settings → Subscription**, tap **Start free month**. The store asks you
-  to confirm it, as it does for any subscription. You're not charged for the
-  free month.
-- **Then it renews every month until you cancel.** Cancel before the free month
-  ends and you won't be charged at all. Cancel later and you keep updates until
-  the end of the month you've paid for. **Manage subscription** in Settings →
-  Subscription takes you straight there.
+- **Your first month is free**, if your account hasn't had one before. When
+  you first set up the app, or any time from **Settings → Subscription**, tap
+  **Start free month**. The store asks you to confirm it, as it does for any
+  subscription. You're not charged for the free month.
+- **Then it renews every month until you cancel.**
+  <!-- android -->
+  Cancel before the free month ends and you won't be charged at all.
+  <!-- /android -->
+  <!-- ios
+  Cancel at least 24 hours before the free month ends and you won't be
+  charged at all.
+  -->
+  Cancel later and you keep updates until the end of the month you've paid
+  for. **Manage subscription** in Settings → Subscription takes you straight
+  there.
 - **One free month per account.** The free month belongs to your
   <!-- android -->
   Google account,
