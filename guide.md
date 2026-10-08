@@ -97,8 +97,7 @@ has its own section further down.
 - **A day out from here** builds a loop of byways around you to fit the time
   you have, from a morning to a long day. It's in the map's control column
   and in Plans.
-- A worked-out plan tells you if you'll be back near dark, and shows the
-  forecast for the hours you're out.
+- A worked-out plan tells you if you'll be back near dark.
 - **Check this track** looks at any track before you ride it and marks the
   stretches that are shut, or that the app can't say anything about.
 
@@ -253,14 +252,33 @@ So a lane shown here as a byway open to all traffic may still be closed to you
 today, and the app can't always tell you. **The signs on the ground come
 first.**
 
+### Unsurfaced public roads (UCRs), where councils publish them
+
+An unclassified road (UCR) is a public road. It is recorded in the council's
+own highway records (its List of Streets), not on the definitive map, which is
+where byways are recorded. Some councils publish which of their unclassified
+roads are unsurfaced, and where one does, the app draws those roads as lanes:
+**green like a byway, with a pale centre line down the middle** so you can tell
+the two apart. Which areas those are, of the ones you have downloaded, is
+said under the colour key in **Layers & lanes**, and tapping a road names the
+council whose highway records it comes from.
+
+It's a public road, but that doesn't on its own prove every vehicle may use
+it: check the signs and any traffic orders. Traffic orders, voluntary requests
+and seasonal rules are shown on a UCR exactly as on a byway, and tapping one
+says what it is and credits the council. Where a local rule applies, such as a
+national park's scheme or a council's code for its green lanes, the lane's
+sheet shows it, with who said it and when it was checked.
+
 ### Roads that are not on the map
 
-**Unclassified roads are not on this map.** The app draws byways open to all
-traffic from the definitive map. Unclassified roads (UCRs), and other public
-roads whose rights are not recorded anywhere the app can read, are left off on
-purpose, because no record says who may use them. A road with no line on it may
-still be one you can ride. The council's List of Streets is the place to check:
-it shows a road is publicly maintained, not what you may ride on it. See
+**Elsewhere, unclassified roads are not on this map.** The app draws
+byways open to all traffic from the definitive map. Unclassified roads (UCRs),
+and other public roads whose rights are not recorded anywhere the app can
+read, are left off there, because no record the app reads says who may use
+them. A road with no line on it may still be one you can ride. The council's
+List of Streets is the place to check: it shows a road is publicly maintained,
+not what you may ride on it. See
 [What the classes mean](guide-green-laning.md#unclassified-road-ucr-or-white-road).
 
 Check signage on the ground and your local authority's TRO register before you
@@ -316,8 +334,9 @@ their ground. With no position fix, first run fetches no background map at all.
 
 A lane is drawn with three separate visual channels. Each one carries different
 information, and you can read any of them on its own. Only what the map carries
-is drawn: unclassified roads are not, so no line is not the same as no road you
-may ride.
+is drawn: outside the areas whose councils publish their unsurfaced roads,
+unclassified roads are not, so no line is not the same as no road you may ride. A green lane with a pale centre line down it is an
+unsurfaced public road (a UCR) from the council's highway records.
 
 ### Colour says open or shut
 
@@ -987,7 +1006,24 @@ long you have:
 - **A long one** — 160 km
 
 It chains lanes near you into a loop within that budget, ignoring anything under
-250 m. Open lanes come first; a restricted one is used only if that
+250 m. It goes for the longer byways first, and for byways that run on into
+each other, so the day is more lane and less road.
+
+Under the distances you choose how many lanes you want. **As many as fit**
+puts the longer byways first, then uses any distance left over on extra lanes
+along the way, up to 25. Or set a number from 1 to 40: slide to roughly the
+number, then use **-** and **+** for the exact one. The number you set is kept
+for your next day out.
+
+When you set a number, the app fits that many lanes if it can, using shorter
+ones if it has to, so there may be less byway than with **As many as fit**.
+Of the lanes that fit, it keeps the longest it can, so asking for fewer lanes
+gives you the longer ones rather than different short ones.
+If the distance can't take that many at all, the sheet says so, for example
+"Only 14 of the 20 lanes you asked for fit in "Half a day". Pick a longer day
+for more."
+
+Open lanes come first; a restricted one is used only if that
 would otherwise leave you with nothing, and when one is in the loop the app
 names it rather than slipping it in:
 
@@ -998,72 +1034,14 @@ names it rather than slipping it in:
 The starting point is pinned to where you were when you opened the sheet, so
 the suggestion does not rewrite itself while you are reading it.
 
-### Weather and daylight
+### Daylight
 
 Once a plan has been worked out, the plan editor warns you if it gets you back
 close to sunset or after it, or starts in the dark. The day-out sheet and its
 preview always say when the loop gets you back, and the same warnings. Times
 are counted from now.
 
-Under that is the forecast for the same hours, from MET Norway (on the day-out
-sheet it is at the foot, under **Keep it**):
-
-> Forecast for 11:00–17:00: 8.0 mm of rain, heaviest 4.0 mm in an hour around
-> 13:00; 3–7°C, wind up to 27 mph.
->
-> Advisory, from MET Norway, updated 3 hours ago. Weather changes; look again
-> before you go.
-
-It looks at every stop on the plan (for a day out, the start and its stops) and
-gives the worst of them: the most rain, the strongest wind and the coldest
-hour. The forecast is for grid points about 28 km apart, so it is a guide to
-the area, not to the lane. Wind is in your units, from Settings.
-
-It says **dry** only when every hour of the ride is forecast with no rain. If
-the forecast is missing any hour, it says **rain not known for part of this
-ride** instead (after **at least** the rain it does know of, if there is any),
-and if the ride runs past the end of the forecast it says where the forecast
-stops.
-
-Wind and temperature are held to the same rule. When part of the ride has no
-forecast - a stop in an area not fetched yet, an hour past the end of the
-forecast, or an hour with no figure - the temperatures and the wind come only
-from the places and hours that had one, so they follow **where known:**. The
-rest of the ride could be colder or windier. When there is no wind figure at
-all it says **wind not known**, and **temperature not known** likewise, rather
-than leaving them out:
-
-> Forecast for 11:00–16:00: rain not known for part of this ride; where known:
-> 6–9°C, wind up to 18 mph.
-
-The line turns red, with its own icon, when the forecast is for:
-
-- **10 mm of rain or more** over the ride - "Wet ride forecast."
-- **Wind of 30 mph (48 km/h) or more** - "Strong wind forecast."
-- **1°C or colder** - "Near freezing: ice is possible in ruts and puddles."
-
 The app does not tell you to go or not to go. That is your decision.
-
-When there is no forecast, it says so rather than saying nothing:
-
-- **No forecast for this ride: none has been fetched for this area yet** - it
-  needs a signal once.
-- **The last forecast for this area is N hours old, too old to use** - a
-  forecast over 12 hours old shows no figures at all.
-- **No forecast for this place** - the plan is outside England and Wales, or
-  the list of downloadable areas has not loaded yet.
-
-On a lane's page, a lane with a rain gauge also gets the rain forecast for the
-next 24 hours under the rain that has already fallen: "Forecast: about 6.0
-mm more over the next 24 hours." If adding the two would put the lane in a
-wetter band it says which one, as "would", because the oldest rain drops out of
-the count as new rain falls. Nothing is shown when the forecast is old or
-missing an hour.
-
-The forecast is fetched only while one of these screens is open, as one file
-for the whole region. Your position and your stops are not sent: the app picks
-out the grid points near your stops on the phone. Your phone never contacts MET
-Norway itself.
 
 ### Your own tracks
 
@@ -2083,8 +2061,9 @@ And one for your vehicle:
 The notice speaks for where you are standing, once the phone has a fix, not
 for wherever you have moved the map to. If it gives no reason and this area is
 downloaded, nothing here is a byway the app carries. Unclassified roads and
-other roads with unrecorded rights are never drawn; check the council's List
-of Streets. Tap a notice to read all of it: under its own words it says the
+other roads with unrecorded rights are not drawn, apart from the unsurfaced
+public roads of the councils that publish them (Layers & lanes names which);
+check the council's List of Streets. Tap a notice to read all of it: under its own words it says the
 same. The key under **Access class** in **Layers & lanes** says it too.
 
 If the **background** is blank rather than the lanes, you have lanes but no
@@ -2122,8 +2101,8 @@ Two things need a connection:
   says so rather than showing an empty list.
 - **Downloading anything new.**
 
-The rain readings and the weather forecast need a signal to update. With none,
-the last ones fetched are shown with their age until they are too old to use.
+The rain and river readings need a signal to update. With none, the last ones
+fetched are shown with their age until they are too old to use.
 
 If you are about to lose signal, **Just where I am standing** on the Downloads
 screen is the fastest way to get what you need.
@@ -2240,10 +2219,6 @@ v3.0.
 
 Basemap: OpenStreetMap data under the ODbL, served by OpenFreeMap. Routing
 tiles published by [brouter.de](https://brouter.de).
-
-Weather forecasts: MET Norway (api.met.no), CC BY 4.0,
-https://creativecommons.org/licenses/by/4.0/. Figures are summarised for the
-ride window.
 
 Lane information is guidance only. Always check signage and current Traffic
 Regulation Orders before riding.

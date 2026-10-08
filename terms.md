@@ -3,7 +3,7 @@
 **Trail Blazer — Offline maps**
 Application id `com.trailblazerofflinemaps`
 
-Last updated: 7 October 2026
+Last updated: 8 October 2026
 
 These terms are a legal agreement between you and the developer of Trail
 Blazer named on the app's store listing ("we", "us"). **Please read them all the way to the end** before you accept them.
@@ -29,12 +29,14 @@ business too, and section 7.4 applies.
 
 ## 2. What the app is
 
-Trail Blazer shows byways open to all traffic in England and Wales, and
-traffic orders (closures, restrictions and the like) that affect them. It
+Trail Blazer shows byways open to all traffic in England and Wales and,
+where a council publishes them, the unsurfaced public roads in its highway
+records, and traffic orders (closures, restrictions and the like) that affect
+them. It
 also offers routes, navigation, ride recording, group ride and related tools.
 
-The lane data comes from the councils' definitive maps and statements and
-other public records. Traffic orders come from the Department for Transport's
+The lane data comes from the councils' definitive maps and statements, their
+highway records (lists of streets) and other public records. Traffic orders come from the Department for Transport's
 D-TRO service and the councils that publish to it. Some features use other
 sources, such as OpenStreetMap and the Environment Agency. We put this
 information together and pass it on. We do not survey the ground, we do not
@@ -48,6 +50,7 @@ You understand and accept that:
 
 - **Not every closure or restriction is shown.** Many councils do not publish their traffic orders anywhere the app can read them, and those that do can publish late or leave orders out. Where the app shows nothing, that does not mean nothing is in force.
 - The legal status of a way can change, and the definitive map can be wrong, out of date or under challenge. A way shown as a byway may not carry public vehicular rights for your vehicle.
+- A road shown from a council's highway records is recorded as a public road. That does not on its own prove that every vehicle may use it, or that it is public along its whole length.
 - The app cannot know a way's condition: flooding, fords, fallen trees, ruts, gates, livestock, works or anything else on the day.
 - Updates need a data connection and reach your phone only when the app checks for them. What is on your phone can be days or weeks old.
 - Routes, suggested day outs, directions and spoken instructions are worked out by software from this information, and from your phone's position, which can be wrong. They can send you along a way that is closed, unsuitable for your vehicle, or dangerous.
