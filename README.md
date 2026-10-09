@@ -11,6 +11,8 @@ they work with no signal.
   if you switch it on, your position and the name you chose go to the riders
   in your group, end-to-end encrypted, and to nobody else; so does any plan or
   ride you choose to send them.
+- **[Where our data comes from](data-status.md)** — every source the map is
+  built from, how fresh each one is, and the councils doing it well.
 - **[Controller profile](controller.md)** — the open specification for handlebar
   controllers, so anyone can build hardware that works with the app.
 
