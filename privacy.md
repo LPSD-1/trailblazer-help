@@ -3,64 +3,142 @@
 **Trail Blazer — Offline maps**
 Application id `com.trailblazerofflinemaps`
 
-Last updated: 3 October 2026
+Last updated: 9 October 2026
 
 ## The short version
 
+This policy covers Trail Blazer on every phone it runs on. Most of it applies
+to all of them. Where they differ, the passage says which phone it is about.
+
 Trail Blazer has no user accounts, no sign-in, no analytics, no crash
-reporting, no advertising and no tracking identifiers of any kind. Two Google
-components it uses, Play billing and the Nearby Connections service behind
-group ride, send Google their own performance figures, as they do in any app;
-see sections 5 and 7. None of that reaches us.
+reporting, no advertising and no tracking identifiers of any kind.
+
+<!-- android -->
+**On Android**, two Google components the app uses, Play billing and the
+Nearby Connections service behind group ride, send Google their own
+performance figures, as they do in any app; see sections 5 and 7. None of
+that reaches us.
+<!-- /android -->
 
 Your rides, your waypoints, your saved plans and your settings are written to
-your phone and stay there. They are never uploaded to us, and they are
-excluded from Android's own cloud backup on purpose. They go to no one else
-either, with one exception that only you can make, one at a time: in a group
+your phone and stay there. They are never uploaded to us.
+
+<!-- android -->
+**On Android** they are all left out of Android's own cloud backup on purpose.
+<!-- /android -->
+
+<!-- ios -->
+**On iPhone** your rides, waypoints and plans are left out of iCloud Backup on
+purpose. Your settings are kept where iOS keeps every app's settings, and
+iCloud Backup, if you use it, takes those too. See "Backup" below.
+<!-- /ios -->
+
+Nobody else receives them, except in one case that only you can choose, one
+at a time: in a group
 ride you can send one of your plans, or one of your tracks - **including a
-ride you recorded** - to the riders in your group, and to nobody else,
+ride you recorded** - to the riders you chose, the ones in your group,
 end-to-end encrypted. It goes only when you pick it and press Send. See §7.
 
-The app does use the network for six things, and only those six: downloading
-map data (and checking it for updates), drawing the online basemap, looking up
-an address you type, speech recognition, Google Play billing, and fetching the
-latest rain and river readings for your region when you open a lane that has a
-rain gauge or a ford (and the weather forecast for the region you are planning
-a ride in). Each is described below, including exactly what the other
-end can see. A seventh, only if your riding group has set one up: a relay run by
-one of the riders, which carries the group's encrypted positions to riders out
-of radio range (§7).
+On every phone the app uses the network for these things: downloading map data (and checking it for updates), drawing the online
+basemap, looking up a place you search for, the app store's billing for the
+subscription, and fetching the latest rain and river readings for your region
+when you open a lane that has a rain gauge or a ford.
 
-**Your position is not one of them, ever.** Not rounded, not coarsened, not
-anonymised - not sent to us or to any of them. It leaves your phone in one
-way only, and only when you switch it on: in a group ride, to the riders
-**you** chose by showing them your group's code, phone to phone or through a
-relay one of **you** runs, end-to-end encrypted, and never to us. See §7.
-Where you **have** ridden can leave the same way, to the same riders and no
-one else, but only if you choose to: a ride you recorded, sent to your group
+<!-- android -->
+**On Android** there are two more: speech recognition, which can go to a
+network service if your phone has no speech model of its own (§4), and asking
+the Play Store app whether a newer version of Trail Blazer is out (§5).
+<!-- /android -->
+
+<!-- ios -->
+**On iPhone** speech recognition stays on the phone and sends nothing (§4).
+<!-- /ios -->
+
+Each is described below, including exactly what the other end can see.
+"Who receives what, and where" says who runs each one and where. One more is
+used only if your riding group has set one up: a relay run by one of the
+riders, which carries the group's encrypted positions to riders out of radio
+range (§7).
+
+**Your GPS coordinates are never sent to any of them.** Not rounded, not
+coarsened, not anonymised - not to us or to any of them. But know this: map
+tiles show OpenFreeMap the area you are looking at, which is where you are
+when the map follows you (§2). Download your area for offline use and that
+stops. Your coordinates themselves leave your phone in one
+way only, and only when you switch it on: in a group ride. They go to the
+riders **you** chose by showing them your group's code, phone to phone or
+through a relay one of **you** runs. They are end-to-end encrypted and never
+reach us. See §7.
+Where you **have** ridden can leave the same way, to the riders you chose,
+but only if you choose to: a ride you recorded, sent to your group
 with "Share a plan with the group" (§7).
 The only other way is one you do yourself: a message you send from your own
 messaging app or share sheet - the Where am I? screen's **Send this**, or a
 safety check-in text the app gets ready and **you** press Send on. The app
 cannot send a text by itself. See "Safety check-in" below.
 
-We do not operate a server that receives anything from the app. There is
-nowhere for us to store your data even if we wanted to.
+We run no server that receives anything from the app, so we hold none of
+your data. The one thing that
+can reach us is an email you choose to send us yourself, for example with
+**Report a problem**. See "Report a problem" below.
 
 ---
 
 ## Who we are
 
-Trail Blazer is published by the developer named on the Google Play listing for
-`com.trailblazerofflinemaps`. For data protection purposes that developer is the
-data controller for the very small amount of processing described here.
+Trail Blazer is made and published by Lucas Potter. For data protection purposes Lucas Potter is the data controller
+for the very small amount of processing described here. Postal address:
+8 Elmhurst Drive, Ipswich, Suffolk, IP3 0PA. You can also reach us at the
+email address under "Contact" below.
+
+---
+
+## The legal basis
+
+UK data protection law asks us to say on what basis any of your information
+is used. Almost everything stays on your phone, where we never see it. For
+the little that leaves it:
+
+- **Requests the app makes to other services.** Every request the app makes
+  over the network goes straight from your phone to someone else's service,
+  never to us: map data and rain and river readings, routing tiles, the online
+  basemap, place search, the store's billing, and the others listed in "What
+  leaves your phone, and when". Each operator receives your IP address and
+  what you asked for, decides for itself what to do with them, and is an
+  independent controller of them (see "Who receives what, and where"). So far as we decide what the app sends, our
+  basis is legitimate interests: making the feature you are using work. You
+  start each request, the app sends the least the request needs, and the
+  effect on you is low.
+- **Problem reports and other emails.** If you email us, we use what you send
+  to look into the problem and to reply. The basis is legitimate interests:
+  our interests are diagnosing and fixing faults in the app, answering you,
+  and keeping a record of what was reported and what we did about it. We have
+  weighed these against yours: you choose to send the email, it holds only what
+  you put in it, and the effect on you is low. You can object at any time (see
+  "Your rights").
+- **The subscription.** The store takes the payment and handles your payment
+  details as a controller in its own right. We never see those details.
+
+<!-- android -->
+**On Android** the store is Google Play, run by Google.
+<!-- /android -->
+
+<!-- ios -->
+**On iPhone** the store is the App Store, run by Apple.
+<!-- /ios -->
 
 ---
 
 ## What the app stores on your phone
 
-All of this except the last row is in the app's own private storage. No other
-app can read it, and none of it is transmitted.
+All of this is in the app's own private storage, except, on some phones,
+the fault-finding file (see below). No other app can read it, and none of it is
+transmitted.
+
+<!-- ios -->
+**On iPhone** some of the folders differ: see "On iPhone, where things are
+kept" after the table.
+<!-- /ios -->
 
 | What | Where | Contains |
 |---|---|---|
@@ -69,32 +147,52 @@ app can read it, and none of it is transmitted.
 | Waypoints | `app_flutter/user_content/waypoints.json` | Position, name and note for each mark you make |
 | Saved plans | `app_flutter/user_content/plans/<id>.json` | The stops in a planned route |
 | Lane notes | `app_flutter/user_content/lane_notes.json` | What you wrote about a lane, whether you mean to ride it, and when |
-| Lane photographs | `app_flutter/user_content/lane_photos/<lane>/` | Copies of the pictures you attached to a lane note, as they were, including any location and date the camera wrote into them |
+| Lane photos | `app_flutter/user_content/lane_photos/<lane>/` | Copies of the photos you attached to a lane note, as they were, including any location and date the camera wrote into them |
 | Imported files (GPX, KML, KMZ, GeoJSON, FIT, TCX) | Same as rides and waypoints | Whatever was in the file you imported: read on the phone; a KML network link is never followed |
 | Downloaded map data | App support directory: `lane-packages/`, `routing/segments/`, `trips/`, `basemaps/` | Public map data. Nothing about you |
 | Rain and river readings | App support directory: `conditions/wet/<region>.json`, `conditions/rivers/<region>.json` | The last rain and river feed fetched for each region, kept so it can be shown with no signal. Public data, but the file names say which regions you have opened lanes in |
-| Weather forecast | App support directory: `conditions/forecast/<region>.json` | The last forecast file fetched for each region, kept so it can be shown with no signal. Public data, but the file names say which regions you have planned rides or opened lanes in |
 | Offline basemap regions | MapLibre's own tile database | Map tiles for the areas you chose |
 | Licence receipt | `files/licence/receipt.json` | See "What the receipt holds" below |
-| Group ride | Android's encrypted storage (`flutter_secure_storage`) | The group you are in - its id, its key, the name you know it by, and a relay address if the group has one - and a random secret this install made, from which your id in each group is worked out. Removed when you leave the group, except the secret. A shared route (the line of a plan sent to or taken from the group) is kept in the app's settings under `group_ride.shared_route.v1` until put away, the group is left, or 12 hours pass. See §7 |
-| Settings | Android `SharedPreferences` | See "What the settings hold" below |
-| Safety check-in | Android `SharedPreferences` (`checkin.*`), and the app's private `trailblazer_checkin` preferences for the alarm | Your back-by time, the number you typed, and - only while a check-in is set - where you last were and the text ready to send. See "Safety check-in" below |
-| Fault-finding file | `Android/data/com.trailblazerofflinemaps/files/diagnostics.json` | What the app has loaded and what it concluded: which map data is open, the map settings, and the lanes near its last fix with its verdict on each. No coordinates |
+| Group ride | The phone's encrypted storage (`flutter_secure_storage`; on iPhone, the Keychain) | The group you are in - its id, its key, the name you know it by, and a relay address if the group has one - and a random secret this install made, from which your id in each group is worked out. Removed when you leave the group, except the secret. A shared route (the line of a plan sent to or taken from the group) is kept in the app's settings under `group_ride.shared_route.v1` until put away, the group is left, or 12 hours pass. See §7 |
+| Settings | The app's settings file (`shared_preferences`) | See "What the settings hold" below |
+| Safety check-in | The app's settings file (`checkin.*`), and a private copy for the alarm (see "Safety check-in" below) | Your back-by time, the number you typed, and - only while a check-in is set - where you last were and the text ready to send. See "Safety check-in" below |
+| Fault-finding file | `diagnostics.json` (see below for where) | What the app has loaded and what it concluded: which map data is open, the map settings, and the lanes near its last fix with its verdict on each. No coordinates |
 
-The fault-finding file is the one thing here that is NOT in private storage.
-It sits in the app's folder on the phone's shared storage, so a computer
-connected to your unlocked phone by USB can read it, and on Android 8, 9 and
-10 so can another app you have allowed to read your storage. It is there so a
-fault can be diagnosed over a cable. It holds no coordinates, but it names
-the lanes within about 170 m of where the app last had a fix, to the nearest
-50 m, so it does say roughly which lanes you were near. Nothing in the app
-reads it back or sends it anywhere, and clearing the app's storage or
-uninstalling removes it.
+The fault-finding file holds no coordinates, but it names the lanes within
+about 170 m of where the app last had a fix, to the nearest 50 m, so it does
+say roughly which lanes you were near. The app never sends it anywhere by
+itself. It leaves the phone only if you attach it to a problem report and send
+that yourself (see "Report a problem" below).
 
-A recorded ride is a precise history of where you have been. The app treats it
-that way: it is the single most sensitive thing on the phone, and it is the
-thing most carefully kept off the network. It leaves the phone only if you
-send it yourself: to your group ride (§7), or as a file you share.
+<!-- android -->
+**On Android** the fault-finding file is the one thing here that is NOT in
+private storage. It sits at
+`Android/data/com.trailblazerofflinemaps/files/diagnostics.json`, in the app's
+folder on the phone's shared storage, so a computer connected to your unlocked
+phone by USB can read it, and on Android 8, 9 and 10 so can another app you
+have allowed to read your storage. It is there so a fault can be diagnosed
+over a cable. Clearing the app's storage or uninstalling removes it.
+<!-- /android -->
+
+<!-- ios -->
+**On iPhone** the fault-finding file is kept in the app's own private
+temporary folder, which no other app can read and which is not in iCloud
+Backup. Deleting the app removes it.
+<!-- /ios -->
+
+<!-- ios -->
+**On iPhone, where things are kept.** Tracks, waypoints, plans, lane notes and
+photos are in the app's private Documents folder. Downloaded map data,
+the rain and river readings, the unrecorded trail and the licence receipt are
+in its private Application Support folder. The group ride's key and secret
+are in the iPhone's Keychain. The settings are kept where iOS keeps every
+app's settings. What of this goes into iCloud Backup is under "Backup" below.
+<!-- /ios -->
+
+A recorded ride is a precise history of where you have been. It is the most
+sensitive thing the app keeps, so the app never sends it over the network by
+itself. It leaves the phone only if you send it yourself: to your group ride
+(§7), or as a file you share.
 
 ### The unrecorded trail
 
@@ -105,14 +203,14 @@ While the app is running and has a position fix, it lays a trail behind you on
 the map, so that you can always find your way back. That trail is also written to
 `files/user_content/session_trail.log` as you go, **whenever you are not
 recording** (while you are, the ride itself is being saved instead, so the
-same stretch is not kept twice), so that if the phone dies or Android closes
+same stretch is not kept twice), so that if the phone dies or the system closes
 the app the day's riding is not lost. It is the same kind of history as a
 recorded ride: latitude, longitude and time, a line for about every 15 m. So
 riding with the app open keeps a history of where you went whether or not you
 press Record.
 
 - It stays in the app's private storage. It is never sent anywhere, and it is
-  not in Android backup (only `files/licence/` is).
+  not in the phone's cloud backup (see "Backup" below).
 - The next time you open the app, a trail from the last 12 hours is offered
   back to you. Keeping it turns it into a recorded ride and dropping it throws
   it away; either way the file is deleted.
@@ -120,21 +218,21 @@ press Record.
   is younger than that, the app empties it the next time it starts.
 - Clearing the app's storage, or uninstalling, removes it.
 
-### Lane photographs
+### Lane photos
 
-When you attach a photograph to a lane note, you choose it in Android's own
-picker and the app copies that one file into its private storage. It does not
-ask for permission to read your photo library and cannot see any picture you
+When you attach a photo to a lane note, you choose it in the phone's own
+photo picker and the app copies that one file into its private storage. It does not
+ask for permission to read your photo library and cannot see any photo you
 did not pick. The copy is kept as it was, so any location and date your camera
-wrote into the picture stay in it; the app does not read them, and the
-photograph is never uploaded. Photographs are not included in the "Back up what
+wrote into the photo stay in it; the app does not read them, and the
+photo is never uploaded. Photos are not included in the "Back up what
 you have put in" file, and they go when you delete them, clear the app's
 storage or uninstall.
 
 ### Safety check-in
 
 A safety check-in is a back-by time you set (the Where am I? screen, or
-Settings > Safety check-in). Everything about it is stored only on your phone,
+Settings → Safety check-in). Everything about it is stored only on your phone,
 in the app's private storage, and none of it is sent anywhere by the app:
 
 - **The time** (`checkin.dueUtcMs`). Removed when you answer the check-in.
@@ -149,10 +247,20 @@ in the app's private storage, and none of it is sent anywhere by the app:
   no check-in set nothing is written.
 - **The alarm's copy.** Because the alarm has to work with the app closed,
   the time, the number and the text ready to send (which contains that
-  position) are also held in the app's private `trailblazer_checkin`
-  preferences, for Android's alarm to read. They are cleared when you answer,
-  and the time alone is kept if you answered from the notification, until the
-  app next opens and clears it.
+  position) are also held in a private copy for the alarm. They are cleared
+  when you answer, and the time alone is kept if you answered from the
+  notification, until the app next opens and clears it.
+
+<!-- android -->
+**On Android** the alarm's copy is the app's private `trailblazer_checkin`
+preferences, which Android's alarm reads.
+<!-- /android -->
+
+<!-- ios -->
+**On iPhone** the alarm's copy is a small file in the app's private
+Application Support folder, left out of iCloud Backup, and the reminders
+themselves are notifications the iPhone holds until they are due.
+<!-- /ios -->
 
 When the check-in is overdue the app gets a text ready in your own messaging
 app (or the share sheet, with no number). **You press Send**; the app cannot
@@ -162,9 +270,20 @@ to the person you chose, through your mobile network, like any other message.
 ### What the settings hold
 
 The app's preferences file holds the choices you have made, and a small amount
-of work in progress so that it survives Android closing the app. It holds no
+of work in progress so that it survives the phone closing the app. It holds no
 identifier except your id in a group ride, in the name of one key (below),
-which only that group's riders ever see. It is not in Android backup.
+which only that group's riders ever see.
+
+<!-- android -->
+**On Android** the settings file is not in Android backup.
+<!-- /android -->
+
+<!-- ios -->
+**On iPhone** the settings are kept where iOS keeps every app's settings, and
+iCloud Backup, if you use it, takes them with the rest of the phone. That
+includes the keys below that hold places, and a check-in's number and last
+position while a check-in is set.
+<!-- /ios -->
 
 **Four of the keys hold places.** `plan.editor.draft` is the plan you are
 editing and have not saved yet: the latitude, longitude and name of each of its
@@ -261,7 +380,7 @@ The complete set of keys is:
   when you leave the group, each answer going after 12 hours; and
   `group_ride.sharing.v1`, written while you are sharing your location with
   your group: the group's id and when the share started (a time, not a
-  place), so that if Android closes the app mid-share the next launch can
+  place), so that if the phone closes the app mid-share the next launch can
   tell you the share ended. Removed when you stop sharing, or at that next
   launch. None of those is a place. `group_ride.shared_route.v1` IS a list of places: the line of a plan
   you sent to your group or took from another rider, its regroup points,
@@ -269,10 +388,10 @@ The complete set of keys is:
   (so a route from another group is never used) and a reference to the offer
   it came from (that rider's id in the group and a random number, so the same
   plan handed over again is not offered twice), kept so it survives the app
-  closing mid-ride, and removed when you put it away, leave the group, or 12
-  hours after it was taken. The group itself - its key - and this install's
+  closing mid-ride, and removed when you tap **Put it away**, leave the group,
+  or 12 hours after it was taken. The group itself - its key - and this install's
   secret are NOT in this file: they are in
-  Android's encrypted storage, under `group_ride.active_group.v1` and
+  the phone's encrypted storage, under `group_ride.active_group.v1` and
   `group_ride.install_secret.v1` (see the storage table above).
 
 `ride.odometer_metres` is a running total of distance. It is a number, not a
@@ -295,7 +414,7 @@ purchase token.
 ### Backup
 
 <!-- android -->
-`android:allowBackup` is on, and the backup rules are an allowlist with exactly
+**On Android**, `android:allowBackup` is on, and the backup rules are an allowlist with exactly
 one entry: `files/licence/`.
 
 That means the receipt's two dates travel to a new phone. Your subscription
@@ -303,8 +422,8 @@ doesn't need them: it belongs to your Google account. **Everything else is exclu
 location history is neither backed up to Google nor transferred device to
 device.
 <!-- /android -->
-<!-- ios
-iCloud Backup takes the receipt. Every time the app starts, everything else it
+<!-- ios -->
+**On iPhone**, iCloud Backup takes the receipt. Every time the app starts, everything else it
 keeps in its own folders - maps, recorded rides, waypoints, notes, photos and
 plans - is marked to be left out of iCloud Backup; only the `licence` folder,
 which holds the receipt, is not.
@@ -313,8 +432,9 @@ That means the receipt's two dates travel to a new iPhone restored from your
 backup. Your subscription doesn't need them: it belongs to your Apple ID.
 **Recorded rides are not in iCloud Backup**, so your location history is not
 sent to iCloud. The app's settings are kept where iOS keeps every app's
-settings, and iCloud Backup takes those with the rest.
--->
+settings, and iCloud Backup takes those with the rest (see "What the settings
+hold" above).
+<!-- /ios -->
 
 ---
 
@@ -351,8 +471,8 @@ serves OpenStreetMap data. While you have a signal, the app requests the map
 tiles for the area on screen, and when you download an offline region it
 requests the tiles for that region.
 
-**This means OpenFreeMap can see, from your IP address, roughly where you are
-looking.** It is the ordinary cost of an online map. Once you have downloaded a
+**Map tiles show OpenFreeMap the area you are looking at, which is where you
+are when the map follows you.** It sees your IP address with them. That is how any online map works. Once you have downloaded a
 region it is served from the phone and no request is made.
 
 No API key is used and no account exists, so nothing links one session to
@@ -360,8 +480,12 @@ another beyond what an IP address implies.
 
 ### 3. Address search
 
-Typing a place name into the search box sends that text to OpenStreetMap's
-Nominatim service at `https://nominatim.openstreetmap.org/search`.
+As you type in the search box, the app shows what it can find on the phone
+already. Nothing is sent while you type. When you press search on the
+keyboard, or say the place into the microphone, the app sends it to OpenStreetMap's Nominatim
+service at `https://nominatim.openstreetmap.org/search`, run by the
+OpenStreetMap Foundation. It goes there directly from your phone, not through
+us, and we never see it.
 
 What is sent:
 
@@ -369,8 +493,38 @@ What is sent:
 - `countrycodes=gb`, which limits the answers to Great Britain. The app only
   covers England and Wales, so this says nothing about you that using the app
   does not,
+- three settings for the answer: its format, how many results, and no
+  address details,
 - a `User-Agent` of `TrailBlazer/0.1 (offline green-lane navigation)`, which
   Nominatim's usage policy requires.
+
+Nothing else is sent.
+
+**It is not linked to you.** The request carries no account, no name, no
+device identifier and no cookie, so nothing the app adds ties one search to
+another or to you. Your IP address goes with it, as with any request: see
+below. The app sends it only to get an answer to your search, not for
+advertising or tracking. What the OpenStreetMap Foundation does with it is
+covered by its privacy policy (linked below).
+
+<!-- ios -->
+**On iPhone**, in the App Store's privacy terms, this is "Search History": not
+linked to you, not used to track you, and used only to make the app work. The
+app's App Store privacy details list two data types as collected: this, and
+"Coarse Location", for the map tiles that show OpenFreeMap the area on screen
+(§2), also not linked to you, not used to track you, and used only to make the
+app work. The app itself never sends email; if you choose to email us, that message is
+handled as described in "Report a problem".
+<!-- /ios -->
+
+<!-- android -->
+**On Android**, the Data safety section of the app's Google Play page says
+what Google Play counts as collected and shared. That includes this search
+history, the approximate location that map tiles show OpenFreeMap (§2), and
+what group ride sends to the riders in your group (§7). Emails you send us are not
+listed there, because the app does not send them: your own email app does,
+when you press Send.
+<!-- /android -->
 
 **Your position is not sent.** It used to be: a `viewbox` a degree of latitude
 and longitude either side of you, so that nearby results came back first. That
@@ -389,21 +543,24 @@ missing, which the app cannot read and says so instead.
 
 A postcode is searched on the phone first, in the place names you have
 downloaded. When they hold that postcode, nothing is sent, and nor is the part
-of it you have typed so far once it reaches the sector ("SA38 9"), even if you
-pause there. If you search straight after opening the app, a postcode waits a
-moment for the place names to finish opening before anything is sent. When they
+of it you have typed so far once it reaches the sector ("SA38 9"). If you
+search straight after opening the app, a postcode waits a
+moment for the place names to finish loading before anything is sent. When they
 do not hold it (you have not downloaded the place names for that area, or the
 postcode is not in them), a postcode is sent like a place name, because
 otherwise it could not be looked up at all. The first half of a postcode on its
 own ("SA38", a district of thousands of homes) is sent like any other text if
-you pause on it. Download the place names for the areas you ride and your
+you search for it. Download the place names for the areas you ride and your
 postcodes stay on the phone.
 
-A request is only made when you have typed at least three characters, and typing
-is debounced by 600 ms, so a typed word is one request rather than fifteen.
+A request is only made when you press search on the keyboard or say a place
+into the microphone, so one search is one request, however slowly you type.
+Lookups are at least 1 second apart.
 
 Nominatim is operated by the OpenStreetMap Foundation under
 [their privacy policy](https://wiki.osmfoundation.org/wiki/Privacy_Policy).
+The Foundation is a UK company. It keeps request data in the UK and the
+Netherlands, with backups elsewhere in the EU.
 
 ### 4. Speech recognition
 
@@ -412,21 +569,30 @@ hands-free control keeps working with no signal. The microphone is only active
 while a command is being listened for — a few seconds after you press the
 button — and audio is never recorded, stored or sent by this app.
 
-Be aware of the honest limit: the app requests on-device recognition but cannot
-force it. If your phone has no local speech model installed, the platform's own
-recogniser may fall back to a network service run by your device vendor, and
-that speech would be handled under that vendor's policy, not ours. The
-microphone is declared optional in the app's manifest, and the voice button can
-simply be left alone.
+<!-- android -->
+**On Android**, be aware of the honest limit: the app requests on-device
+recognition but cannot force it. If your phone has no local speech model
+installed, the platform's own recogniser may fall back to a network service
+run by your device vendor, and that speech would be handled under that
+vendor's policy, not ours. The microphone is declared optional in the app's
+manifest, and you can simply ignore the voice button.
+<!-- /android -->
+
+<!-- ios -->
+**On iPhone** the app requires recognition on the phone. If your iPhone cannot
+recognise speech on the phone, the voice button says so and does nothing,
+rather than sending your voice anywhere.
+<!-- /ios -->
 
 ### 5. The subscription and billing
 
 <!-- android -->
-The app is free. The monthly subscription goes through Google Play. Google
+**On Android** the app is free. The monthly subscription goes through Google Play. Google
 receives whatever Google receives for any Play subscription — your Play account,
-your payment details, and the subscription you took out. We never see your
-payment details and we operate no server that receives anything about your
-subscription.
+your payment details, and the subscription you took out. The store takes your payment; we never see your card or payment details.
+The store's reports to us show the subscription itself — such as an order
+number, the product, the country and whether it is active — not your payment
+details.
 
 The app asks Play for the subscription's local price and title, and asks Play
 whether your account has an active subscription, when the app opens, when you
@@ -438,12 +604,14 @@ Google's billing library also sends Google its own diagnostic figures about
 how the purchase screens performed, as it does in every app that sells through
 Play. We never receive them.
 <!-- /android -->
-<!-- ios
-The app is free. The monthly subscription goes through Apple's App Store.
+<!-- ios -->
+**On iPhone** the app is free. The monthly subscription goes through Apple's
+App Store.
 Apple receives whatever it receives for any App Store subscription — your
-Apple ID, your payment details, and the subscription you took out. We never see
-your payment details and we operate no server that receives anything about your
-subscription.
+Apple ID, your payment details, and the subscription you took out. The store takes your payment; we never see your card or payment details.
+The store's reports to us show the subscription itself — such as an order
+number, the product, the country and whether it is active — not your payment
+details.
 
 The app asks the App Store for the subscription's local price and title, and
 asks it whether your Apple ID has an active subscription, when the app opens,
@@ -452,19 +620,30 @@ phone only. **Manage subscription** opens your subscriptions in the App Store.
 What the app writes down locally is described under "What the receipt holds"
 above.
 
-Apple's handling of an App Store purchase is covered by Apple's privacy policy.
--->
+Apple handles the payment, and we never see your card or bank details. To
+cancel, open the Settings app on your iPhone, tap your name, then tap
+Subscriptions. Or tap **Manage subscription** in the app, which opens that same
+Subscriptions page. Apple's handling of an App Store purchase is covered
+by [Apple's privacy policy](https://www.apple.com/legal/privacy/).
+<!-- /ios -->
 
-When the app opens, it asks the Play Store app on your phone whether a newer
-version of Trail Blazer is available, using Google's in-app updates library.
-That question goes to Play, not to us, and if you tap Update, Play downloads
-and installs the new version as it would from the store. We never receive
-anything from it.
+<!-- android -->
+**On Android**, when the app opens, it asks the Play Store app on your phone
+whether a newer version of Trail Blazer is available, using Google's in-app
+updates library. That question goes to Play, not to us, and if you tap
+Update, Play downloads and installs the new version as it would from the
+store. We never receive anything from it.
 
 Google's handling of a Play purchase is covered by the
 [Google Privacy Policy](https://policies.google.com/privacy).
+<!-- /android -->
 
-### 6. Rain and river readings, and the weather forecast
+<!-- ios -->
+**On iPhone** the app does not ask about updates itself: the App Store
+handles them.
+<!-- /ios -->
+
+### 6. Rain and river readings
 
 Some lanes are soft after rain, and some cross a ford. For those, the lane's
 detail page shows how much rain has fallen at the nearest rain gauge and how
@@ -499,60 +678,49 @@ lanes in, at about the scale of a few counties, and roughly when you are
 looking. It is the same kind of inference as downloading a region's map data,
 and it is made more often.
 
-**The weather forecast** comes the same way. The plan editor, the day-out
-sheet and the day-out preview show what the forecast says for the hours of the
-ride you are planning, and the lane detail page adds the rain forecast for the
-next 24 hours to a lane's rain line. For that the app fetches one more small
-public file per region:
-
-- `published/forecast/<region>.json`, fetched when one of those planning
-  screens is open with a ride on it, and when you open a lane that has a rain
-  gauge,
-
-from the same host as above. It is built four times a day by the same
-scheduled job that publishes the rain readings, from MET Norway's public
-forecast (api.met.no), for a grid of points about 28 km apart covering the
-whole region. **Your phone never contacts MET Norway.** It downloads the whole
-region's file and picks out the grid points nearest your stops on the phone.
-
-What is sent: the same kind of plain HTTPS request, with no identifier and no
-query. **Neither your position nor your plan's stops are sent.** The region is
-worked out on the phone from the stops, the same way as for a lane.
-
-What the other end can see: your IP address, which region's forecast you asked
-for, when, and how often - which says which part of the country you are
-planning a ride in, at the scale of a few counties. Nothing is fetched in the
-background or while the app is closed: only while a planning screen or a lane's
-page is open. With no signal, the last forecast fetched is shown with its age,
-and none is shown once it is more than 12 hours old.
-
 ### 7. Group ride: your position, to the riders you chose
 
 If you ride with other people who use Trail Blazer, you can see each other on
 the map. **It is off unless you are in a group and switch on "Share my
 position on this ride"**, and being in a group is not the same as sharing.
 
-- **Who receives it.** The phones of the riders in your group, and no one
-  else. A group is joined by scanning a code another member shows you; that
+- **Who receives it.** The phones of the riders you chose: the riders in
+  your group. A group is joined by scanning a code another member shows you; that
   code carries the group's key, and the key is what lets a phone read the
-  group's positions. So anyone who scans or photographs the code can see the
+  group's positions. So anyone who scans the code, or takes a photo of it, can see the
   group. The app says so on the screen before it shows the code. Nobody can be
   removed from a group, because there is no server to remove them from; the
   way to leave someone out is to start a new group.
-- **Scanning a code.** The camera is used only to read the code, on your
+
+<!-- android -->
+- **Scanning a code.** **On Android:** the camera is used only to read the code, on your
   phone, by an open-source reader (ZXing) built into the app. Nothing it sees
   is kept or leaves your phone, and no Google scanner or ML Kit is involved.
   The app asks for the camera only when you tap Scan a code, and a code sent
   to you as text can be pasted instead.
-- **How it travels.** Phone to phone, over Bluetooth and Wi-Fi, using Google's
+- **How it travels.** **On Android:** phone to phone, over Bluetooth and Wi-Fi, using Google's
   Nearby Connections, which runs inside Google Play services on your phone.
   Google says Nearby Connections sends Google performance figures: how fast
   and reliably connections are made, the phone model, the country, the Play
   services version and the app's package name. That goes from Play services to
   Google, carries no position or anything you share, and never reaches us.
-  Positions are passed along through the group, so a rider at the back of a
+  Positions are passed on through the group, so a rider at the back of a
   long line still sees the one at the front. **Nothing goes through a server of
-  ours: there is no server of ours.**
+  ours** (see "Who receives what, and where").
+<!-- /android -->
+
+<!-- ios -->
+- **Scanning a code.** **On iPhone:** the camera is used only to read the code,
+  on your phone, by the iPhone's own camera software. Nothing it sees is kept
+  or leaves your phone. The app asks for the camera only when you tap Scan a
+  code, and a code sent to you as text can be pasted instead.
+- **How it travels.** **On iPhone:** only through a relay that one of your group
+  runs (next point). An iPhone does not share phone to phone, so without a
+  relay in the group's code it cannot share your position at all, and the app
+  says so. **Nothing goes through a server of ours** (see "Who receives what,
+  and where").
+<!-- /ios -->
+
 - **Through a relay, if your group has one.** One rider may run a small relay
   on their own account (a free Cloudflare account, or their own computer),
   from the open-source software at github.com/LPSD-1/trailblazer-relay, and
@@ -569,11 +737,12 @@ position on this ride"**, and being in a group is not the same as sharing.
   nothing about who is in it. A plan you send to the group goes as parts of
   another fixed size, so the relay (or a Bluetooth scanner nearby) can tell
   that a plan was sent and roughly how big it is, but not what is in it. The relay can still tell which packets a connected phone
-  sent for itself and which it passed along for someone else, and from how
-  many arrive, and when, it can guess how many riders there are, including
-  riders whose packets only reach it passed along by another phone. It keeps the last 64 packets in memory only, so a rider
-  joining mid-ride sees everyone at once, and forgets a room when the last
-  phone leaves. Without a relay in the group's code, the app opens no
+  sent for itself and which it passed on for someone else. It can guess
+  how many riders there are from how many packets arrive, and when. That
+  includes riders whose packets reach it only because another phone passed
+  them on. It keeps only the last 64 packets, in memory, so a rider who joins
+  mid-ride sees everyone at once. It forgets a room when the last phone
+  leaves. Without a relay in the group's code, the app opens no
   internet connection for group ride at all. "Test the relay", in Settings,
   connects to the relay you type in, with the token you type in, sends one
   random test message through a throwaway room, and checks that your group's
@@ -585,9 +754,10 @@ position on this ride"**, and being in a group is not the same as sharing.
   two groups cannot be matched). When sharing ends and you are still in the
   group, one last "stopped sharing" message goes too, with no position in it:
   see "How long". Every packet is encrypted with AES-256-GCM under a key only
-  the members hold, and every packet is the same size whatever your name, so a phone that is not in the group, or anything in
-  between, sees only noise: it can see that packets are being sent, from
-  where, and how often, but not what they say.
+  the members hold. Every packet is the same size whatever your name. So a
+  phone that is not in the group, or anything in between, sees only noise: it
+  can see that packets are being sent, from where, and how often, but not
+  what they say.
 - **A plan you choose to send.** "Share a plan with the group" sends one of
   your plans - its stops, their names, the style of each leg, any regroup
   points, and the line your phone worked out for it - **or one of your
@@ -596,8 +766,8 @@ position on this ride"**, and being in a group is not the same as sharing.
   files you imported **and rides you recorded yourself**, so a recorded ride,
   the history of where you rode, can go to your group this way. A track
   goes as a plan along it: up to 30 stops on its ends and bends, the track
-  itself (simplified) as its line, and its name, which for a recorded ride
-  is the date and time it started unless you renamed it; the plan's id is
+  itself (simplified) as its line, and its name. For a recorded ride the name
+  is the date and time it started, unless you renamed it. The plan's id is
   made from the track's, which for a recorded ride also says when it started.
   The times, speeds and heights of the points along it are not sent. A plan
   with a leg set to go "via my tracks" sends that leg as the places it joins
@@ -610,7 +780,8 @@ position on this ride"**, and being in a group is not the same as sharing.
   line is then kept on your phone as the group's shared route (under
   `group_ride.shared_route.v1`, see "What the settings hold") until you put it
   away, leave the group, or 12 hours pass.
-- **What a stranger nearby can see.** That a phone near them is using this
+<!-- android -->
+- **What a stranger nearby can see.** **On Android:** that a phone near them is using this
   feature, and which phones are riding together. While sharing (and while a
   goodbye goes out after it: see "Leaving"), the phone advertises a short tag worked out from the group's key and the date - never
   your name - and every phone in the group advertises the same tag all day. So
@@ -619,6 +790,14 @@ position on this ride"**, and being in a group is not the same as sharing.
   again later that day. They cannot tell whose phones they are, and the tag
   changes each day, so they cannot tell it is the same group, or follow the
   same phone, from one day to the next.
+<!-- /android -->
+
+<!-- ios -->
+- **What a stranger nearby can see.** **On iPhone:** nothing from the app. An
+  iPhone shares only through the relay, so it sends no signal over Bluetooth
+  for a scanner nearby to pick up.
+<!-- /ios -->
+
 - **How long.** Until you switch it off, the ride you are recording finishes,
   or 12 hours pass, whichever is first. While it is on, the ongoing
   notification says "Sharing your position with" your group, and how many
@@ -634,7 +813,7 @@ position on this ride"**, and being in a group is not the same as sharing.
 - **"I need help".** One tap marks every packet you send with a call for help
   until you cancel it. The other riders' phones sound an alarm and show where
   you are. It does not contact the emergency services.
-- **What is kept.** On your phone: the group and its key, in Android's
+- **What is kept.** On your phone: the group and its key, in the phone's
   encrypted storage, and the name and send counts listed under "What the
   settings hold". The positions of the other riders are held in memory while
   you share and are not written anywhere. One exception: a rider's call for
@@ -659,38 +838,121 @@ position on this ride"**, and being in a group is not the same as sharing.
   copied since is left alone. A copy your keyboard's history has already
   kept is out of the app's reach: clear it there.
 
-The permissions it needs are listed under "Location" below, and Android asks
+The permissions it needs are listed under "Location" below, and the phone asks
 for them the first time you switch sharing on, after the app has said what
 they are for.
+
+### Who receives what, and where
+
+The app talks directly to the services below. Each is run by someone else,
+not by us. Each receives your IP address and what you asked for, decides for itself what it does with them,
+and is an independent controller of them under its own privacy policy. We run
+no server of our own: nothing the app sends reaches us, we send these services
+nothing ourselves, and we receive nothing back from them about you.
+
+- **Map data, and rain and river readings (§1, §6):** GitHub Pages and GitHub
+  Releases, run by GitHub. See
+  [its privacy policy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
+  for where it keeps data.
+- **Routing tiles (§1):** brouter.de. See
+  [its privacy policy](https://brouter.de/privacypolicy.html) for where it
+  keeps data.
+- **The online basemap (§2):** OpenFreeMap (`tiles.openfreemap.org`). See
+  [its privacy policy](https://openfreemap.org/privacy/) for where it keeps
+  data.
+- **Place search (§3):** the OpenStreetMap Foundation, a UK company, which
+  keeps request data in the UK and the Netherlands, with backups elsewhere in
+  the EU ([its privacy policy](https://osmfoundation.org/wiki/Privacy_Policy)).
+- **The subscription (§5):** the store you got the app from, under its own
+  privacy policy.
+- **A group's relay (§7):** whoever in your group runs it, wherever they run
+  it. It cannot read what passes through it.
+
+<!-- android -->
+**On Android** two more: speech recognition that falls back to the network
+goes to the service your phone's maker chose (§4), and the update check goes
+to Google Play (§5), each under its own policy.
+<!-- /android -->
+
+**Emails you send us are different.** The app does not send them, and we are
+their controller. They arrive in our Gmail mailbox. Google runs Gmail under
+[its own privacy policy](https://policies.google.com/privacy) and may store
+mail in the US. See "Report a problem" and "Data retention".
+
+---
+
+## Report a problem
+
+**Settings → Help → Report a problem** helps you email us about a fault. The
+app sends nothing itself.
+
+**Write report** opens your phone's share sheet with a message ready: our
+address, a subject with the app's version, and the app's version and build
+and your phone's system version (and its make and model, where the app can
+read them). You choose the app that sends it, usually your email app, and you
+can change or delete any of it. Nothing goes until you press Send.
+
+If you tick **Attach the fault-finding file**, a copy of that file goes with
+it: what the app has loaded and concluded, your map settings, and the names of
+the lanes within about 170 m of where it last had a fix, with its verdict on
+each. It holds no coordinates, but it does say roughly which lanes you were
+near. Leave the box unticked and nothing is attached.
+
+What reaches us is the message you send: what you wrote, the details above,
+the address you sent it from, and anything your email service adds. It travels
+through the email or messaging service you chose, under that service's own
+policy. We use it only to look into the problem, to reply to you, to keep a
+record of what was reported and what we did, and to defend a legal claim if
+one is ever made. How long we keep it is under "Data retention".
+
+We read reports in Gmail, Google's email service. Google handles the
+mailbox under its own [privacy policy](https://policies.google.com/privacy)
+and may store mail in the US, which UK law covers under the UK-US data bridge.
+
+We read and sort every report ourselves, in Gmail. We use it only to look into
+the problem and to reply to you, and to keep the record and defend the claims
+described above. We delete it as set out in "Data retention".
 
 ---
 
 ## What does not happen
 
-Verified against the source and the dependency lockfile:
+We have checked the app's code and its library list, and none of the
+following is in it:
 
 - **No analytics or telemetry of ours.** There is no Firebase, no Crashlytics, no
   Sentry, no Amplitude, no Mixpanel, no Segment, no PostHog, no Bugsnag and no
   App Center anywhere in the project. Nor is there Google's ML Kit, which
-  Google says reports usage and performance metrics to Google: the group code
-  is read by ZXing instead, and the release check
-  (`tool/check_release_apk.py`) fails any build whose code contains ML Kit or
-  the Play services Vision API.
+  Google says reports usage and performance metrics to Google.
+
+<!-- android -->
+**On Android** the group code is read by ZXing instead of ML Kit, and the
+release check (`tool/check_release_apk.py`) fails any build whose code
+contains ML Kit or the Play services Vision API.
+<!-- /android -->
+
+<!-- ios -->
+**On iPhone** the group code is read by the iPhone's own camera software, on
+the phone.
+<!-- /ios -->
+
 - **No advertising, and no advertising identifier.**
-- **No account, no sign-in, no email address collected.**
+- **No account, no sign-in, no email address collected.** If you email us, for
+  example with Report a problem, we see the address you send from: see
+  "Report a problem".
 - **No contacts, calendar or SMS access, and no permission to read your photos
   or files.** The safety check-in's number is typed, and its text is sent
   by you from your own messaging app: the app holds no permission to read or
-  send messages. The app sees only a file you pick yourself in Android's picker: a
-  track file to import (GPX, KML, KMZ, GeoJSON, FIT or TCX), or a photograph to
+  send messages. The app sees only a file you pick yourself in the phone's own picker: a
+  track file to import (GPX, KML, KMZ, GeoJSON, FIT or TCX), or a photo to
   attach to a lane note, which is copied
-  into the app's private storage (see "Lane photographs").
+  into the app's private storage (see "Lane photos").
 - **No server of ours.** Every network destination named above belongs to a
   third party publishing static data or providing a public service. Group ride
-  (§7) goes from phone to phone and uses no server of ours; the only server
-  it can use is a relay one of your group's riders runs themselves, and that
-  relay cannot read what passes through it.
-- **Recorded rides are never uploaded**, including to Android backup.
+  (§7) goes from phone to phone, or through a relay one of your group's
+  riders runs themselves, which cannot read what passes through it. No server
+  of ours is involved.
+- **Recorded rides are never uploaded**, including to your phone's cloud backup.
 - **A handlebar remote needs no Bluetooth permission, and nothing is sent.**
   It pairs in your phone's own Bluetooth settings as a keyboard, and the app
   reads its button presses the way any app reads a keyboard. The app does not
@@ -705,29 +967,37 @@ Verified against the source and the dependency lockfile:
 | `maplibre_gl` | Renders the map and stores offline regions | Fetches map tiles (see §2) |
 | `pmtiles` | Reads downloaded satellite imagery archives | No |
 | `geolocator` | Position fixes and the recording foreground service | No |
-| `in_app_update` | Asks the Play Store on the phone whether a newer version is available, and installs it when you tap Update | Talks to the Play Store app on the phone, not to us |
 | `sensors_plus`, `flutter_compass` | Roll, gradient, compass heading, and whether the phone is moving or lying still | No |
 | `latlong2` | Coordinate arithmetic | No |
 | `gpx`, `xml` | Reading and writing GPX files, and reading KML and TCX. A KML's network link is never followed | No |
 | `cryptography`, `crypto`, `convert` | Decrypting downloaded packs; hashing the purchase token | No |
-| `http` | Fetching the data index, packs, address search, the rain and river readings and the weather forecast | Yes (see §1, §3, §6) |
+| `http` | Fetching the data index, packs, address search, and the rain and river readings | Yes (see §1, §3, §6) |
 | `background_downloader` | Hands pack downloads to the OS so they survive the app closing | Yes (see §1) |
 | `shared_preferences` | Settings, on the device | No |
 | `sqlite3`, `sqlite3_flutter_libs` | Reads the downloaded lane data, which is an SQLite database, and applies updates to it | No |
 | `path_provider`, `path` | Local storage | No |
-| `permission_handler` | Asks for the notification permission when a ride starts, "Nearby devices" (and, up to Android 12, location) when group sharing first starts, and the camera when you tap Scan a code | No |
+| `permission_handler` | Asks for the notification permission when a ride starts, the permissions group sharing needs when it first starts (see "Location"), and the camera when you tap Scan a code | No |
 | `wakelock_plus` | Keeps the screen awake while riding | No |
 | `battery_plus` | Reads the battery level and whether it is charging, so the app can do less when the battery is low | No |
-| `file_picker` | Choosing track files to import (GPX, KML, KMZ, GeoJSON, FIT, TCX), or a photograph for a lane note | No |
+| `file_picker` | Choosing track files to import (GPX, KML, KMZ, GeoJSON, FIT, TCX), or a photo for a lane note | No |
 | `share_plus` | Sharing a GPX file you exported | No |
-| `flutter_secure_storage` | Keeps the group ride's key and this install's group secret in Android's encrypted storage (§7) | No |
-| `nearby_connections` | Group ride, phone to phone, through Google Nearby Connections in Play services (§7) | Your positions: no, Bluetooth and Wi-Fi between phones. Play services sends Google its own connection statistics (§7) |
+| `flutter_secure_storage` | Keeps the group ride's key and this install's group secret in the phone's encrypted storage (§7) | No |
 | `pretty_qr_code` | Draws the group ride's code on screen | No |
-| ZXing (`com.journeyapps:zxing-android-embedded`, `com.google.zxing:core`; an Android library, Apache-2.0) | Reads a group ride's code through the camera, on the phone, when you tap Scan a code | No |
 | `speech_to_text`, `flutter_tts` | The voice button and spoken replies | Platform-dependent (see §4) |
-| `in_app_purchase`, `in_app_purchase_android`, `in_app_purchase_platform_interface` | Google Play billing | Yes (see §5) |
+| `in_app_purchase`, `in_app_purchase_platform_interface` | The subscription, through the app store | Yes (see §5) |
 | `in_app_purchase_storekit` | App Store billing on iPhone, including whether the free month is still open to your Apple ID | Yes, to Apple (see §5) |
 | `collection`, `intl` | Utilities and formatting | No |
+
+<!-- android -->
+**On Android** the app also uses these:
+
+| Package | What it does | Network? |
+|---|---|---|
+| `in_app_purchase_android` | Google Play billing | Yes (see §5) |
+| `in_app_update` | Asks the Play Store on the phone whether a newer version is available, and installs it when you tap Update | Talks to the Play Store app on the phone, not to us |
+| `nearby_connections` | Group ride, phone to phone, through Google Nearby Connections in Play services (§7) | Your positions: no, Bluetooth and Wi-Fi between phones. Play services sends Google its own connection statistics (§7) |
+| ZXing (`com.journeyapps:zxing-android-embedded`, `com.google.zxing:core`; an Android library, Apache-2.0) | Reads a group ride's code through the camera, on the phone, when you tap Scan a code | No |
+<!-- /android -->
 
 ---
 
@@ -739,6 +1009,9 @@ To show where you are on the map, to record a ride, to drive the dashboard
 gauges, and to work out a route from where you are standing.
 
 ### What is requested
+
+<!-- android -->
+**On Android:**
 
 The app declares `ACCESS_FINE_LOCATION` and `ACCESS_COARSE_LOCATION`. It asks
 for them the first time it needs a position — at first run, or when you start a
@@ -824,10 +1097,37 @@ you tap **Scan a code**. Android asks for it then, and only then, after the
 app's own line: "The camera is used only to read the code; nothing it sees
 leaves your phone." It is never asked for at install or when the app starts.
 The code is read on your phone by ZXing, an open-source reader built into the
-app; the picture is not kept, not saved and not sent anywhere, and no Google
+app; what the camera sees is not kept, not saved and not sent anywhere, and no Google
 scanning service is involved. If you say no, **Paste a code** still joins a
 group from a code someone sent you as text. The camera is marked as not
 required, so the app still installs on a device without one.
+<!-- /android -->
+
+<!-- ios -->
+**On iPhone:**
+
+- **Location**, "While Using the App" only. The app asks the first time it
+  needs a position, and says why on screen first. It never asks for "Always".
+  While you record a ride with the screen off, the iPhone keeps giving the app
+  your position because the ride is running, and shows its blue location
+  indicator at the top of the screen so you can see it.
+- **Notifications**, asked the first time something needs one, such as a
+  ride being recorded or a safety check-in. If you refuse, a ride still
+  records without it, and a check-in is not set and the app says why.
+- **Camera**, only when you tap **Scan a code**, to read a group's code on
+  the phone. If you say no, **Paste a code** still works.
+- **Microphone** and **Speech Recognition**, the first time you use the voice
+  button. What you say is recognised on the phone and never sent anywhere.
+- **Motion & Fitness**, which the iPhone may ask about: the app reads the
+  motion sensors only to tell when you are stopped, so GPS drift is not
+  recorded as riding.
+- **Local Network**, only if your group's relay is on your own network.
+- **Photos**: none. A photo for a lane note is picked in the iPhone's own
+  photo picker, which hands the app only the one you pick.
+
+The app does not ask for Bluetooth, contacts, calendars or "Always" location
+on iPhone.
+<!-- /ios -->
 
 ### If you refuse
 
@@ -843,34 +1143,32 @@ Not to us. The one exception is one you switch on yourself: in a group ride
 your position goes to the phones of the riders in your group, encrypted,
 directly from your phone to theirs, or through a relay one of those riders
 runs, which passes it on without being able to read it (§7). The same way,
-to the same riders and no one else, goes a plan or a track you pick in "Share
+to the riders you chose, goes a plan or a track you pick in "Share
 a plan with the group" and send, and a track can be a ride you recorded: a
 history of where you went (§7, "A plan you choose to send").
 
 Your position is not sent when you record, when you download, when you route,
 when you plan, when you search, when you open a lane, or when you buy anything.
 
-Two features that would have sent it were removed rather than kept:
+Two earlier features that would have sent it were removed:
 
 - a coarse box around you, sent to Nominatim to bias address results, dropped
   once it was clear the sorting it helped with was already done on the phone;
-- the first version of the rainfall feature, built in September 2026, which
-  would have sent a position rounded to about 28 km to a weather service to
-  fetch recent rainfall. That version was removed before any release carried
-  it.
+- an earlier version of the rainfall feature, which would have sent a rounded
+  position to a weather service, was removed before any release carried it.
 
-Rainfall is genuinely useful for deciding whether a byway will be soft, so it
-came back in a form that sends no position at all: the app fetches the
-readings for a whole region, from the same host as the map data, and picks out
-the gauge for your lane on the phone. That is §6 above, and it says exactly
-what the other end can see. A promise about your location with an exception in
-it is not the same promise, so the feature was changed to fit the promise
-rather than the other way round.
+Rainfall is useful for deciding whether a byway will be soft, so it works in
+a way that sends no position at all: the app fetches the readings for a whole
+region, from the same host as the map data, and picks out the gauge for your
+lane on the phone. That is §6 above, and it says exactly what the other end
+can see.
 
 The qualification that belongs here: any request to any server carries your IP
 address, and an IP implies a town. That is true of downloading a map pack as
 much as of searching, and it is not something an app can prevent. What it can
-do is not send anything sharper, and it does not.
+do is not send your GPS coordinates, and it does not. But map tiles show
+OpenFreeMap the area you are looking at, which is where you are when the map
+follows you (§2). Download your area and the map asks for nothing.
 
 Offline routing runs entirely on the phone through a routing engine compiled
 into the app — that is why routing tiles are downloaded rather than a route
@@ -889,7 +1187,7 @@ while those tiles are not available), downloaded satellite imagery, and
 downloaded height data for hill shading and 3D. All of it is public data from
 the packs on your phone. What is yours in it is the choosing: the GeoJSON files
 are cut to your map filters (with an "around me" area chosen, to the lanes near
-where you are), and the one of lanes marks the lanes you have starred, so the
+where you are), and a second file marks the lanes you have starred, so the
 map can draw them. They never carry your position itself, your notes or your
 recordings. Nothing outside the device can reach the server, and nothing it
 serves leaves the phone.
@@ -898,20 +1196,21 @@ serves leaves the phone.
 
 ## The free month, and how it is given
 
-The app is free and never locks. Downloading map data needs the monthly
+The app is free to download and never locks you out. Downloading map data needs the monthly
 subscription, and the first month of it is free. The free month is run by the
-store (Google Play or the App Store), once per account, so the app keeps no
+store you got the app from, once per account, so the app keeps no
 install date or trial clock of its own. Everything already downloaded keeps
 working whether you subscribe or not.
 
-Whether or not you ever buy anything, your data stays yours and in reach: the
-app never locks you out of your own rides, waypoints or plans.
+Whether or not you subscribe, your data stays on your phone and within your
+reach: the app never locks you out of your rides, waypoints or plans.
 
 ---
 
 ## Children
 
-Trail Blazer is not directed at children and collects nothing from anyone.
+Trail Blazer is not directed at children. Beyond what this policy describes,
+it collects nothing from anyone.
 
 ## Special category data
 
@@ -930,18 +1229,45 @@ to us, most requests are things you can carry out yourself and immediately:
 - **Export it.** Any ride can be exported to GPX, and **Back up what you have
   put in** in Settings writes out your rides, waypoints, plans and lane notes
   as one file.
-- **Delete it.** Delete individual rides, waypoints and plans in the app; or use
-  Android's "Clear storage" to remove everything the app has written; or
-  uninstall the app, which removes all of it. Note that the licence receipt is
-  the one file included in Android backup, so a reinstall on a phone with backup
-  turned on will restore the months of map updates you paid for — and only
-  that.
-- **Object or complain.** Contact us at the address below. In the UK you may
-  also complain to the Information Commissioner's Office at
-  [ico.org.uk](https://ico.org.uk).
+<!-- android -->
+- **Delete it.** **On Android:** delete individual rides, waypoints and plans in
+  the app; or use Android's "Clear storage" to remove everything the app has
+  written; or uninstall the app, which removes all of it. Note that the licence receipt is the one file included in Android
+  backup, so a reinstall on a phone with backup turned on will restore the
+  record of the months you paid for, and nothing else.
+<!-- /android -->
+<!-- ios -->
+- **Delete it.** **On iPhone:** delete individual rides, waypoints and plans in
+  the app; or delete the app, which removes what it has written. iOS may keep the group ride's key and this install's group secret
+  in the Keychain after the app is deleted: leave your group first to remove
+  its key. Your iCloud Backup keeps what is described under "Backup" until
+  that backup is replaced or deleted.
+<!-- /ios -->
 
 We cannot retrieve, restore or delete your rides on your behalf, because we have
 never had them.
+
+### For emails you have sent us
+
+The one thing of yours we can hold is an email you sent us, such as a problem
+report. For that, you have the right to:
+
+- **Access:** a copy of what we hold about you.
+- **Correction:** have anything wrong in it put right.
+- **Restriction:** have us stop using it, but keep it, while a question about
+  it is settled.
+- **Deletion:** have it deleted.
+- **Object:** you can object at any time to our using your email on the basis
+  of our legitimate interests. We will then stop, unless we have a compelling
+  reason to carry on, such as a legal claim.
+
+Ask at the email address under "Contact". We will reply within one month.
+
+**Complaints.** If you are unhappy with how we have handled your information,
+please complain to us first, at the same address. We will acknowledge your
+complaint without undue delay, and in any case within 30 days. If you are still unhappy, you can complain to the
+Information Commission ([ico.org.uk](https://ico.org.uk)), formerly the
+Information Commissioner's Office.
 
 ---
 
@@ -949,7 +1275,12 @@ never had them.
 
 Data on your phone is kept until you delete it or uninstall the app, except the
 unrecorded trail, which goes as described under "The unrecorded trail". We
-retain nothing, because we receive nothing.
+receive nothing from the app, so we keep nothing from it. An email you send us
+yourself, such as a problem report, is deleted within 6 months of our reply
+closing the report, or 6 months after we receive it if we never reply, or
+within a month of you asking, unless we must keep it for a legal claim. A
+deleted email can stay in Gmail's bin for up to about 30 days before Gmail
+removes it.
 
 ---
 
@@ -965,6 +1296,8 @@ notes.
 
 Lucaspottersoftwaredevelopment@gmail.com
 
+Post: Lucas Potter, 8 Elmhurst Drive, Ipswich, Suffolk, IP3 0PA
+
 ---
 
 ## Map and lane data attribution
@@ -974,6 +1307,5 @@ maps, obtained via [rowmaps.com](https://www.rowmaps.com) and used under the
 [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
 The basemap is OpenStreetMap data under the ODbL, served by OpenFreeMap. Routing
 tiles are published by [brouter.de](https://brouter.de). Address search results
-are ODbL, from OpenStreetMap. Weather forecasts are from MET Norway
-(api.met.no), under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
-summarised for the ride window.
+are ODbL, from OpenStreetMap.
+Satellite imagery is EOxCloudless (https://cloudless.eox.at), under CC BY 4.0. If you tap its credit in the map, your phone's browser opens EOX's website (or the licence page). The app sends nothing to EOX, but, as with any website, EOX can then see your IP address.
