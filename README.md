@@ -5,21 +5,24 @@ of way from local highway authority definitive maps, carried on the phone so
 they work with no signal.
 
 - **[Guide](guide.md)** — how the map reads, downloads, recording, planning,
-  group rides, the voice button, and what to do when something is not working.
+  group rides, spoken guidance, and what to do when something is not working.
 - **[Privacy policy](privacy.md)** — what stays on your phone, the six things
   the app uses the network for, and what Google Play receives. And group ride:
   if you switch it on, your position and the name you chose go to the riders
   in your group, end-to-end encrypted, and to nobody else; so does any plan or
   ride you choose to send them.
+- **[Terms of use](terms.md)** — the terms you agree to when you first open
+  the app, and again if they change.
 - **[Where our data comes from](data-status.md)** — every source the map is
-  built from, how fresh each one is, and the councils doing it well.
+  built from and how fresh each one is.
 - **[Controller profile](controller.md)** — the open specification for handlebar
   controllers, so anyone can build hardware that works with the app.
 
-The guide and the policy are also inside the app, under **Settings → Help**, so
-they can be read at a gate with no signal — they are the same files, published
-from the app's own copies. The controller profile is here only: it is for people
-building hardware, not for riders.
+The guide, the privacy policy and the terms are also inside the app, under
+**Settings → Help**, so they can be read at a gate with no signal. The policy
+and the terms here are exact copies of the app's own; the guide is the app's
+guide with each phone's passages shown and labelled. The controller profile is
+here only: it is for people building hardware, not for riders.
 
 ---
 

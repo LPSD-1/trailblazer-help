@@ -3,7 +3,7 @@
 **Trail Blazer — Offline maps**
 Application id `com.trailblazerofflinemaps`
 
-Last updated: 9 October 2026
+Last updated: 29 October 2026
 
 ## The short version
 
@@ -20,8 +20,9 @@ performance figures, as they do in any app; see sections 5 and 7. None of
 that reaches us.
 <!-- /android -->
 
-Your rides, your waypoints, your saved plans and your settings are written to
-your phone and stay there. They are never uploaded to us.
+Your rides, your waypoints, your saved plans and your settings are kept on
+your phone. They are never uploaded to us. Whether your phone's own backup
+takes them is set out below and under "Backup".
 
 <!-- android -->
 **On Android** they are all left out of Android's own cloud backup on purpose.
@@ -30,7 +31,9 @@ your phone and stay there. They are never uploaded to us.
 <!-- ios -->
 **On iPhone** your rides, waypoints and plans are left out of iCloud Backup on
 purpose. Your settings are kept where iOS keeps every app's settings, and
-iCloud Backup, if you use it, takes those too. See "Backup" below.
+iCloud Backup, if you use it, takes those too. The group ride's key and
+secret are kept in the Keychain, and go into your iPhone's backups: iCloud
+Backup, and an encrypted backup made on a computer. See "Backup" below.
 <!-- /ios -->
 
 Nobody else receives them, except in one case that only you can choose, one
@@ -45,13 +48,17 @@ subscription, and fetching the latest rain and river readings for your region
 when you open a lane that has a rain gauge or a ford.
 
 <!-- android -->
-**On Android** there are two more: speech recognition, which can go to a
-network service if your phone has no speech model of its own (§4), and asking
-the Play Store app whether a newer version of Trail Blazer is out (§5).
+**On Android** there are two more. The app asks the Play Store app whether a
+newer version of Trail Blazer is out (§5). And if you speak a search with the
+search box's mic, it is your phone's own speech input service that hears you,
+not the app, and that service may send what you say to whoever provides it
+(§4).
 <!-- /android -->
 
 <!-- ios -->
-**On iPhone** speech recognition stays on the phone and sends nothing (§4).
+**On iPhone** the app has no speech input of its own. If you dictate a search,
+that is your keyboard's own dictation (Apple's, or the maker's of a keyboard
+you installed), not the app's (§4).
 <!-- /ios -->
 
 Each is described below, including exactly what the other end can see.
@@ -153,7 +160,7 @@ kept" after the table.
 | Rain and river readings | App support directory: `conditions/wet/<region>.json`, `conditions/rivers/<region>.json` | The last rain and river feed fetched for each region, kept so it can be shown with no signal. Public data, but the file names say which regions you have opened lanes in |
 | Offline basemap regions | MapLibre's own tile database | Map tiles for the areas you chose |
 | Licence receipt | `files/licence/receipt.json` | See "What the receipt holds" below |
-| Group ride | The phone's encrypted storage (`flutter_secure_storage`; on iPhone, the Keychain) | The group you are in - its id, its key, the name you know it by, and a relay address if the group has one - and a random secret this install made, from which your id in each group is worked out. Removed when you leave the group, except the secret. A shared route (the line of a plan sent to or taken from the group) is kept in the app's settings under `group_ride.shared_route.v1` until put away, the group is left, or 12 hours pass. See §7 |
+| Group ride | The phone's encrypted storage (`flutter_secure_storage`; on iPhone, the Keychain) | The group you are in - its id, its key, the name you know it by, and a relay address if the group has one - and a random secret this install made, from which your id in each group is worked out. Also, once you have shared your location in the group, the group's id (`group_ride.sent.v1`), and while a call for help you made stands, the time you made it (`group_ride.help.<your id in the group>`). And the number (1 to 15) of the last call for help this phone made (`group_ride.last_help_call.v1`), so that a later call, after the app restarts or after you leave and rejoin the group (you come back under the same id), is not given the same number. Removed when you leave the group, except the secret and that number. See "What the settings hold" for when the group's id and the time of a call go. A shared route (the line of a plan sent to or taken from the group) is kept in the app's settings under `group_ride.shared_route.v1` until put away, the group is left, or 12 hours pass. See §7 |
 | Settings | The app's settings file (`shared_preferences`) | See "What the settings hold" below |
 | Safety check-in | The app's settings file (`checkin.*`), and a private copy for the alarm (see "Safety check-in" below) | Your back-by time, the number you typed, and - only while a check-in is set - where you last were and the text ready to send. See "Safety check-in" below |
 | Fault-finding file | `diagnostics.json` (see below for where) | What the app has loaded and what it concluded: which map data is open, the map settings, and the lanes near its last fix with its verdict on each. No coordinates |
@@ -184,8 +191,10 @@ Backup. Deleting the app removes it.
 **On iPhone, where things are kept.** Tracks, waypoints, plans, lane notes and
 photos are in the app's private Documents folder. Downloaded map data,
 the rain and river readings, the unrecorded trail and the licence receipt are
-in its private Application Support folder. The group ride's key and secret
-are in the iPhone's Keychain. The settings are kept where iOS keeps every
+in its private Application Support folder. The group ride's key, this
+install's group secret, `group_ride.sent.v1`, any
+`group_ride.help.<your id in the group>` and `group_ride.last_help_call.v1`
+(see "What the settings hold") are in the iPhone's Keychain. The settings are kept where iOS keeps every
 app's settings. What of this goes into iCloud Backup is under "Backup" below.
 <!-- /ios -->
 
@@ -307,12 +316,24 @@ The complete set of keys is:
   shown, so it's shown once),
   `settings.brightness`, `settings.map_ui_scale` (how big the map's buttons
   are drawn), `settings.lock_button_scale` (how big the Hold button on the
-  locked screen is drawn),
+  locked screen is drawn), `settings.line_thickness` (how thick roads, lanes,
+  closures and your route are drawn on the map: a number),
   `settings.screen_mode`, `settings.screen_mode.after_dark` (whether the
   screen goes unlit by itself after sunset, and whether it last did so for
   dark or for light - no place and no time), `settings.roadbook_tab`,
+  `map.roadbook_slim` (whether the road book card on the map is shrunk to one
+  line: on or off, kept on the phone like the other settings),
   `map.basemap`,
-  `map.chrome_mode`, `map.show_gauges`, `map.orientation`, `map.lane_filters`,
+  `map.chrome_mode`, `map.show_gauges`, `map.hide_route_cards_locked`
+  (whether the route cards - the turn and journey cards, and the notes under
+  them - are hidden while the screen is locked (a closure ahead still shows
+  for a few seconds): on or off, kept on the phone like the other settings),
+  `map.orientation`, `map.lane_filters`,
+  `map.marker_position` (whether your position marker sits lower on the
+  screen, with more road ahead of you, or in the middle of the map),
+  `map.zoom_lock` (the zoom level the map is held at while you have locked
+  the zoom; removed when you unlock it; not the same as
+  `settings.locked_zoom` above, which is for when the screen is locked),
   `map.lane_overview_mode`, `map.tro_filter`, `map.hillshade`,
   `map.heightColours`, `map.multidirectional`, `map.terrainExaggeration`,
   `map.terrain3d`, `map.buildings3d`, `dashboard.gauges`,
@@ -336,7 +357,8 @@ The complete set of keys is:
   (a date), and `regions.plannedPieces`: the map areas of a download still in
   progress (each area's name and the rectangle it covers, which for a download
   along a plan follows that plan), so a download stopped by the app being
-  closed can carry on; each area is removed when it finishes or you stop it.
+  closed can carry on when you next open the app; each area is removed when it
+  finishes or you stop it.
 - Routing and planning: `routing.style`, `routing.includeTracks`,
   `routing.avoid_closures`, `journey.travel_mode`, `journey.travel_mode.rides`,
   `dayout.km`, `dayout.lanes`, `plan.editor.draft` (see above), and one
@@ -392,7 +414,30 @@ The complete set of keys is:
   or 12 hours after it was taken. The group itself - its key - and this install's
   secret are NOT in this file: they are in
   the phone's encrypted storage, under `group_ride.active_group.v1` and
-  `group_ride.install_secret.v1` (see the storage table above).
+  `group_ride.install_secret.v1` (see the storage table above). Two more
+  group ride items are kept there too, beside the group:
+  `group_ride.sent.v1`, the group's id, written once you have shared your
+  location in the group, so that leaving still tells the others you have
+  gone; it is removed when you leave the group or join another. And one
+  `group_ride.help.<your id in the group>`, written while a call for help you
+  made stands: the time you made it (a time, not a place). While the app is
+  open, it is removed when you cancel the call, switch off sharing, finish
+  your recorded ride, reach the 12-hour sharing limit, or leave the group or
+  join another. If the app was closed while the call stood, it is kept until
+  you next share: the call is then taken up again,
+  or removed if it was made 12 hours or more before. Earlier versions of the
+  app kept it in the settings file under the same name; it is moved, or
+  removed there, the next time you make or cancel a call for help, or share
+  again with one still standing. Neither item is a place. A third is kept
+  there as well: `group_ride.last_help_call.v1`, the number (1 to 15) of the
+  last call for help this phone made, kept only so that a later call, after
+  the app restarts or after you leave and rejoin the group (you come back
+  under the same id), is not given the same number. It is a number, not a
+  place. It is replaced by your next call's number, and it is not removed
+  when you leave the group. When deleting the app removes it is under
+  "Delete it", and whether it goes into a backup under "Backup". Over the
+  network it leaves your phone only during a call for help, inside
+  the packets your phone sends to your group (see §7).
 
 `ride.odometer_metres` is a running total of distance. It is a number, not a
 route.
@@ -434,6 +479,15 @@ backup. Your subscription doesn't need them: it belongs to your Apple ID.
 sent to iCloud. The app's settings are kept where iOS keeps every app's
 settings, and iCloud Backup takes those with the rest (see "What the settings
 hold" above).
+
+Everything the app keeps in the Keychain - the group ride's key, this
+install's group secret, `group_ride.sent.v1`,
+`group_ride.help.<your id in the group>` and `group_ride.last_help_call.v1`
+(see "What the settings hold") - is
+saved in a way that is not tied to this phone. So it goes into your iPhone's
+backups: iCloud Backup, and an encrypted backup made on a computer. Restoring
+the phone from one of those backups can bring it back. None of it is synced
+through iCloud Keychain.
 <!-- /ios -->
 
 ---
@@ -482,14 +536,21 @@ another beyond what an IP address implies.
 
 As you type in the search box, the app shows what it can find on the phone
 already. Nothing is sent while you type. When you press search on the
-keyboard, or say the place into the microphone, the app sends it to OpenStreetMap's Nominatim
+keyboard, the app sends it to OpenStreetMap's Nominatim
 service at `https://nominatim.openstreetmap.org/search`, run by the
 OpenStreetMap Foundation. It goes there directly from your phone, not through
 us, and we never see it.
 
+<!-- android -->
+**On Android** you can also speak a search with the search box's mic (§4).
+What your phone's speech input heard is sent in the same way, as soon as it
+has been heard, as if you had typed it and pressed search.
+<!-- /android -->
+
 What is sent:
 
-- the text you typed,
+- the text you typed (or, if you spoke it, the words your phone's speech
+  input heard),
 - `countrycodes=gb`, which limits the answers to Great Britain. The app only
   covers England and Wales, so this says nothing about you that using the app
   does not,
@@ -553,8 +614,9 @@ own ("SA38", a district of thousands of homes) is sent like any other text if
 you search for it. Download the place names for the areas you ride and your
 postcodes stay on the phone.
 
-A request is only made when you press search on the keyboard or say a place
-into the microphone, so one search is one request, however slowly you type.
+A request is only made when you press search on the keyboard (or use the
+search box's mic, where there is one), so one search is one request, however
+slowly you type.
 Lookups are at least 1 second apart.
 
 Nominatim is operated by the OpenStreetMap Foundation under
@@ -562,26 +624,39 @@ Nominatim is operated by the OpenStreetMap Foundation under
 The Foundation is a UK company. It keeps request data in the UK and the
 Netherlands, with backups elsewhere in the EU.
 
-### 4. Speech recognition
+### 4. Speaking a search, and the spoken warnings
 
-The voice button asks the platform for **on-device** recognition, so that
-hands-free control keeps working with no signal. The microphone is only active
-while a command is being listened for — a few seconds after you press the
-button — and audio is never recorded, stored or sent by this app.
+Trail Blazer does not use the microphone and does not recognise speech
+itself. It holds no microphone permission on either phone.
+
+The spoken warnings are the app talking, not listening. The app hands the
+words to your phone's own text-to-speech engine, which reads them aloud. The
+app sends nothing over the network for this. Depending on the engine and its
+settings, the engine itself may download voices, or use an online voice that
+sends the words to its maker, under its maker's policy, not ours.
 
 <!-- android -->
-**On Android**, be aware of the honest limit: the app requests on-device
-recognition but cannot force it. If your phone has no local speech model
-installed, the platform's own recogniser may fall back to a network service
-run by your device vendor, and that speech would be handled under that
-vendor's policy, not ours. The microphone is declared optional in the app's
-manifest, and you can simply ignore the voice button.
+**On Android**, if your phone has a speech input service (for example
+Google's), the search box shows a mic. Tapping it hands over to that
+service's own screen. That service, not Trail Blazer, listens to and
+recognises what you say, and it may send your voice to its provider to do
+so, under that provider's own terms and privacy policy, not ours. The app
+receives only the words it recognised. They go into the search box and are
+sent as soon as they are heard, as with typed text when you press search
+(§3). If you back out, or it hears
+nothing, nothing is searched. If you use your keyboard's own voice typing
+instead (for example the mic key on Gboard), that is the keyboard maker's,
+under its terms and privacy policy, not ours, and the app receives only the
+text, as if you had typed it.
 <!-- /android -->
 
 <!-- ios -->
-**On iPhone** the app requires recognition on the phone. If your iPhone cannot
-recognise speech on the phone, the voice button says so and does nothing,
-rather than sending your voice anywhere.
+**On iPhone** there is no mic in the app. If you use your keyboard's
+dictation key in the search box, that is the keyboard's own dictation -
+Apple's with the built-in keyboard, or the keyboard maker's if you have
+installed another - under its terms and privacy policy, not ours. Depending
+on its settings, it may send your voice to its maker. The app receives only
+the text, as if you had typed it.
 <!-- /ios -->
 
 ### 5. The subscription and billing
@@ -869,10 +944,26 @@ nothing ourselves, and we receive nothing back from them about you.
   it. It cannot read what passes through it.
 
 <!-- android -->
-**On Android** two more: speech recognition that falls back to the network
-goes to the service your phone's maker chose (§4), and the update check goes
-to Google Play (§5), each under its own policy.
+**On Android** one more: the update check goes to Google Play (§5), under
+its own policy.
 <!-- /android -->
+
+**Parts of your phone, not services the app contacts.** These are not in the
+list above: the app sends them no request over the network. Any network use
+is theirs, under their makers' own policies, not ours (§4):
+
+- your phone's text-to-speech engine, which reads the spoken warnings aloud
+  and may download voices or use an online voice;
+<!-- android -->
+- **On Android**, the speech input service the search box's mic opens, and
+  your keyboard's own voice typing, either of which may send your voice to
+  its provider;
+<!-- /android -->
+<!-- ios -->
+- **On iPhone**, your keyboard's dictation (Apple's, or the maker's of a
+  keyboard you installed), which, depending on its settings, may send your
+  voice to its maker.
+<!-- /ios -->
 
 **Emails you send us are different.** The app does not send them, and we are
 their controller. They arrive in our Gmail mailbox. Google runs Gmail under
@@ -972,18 +1063,18 @@ the phone.
 | `gpx`, `xml` | Reading and writing GPX files, and reading KML and TCX. A KML's network link is never followed | No |
 | `cryptography`, `crypto`, `convert` | Decrypting downloaded packs; hashing the purchase token | No |
 | `http` | Fetching the data index, packs, address search, and the rain and river readings | Yes (see §1, §3, §6) |
-| `background_downloader` | Hands pack downloads to the OS so they survive the app closing | Yes (see §1) |
+| `background_downloader` | Hands pack downloads to the phone, so they can carry on while the app is in the background | Yes (see §1) |
 | `shared_preferences` | Settings, on the device | No |
 | `sqlite3`, `sqlite3_flutter_libs` | Reads the downloaded lane data, which is an SQLite database, and applies updates to it | No |
 | `path_provider`, `path` | Local storage | No |
-| `permission_handler` | Asks for the notification permission when a ride starts, the permissions group sharing needs when it first starts (see "Location"), and the camera when you tap Scan a code | No |
+| `permission_handler` | Asks for the notification permission when a ride starts or you start a map download, the permissions group sharing needs when it first starts (see "Location"), and the camera when you tap Scan a code | No |
 | `wakelock_plus` | Keeps the screen awake while riding | No |
 | `battery_plus` | Reads the battery level and whether it is charging, so the app can do less when the battery is low | No |
 | `file_picker` | Choosing track files to import (GPX, KML, KMZ, GeoJSON, FIT, TCX), or a photo for a lane note | No |
 | `share_plus` | Sharing a GPX file you exported | No |
-| `flutter_secure_storage` | Keeps the group ride's key and this install's group secret in the phone's encrypted storage (§7) | No |
+| `flutter_secure_storage` | Keeps the group ride's key, this install's group secret, `group_ride.sent.v1`, `group_ride.help.<your id in the group>` and `group_ride.last_help_call.v1` in the phone's encrypted storage (§7) | No |
 | `pretty_qr_code` | Draws the group ride's code on screen | No |
-| `speech_to_text`, `flutter_tts` | The voice button and spoken replies | Platform-dependent (see §4) |
+| `flutter_tts` | The spoken warnings, read aloud by the phone's own text-to-speech engine | Not from the app; your phone's own speech engine may download or use online voices under its maker's policy (see §4) |
 | `in_app_purchase`, `in_app_purchase_platform_interface` | The subscription, through the app store | Yes (see §5) |
 | `in_app_purchase_storekit` | App Store billing on iPhone, including whether the free month is still open to your Apple ID | Yes, to Apple (see §5) |
 | `collection`, `intl` | Utilities and formatting | No |
@@ -1028,15 +1119,32 @@ recording. The ride keeps recording until you press Finish ride in the app,
 even though nothing in the notification shade says so any more.
 `POST_NOTIFICATIONS` is
 requested at that moment, for that notification. If you refuse it the ride still
-records; you simply lose the indicator.
+records; you simply lose the indicator. It is also asked for when you start a
+map download (below).
 
 **`ACCESS_BACKGROUND_LOCATION` is deliberately not declared and never
 requested.** The recording service does not need it, and declaring it would ask
 you for a far broader permission than the app uses.
 
-The app also declares `RECORD_AUDIO` (the voice button), `WAKE_LOCK` (keeping
-the screen on while riding) and `INTERNET`. The microphone is marked as not
-required, so the app still installs on a device without one.
+The app also declares `WAKE_LOCK` (keeping the screen on while riding) and
+`INTERNET`. It does not declare `RECORD_AUDIO` and never asks for the
+microphone: the search box's mic hands over to your phone's own speech input
+(§4), which has its own permission.
+
+It also declares `RUN_USER_INITIATED_JOBS`. On Android 14 and later, if the
+app's notifications are allowed when you tap Download, a map download you start
+can carry on after you swipe the app away: Android can keep it going as a
+download you started, and shows the "Downloading maps" notification while it
+runs. Android may still pause or stop it, and it can carry on when you open the
+app again. On Android 13
+and older, or with notifications turned off, a download may stop when you
+swipe the app away and wait until you open the app again. When you tap
+Download, the app asks to show notifications if they are not allowed yet and
+Android still lets it ask; if you refuse, the download still runs, without the
+notification. The permission is granted when the app is installed and never
+asked for, and the permission itself sends nothing anywhere: a download makes
+the same requests, to the same hosts, as described in §1 ("Map data
+downloads"). No foreground service is used for downloads.
 
 The libraries the app is built with add four more, and Google Play lists them
 with the rest:
@@ -1112,12 +1220,13 @@ required, so the app still installs on a device without one.
   your position because the ride is running, and shows its blue location
   indicator at the top of the screen so you can see it.
 - **Notifications**, asked the first time something needs one, such as a
-  ride being recorded or a safety check-in. If you refuse, a ride still
-  records without it, and a check-in is not set and the app says why.
+  ride being recorded, a map download you start or a safety check-in. If you
+  refuse, a ride still records without it, a download still runs without its
+  notifications, and a check-in is not set and the app says why.
 - **Camera**, only when you tap **Scan a code**, to read a group's code on
   the phone. If you say no, **Paste a code** still works.
-- **Microphone** and **Speech Recognition**, the first time you use the voice
-  button. What you say is recognised on the phone and never sent anywhere.
+- **Microphone** and **Speech Recognition**: never asked for. The app does
+  not listen; the dictation key belongs to your keyboard, not the app (§4).
 - **Motion & Fitness**, which the iPhone may ask about: the app reads the
   motion sensors only to tell when you are stopped, so GPS drift is not
   recorded as riding.
@@ -1238,9 +1347,13 @@ to us, most requests are things you can carry out yourself and immediately:
 <!-- /android -->
 <!-- ios -->
 - **Delete it.** **On iPhone:** delete individual rides, waypoints and plans in
-  the app; or delete the app, which removes what it has written. iOS may keep the group ride's key and this install's group secret
+  the app; or delete the app, which removes what it has written. iOS may keep the group ride's key,
+  `group_ride.sent.v1`, any `group_ride.help.<your id in the group>`, this
+  install's group secret and `group_ride.last_help_call.v1`
   in the Keychain after the app is deleted: leave your group first to remove
-  its key. Your iCloud Backup keeps what is described under "Backup" until
+  the group's key, `group_ride.sent.v1` and any
+  `group_ride.help.<your id in the group>`. Leaving a group does not remove the
+  install secret or `group_ride.last_help_call.v1`. Your iCloud Backup keeps what is described under "Backup" until
   that backup is replaced or deleted.
 <!-- /ios -->
 
@@ -1274,7 +1387,9 @@ Information Commissioner's Office.
 ## Data retention
 
 Data on your phone is kept until you delete it or uninstall the app, except the
-unrecorded trail, which goes as described under "The unrecorded trail". We
+unrecorded trail, which goes as described under "The unrecorded trail", and,
+on iPhone, the Keychain items described under "Delete it", which can outlast
+deleting the app. We
 receive nothing from the app, so we keep nothing from it. An email you send us
 yourself, such as a problem report, is deleted within 6 months of our reply
 closing the report, or 6 months after we receive it if we never reply, or

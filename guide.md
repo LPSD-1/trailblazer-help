@@ -21,7 +21,7 @@ guide covers the lot, from first run to what to do when something won't work.
 - [Sharing with other riders](#sharing-with-other-riders)
 - [Following a route](#following-a-route)
 - [The road book](#the-road-book)
-- [The voice button](#the-voice-button)
+- [Spoken guidance](#spoken-guidance)
 - [Handlebar remote](#handlebar-remote)
 - [Screen lock](#screen-lock)
 - [Controls that get out of the way](#controls-that-get-out-of-the-way)
@@ -84,10 +84,8 @@ has its own section further down.
   tells you how old your closures are.
 - Downloading map data needs the subscription, and your first month of it is
   free (see below).
-<!-- android -->
-- When a new version of Trail Blazer is on Google Play, a note on the map
+- **On Android:** When a new version of Trail Blazer is on Google Play, a note on the map
   offers it. See [Updating the app](#updating-the-app).
-<!-- /android -->
 
 ### Planning and days out
 
@@ -112,8 +110,11 @@ has its own section further down.
   straight up is the way you're going, and keeps your arrow low on the screen
   so you see the road ahead. Press and hold **Hold** to unlock. See
   [Screen lock](#screen-lock).
-- The voice button takes spoken commands, and a Bluetooth handlebar remote
-  works the main controls with gloves on.
+- The app speaks its warnings and turns. A Bluetooth handlebar remote works
+  the main controls with gloves on.
+- **On Android:** The app does not listen to you itself. The search mic uses your phone's own
+  speech input.
+- **On iPhone:** The app does not listen to you itself.
 - The dashboard is a screen of big, clear gauges: speed, trip meters, heading,
   grid reference and more.
 
@@ -125,7 +126,7 @@ has its own section further down.
 - Forgot to press record? The app keeps a rough trail of the last 12 hours
   that you can save as a ride.
 - Waypoints mark a gate, a ford or where you parked. Hold a finger on the map,
-  or press the voice button and say "mark this".
+  or press F1 on a handlebar remote.
 
 ### Group ride and check-ins
 
@@ -424,18 +425,20 @@ the same class at the same width. Do not read a bold line as an open one.
 A lane you have starred gets an amber halo drawn underneath it, wider than the
 line. That is deliberately not one of the open-or-shut channels.
 
-<!-- android -->
+
+**On Android:**
 **If you use Android's own colour correction**, leave this setting on Standard.
 The phone is already transforming these colours on their way to the screen, and
 changing them here as well corrects them twice. The app cannot detect that
 setting — no Android API exposes it — so this one is on you.
-<!-- /android -->
-<!-- ios
+
+
+**On iPhone:**
 **If you use the iPhone's own Colour Filters**, leave this setting on Standard.
 The phone is already transforming these colours on their way to the screen, and
 changing them here as well corrects them twice. The app is not told whether
 Colour Filters are on, so this one is on you.
--->
+
 
 ### Tapping a lane
 
@@ -504,7 +507,8 @@ where you are.
   smaller of the two and not the one to reach for first
 - **Everything** — every country published; check the size and use wifi
 
-<!-- android -->
+
+**On Android:**
 Above 1 GB you get a confirmation showing the size and the number of packs.
 Downloads are handed to the operating system, so they carry on when you close
 the app and survive the phone being locked or the app being killed. You can
@@ -517,14 +521,15 @@ the download finishes.
 To let the downloads carry on with the app closed, allow Trail Blazer as
 [The ride, the voice or the group stopped with the screen off](#the-ride-the-voice-or-the-group-stopped-with-the-screen-off)
 says for your phone.
-<!-- /android -->
-<!-- ios
+
+
+**On iPhone:**
 Above 1 GB you get a confirmation showing the size and the number of packs.
 Downloads are handed to the operating system, so they carry on when you leave
 the app and survive the phone being locked. **Do not swipe Trail Blazer away in
 the app switcher while it downloads**: on iPhone that cancels the downloads, and
 you may need to start them again.
--->
+
 
 ### The kinds of data
 
@@ -628,7 +633,8 @@ The record button sits on the map.
 - **Tap** while recording to finish. You are asked "Finish this ride?" before
   anything stops.
 
-<!-- android -->
+
+**On Android:**
 While recording, Android runs a foreground service with an ongoing "Recording
 your ride" notification. That is what keeps the track being logged with the
 screen off and the phone in a tank bag. Without it Android throttles background
@@ -640,20 +646,22 @@ battery settings restrict it.
 Before you ride, set Trail Blazer's battery use to unrestricted, as
 [The ride, the voice or the group stopped with the screen off](#the-ride-the-voice-or-the-group-stopped-with-the-screen-off)
 says for your phone.
-<!-- /android -->
-<!-- ios
+
+
+**On iPhone:**
 While recording, the iPhone shows a blue location indicator at the top of the
 screen. That is what keeps the track being logged with the screen off and the
 phone in a tank bag. Trail Blazer only asks for your location while you are
 using the app; a ride you start in the app carries on with the screen off, and
 the blue indicator is the phone telling you so.
--->
+
 
 The ride autosaves as it goes, so a flat battery costs you the last few points
 rather than the day. If the position stream goes dead for 15 minutes the ride
 is ended and saved by itself.
 
-<!-- android -->
+
+**On Android:**
 **Start recording when you ride off** (Settings > User choices > Riding, off
 by default)
 starts a ride for you once the phone can feel you moving and you have gone
@@ -669,8 +677,9 @@ minutes it offers to finish the ride, and never finishes by itself. After you
 finish a ride it will not start another until the phone has lain still for 5
 minutes, so the drive home is not a second ride. It still waits if Trail Blazer
 is restarted in the meantime, for up to 4 hours after you finish.
-<!-- /android -->
-<!-- ios
+
+
+**On iPhone:**
 **Start recording when you ride off** (Settings > User choices > Riding, off
 by default)
 starts a ride for you once the phone can feel you moving and you have gone
@@ -686,7 +695,7 @@ the ride, and never finishes by itself. After you finish a ride it will not
 start another until the phone has lain still for 5 minutes, so the drive home
 is not a second ride. It still waits if Trail Blazer is restarted in the
 meantime, for up to 4 hours after you finish.
--->
+
 
 Recording ignores fixes that are too close together, too soon after the last
 one, or impossibly fast. A gap of more than two minutes breaks the track into a
@@ -717,7 +726,8 @@ or not you subscribe.
 
 ## Safety check-in
 
-<!-- android -->
+
+**On Android:**
 A back-by time, for riding alone. Set it from the **Where am I?** screen (tap
 the grid reference on the dashboard), in the **Safety check-in** card under
 **If you need help** - or from **Settings > Safety check-in**. The sheet starts with this, and it means it:
@@ -788,8 +798,9 @@ While it is set the card says "Check-in set for 17:00", with **I'm back safe**,
   running it may be old, and the text says how old.
 - Your number never leaves the phone except in a text you send. The position
   is kept only while a check-in is set, and deleted when you answer it.
-<!-- /android -->
-<!-- ios
+
+
+**On iPhone:**
 A back-by time, for riding alone. Set it from the **Where am I?** screen (tap
 the grid reference on the dashboard), in the **Safety check-in** card under
 **If you need help** - or from **Settings > Safety check-in**. The sheet starts with this, and it means it:
@@ -855,7 +866,7 @@ closed or swiped away. Press and hold one to see its buttons.
   running it may be old, and the text says how old.
 - Your number never leaves the phone except in a text you send. The position
   is kept only while a check-in is set, and deleted when you answer it.
--->
+
 
 ---
 
@@ -868,10 +879,11 @@ Mark a gate, a ford, a parking spot or a wrong turn.
 - **Hold a finger on the map** and choose **Save a waypoint here**. This is the
   one for somewhere you can see but are not standing in — a gate spotted from
   the road, a parking spot on the far side of a valley. It asks you to name it.
-- **By voice** — press the voice button and say "mark this", with gloves on,
-  and the app marks where you are now and says back which one it made, so
-  several marks in an afternoon can be told apart before you look at the
-  screen. This is the way to mark the spot you are standing on.
+- **From a handlebar remote** — press **F1**, with gloves on, and the app
+  marks where you are now and says back which one it made, so several marks
+  in an afternoon can be told apart before you look at the screen. This is
+  the way to mark the spot you are standing on. See
+  [Handlebar remote](#handlebar-remote).
 
 Naming is asked for rather than assumed, because "Waypoint 7" in a list of nine
 is something you have to go and look at on the map to identify. Leave the box
@@ -1154,19 +1166,21 @@ picking them all twice.
 
 ### To your group ride
 
-<!-- android -->
+
+**On Android:**
 In a group ride with sharing on, **Share a plan with the group** in the group
 card (on the dashboard, and in Settings > Group ride) sends one of your plans to
 everyone in the group, over the same link as your position: phone to phone, and
 through the group's relay if it has one. Nothing goes through a server of ours.
-<!-- /android -->
-<!-- ios
+
+
+**On iPhone:**
 In a group ride with sharing on, **Share a plan with the group** in the group
 card (on the dashboard, and in Settings > Group ride) sends one of your plans to
 everyone in the group, over the same link as your position: on iPhone that is
 the group's relay, which the group needs anyway. Nothing goes through a server
 of ours.
--->
+
 Pick the plan (the one you are riding comes first), or one of your tracks - a
 mate's GPX you are following comes next - then **Send**. A track goes as a plan
 along it, with stops at its ends and bends, and the track itself as the line
@@ -1224,7 +1238,8 @@ asked can end the call, with **Cancel help**; then the others read "Dave no
 longer needs help." A call stays up even when their phone goes out of touch,
 because the last word heard from it still asks for help.
 
-<!-- android -->
+
+**On Android:**
 Only a phone that still has Trail Blazer running can sound. A phone whose
 battery settings have stopped the app in the background - Samsung's deep sleep,
 or the battery managers on Xiaomi, Huawei, Honor, OnePlus, Oppo, Realme and
@@ -1232,7 +1247,7 @@ Vivo phones - hears nothing, and the rider asking for help cannot tell. Before
 the ride, each rider should let Trail Blazer run unrestricted, as
 [The ride, the voice or the group stopped with the screen off](#the-ride-the-voice-or-the-group-stopped-with-the-screen-off)
 says for their phone.
-<!-- /android -->
+
 
 Everything else the group tells you is **one quiet notice, with no sound and
 no voice**, because a group loses touch over every hill and a phone that makes
@@ -1345,11 +1360,16 @@ and in the turn strip on the map go round clockwise, the way roundabouts work
 in Britain.
 
 **Getting to it:** while a journey is running there is a **road book button in
-the map's control column**, and tapping the turn strip at the top of the map
-opens it too. If you live in it, **Settings → Accessibility → Road book tab**
-gives it a tab of its own. That is off by default — the road book means nothing
-when you are not riding, and a permanent tab that is empty most of the time is
-wasted width on the one bar you press with gloves on.
+the map's control column**. You can also press and hold the turn strip at the
+top of the map to open it. A short tap on the strip shrinks it to one line: the
+next turn and how far to it. A closure ahead still shows on that line, and so
+does "Still for 2 hours · alerts back when you move" after a long stop. Another
+tap brings
+the whole strip back, and the app remembers which you chose. If you use it a
+lot, **Settings → Accessibility → Road book tab** gives it a tab of its own.
+That is off by default — the road book means nothing when you are not riding,
+and a permanent tab that is empty most of the time is wasted width on the bar
+you press with gloves on.
 
 **It follows you.** The line you are on is highlighted and the list scrolls to
 it as you pass each turn. Scroll it yourself to read ahead and it stops
@@ -1376,72 +1396,47 @@ this is the only way to pass one on.
 
 ---
 
-## The voice button
+## Spoken guidance
 
-One large round button on the map, sized to be hit in winter gloves without
-looking. Press it and speak. Recognition runs on the device where the platform
-supports it, so it works with no signal.
+The app speaks its warnings: closures ahead, "Byway ahead", the end of a
+byway, steep ground, and turns when you follow a route. Each has its own
+switch in **Settings → User choices → Voice** and in the road book's voice
+menu. The app does not listen to you itself.
+
+**On Android:**
+The search mic uses your phone's own speech input: see
+[Speak a search](#speak-a-search).
+
 
 With a handlebar remote, **F2** says the last thing again - a closure warning
-a lorry drowned out as well as the mic's last answer - and **F5** turns the
-spoken guidance off and on. See **Handlebar remote** below.
+a lorry drowned out - and **F5** turns the spoken guidance off and on. See
+**Handlebar remote** below.
 
-### What you can say
+### Speak a search
 
-| Say | What happens |
-|---|---|
-| "am I allowed down here", "can I ride here", "is this legal", "is this a byway", "what is this lane" | Says out loud what the record and the orders on your phone say about the lane you are on, for your vehicle. It is not permission, and signs on the ground come first. With no fix, an old or rough one, or no lane here in your maps, it says it cannot tell and why - never a yes or a no |
-| "start recording", "record ride", "start ride", "begin recording" | Starts recording |
-| "stop recording", "end ride", "finish ride" | Stops recording |
-| "pause recording", "pause ride" | Pauses recording |
-| "mark", "mark this", "drop pin", "mark waypoint", "save this spot", "mark gate" | Drops a waypoint |
-| "show lanes", "lanes on" | Shows lanes |
-| "hide lanes", "lanes off" | Hides lanes |
-| "zoom in", "closer" / "zoom out", "wider" | Zooms |
-| "centre on me", "find me", "recentre" | Centres on your position |
-| "north up", "face north" | Locks the map north |
-| "heading up", "track up", "follow heading" | Turns the map with you |
-| "day mode", "brighten" / "night mode", "darken" | Switches theme |
-| "dashboard", "show gauges" | Opens the dashboard |
-| "show map", "back to map" | Returns to the map |
-| "nearest lane", "closest lane", "find a lane" | Finds the nearest lane |
-| "how far", "how much further", "distance remaining" | Reads out distance to go |
-| "where am i", "grid reference", "grid ref" | Reads out your position |
-| "plan a day out", "what can i ride", "suggest a loop" | Opens the day-out planner |
-| "stop the journey", "stop navigating", "cancel the route" | Ends the journey |
-| "repeat", "say again" | Repeats the last thing said |
-| "cancel", "never mind", "forget it" | Cancels |
-| "help", "what can i say" | Lists commands |
 
-To set a destination, start with any of **"take me to"**, **"navigate to"**,
-**"directions to"**, **"set a route to"**, **"plan a route to"**, **"route
-to"**, **"ride to"** or **"go to"**, then say the place.
+**On Android:**
+Tap the search mic and say a lane or a place. Your phone's own speech input
+opens (Google's, or whichever your phone uses) and shows
+"Say a lane or a place". What it hears goes in the box and is searched
+straight away. If it heard wrong, type the right name.
 
-Filler is stripped before matching, so "could you please hide the lanes" works.
-"Trail" and "blazer" are treated as wake words. A negative — "don't hide the
-lanes" — is refused rather than guessed at.
+Your phone's speech service (for example Google) may send the sound to its
+provider to turn it into words. Trail Blazer gets only the words, never the
+sound. If your phone has no speech input, there is no mic and you type as
+usual.
 
-### What gets confirmed first
 
-Stopping or pausing a recording, stopping a journey, and cancelling are all
-confirmed aloud before they happen if the app is not confident it heard you.
-Setting a new destination while you are already riding a journey is **always**
-confirmed, whatever the confidence, because it would silently replace the route
-you are on and there is no undo.
+**On iPhone:**
+On an iPhone there is no mic in the search box. Use the dictation key on the
+keyboard instead.
 
-Answer with yes, yeah, yep, aye, ok or correct — or no, nope, nah or cancel.
-The question expires after 20 seconds.
-
-There is no bare "pause" on purpose. A one-word match scores full confidence
-and would skip the confirmation, and a misheard pause means the rest of the
-ride is silently not recorded.
 
 ### Grid references
 
-A grid reference is read out character by character — "N Y, 2 1 5, 0 7 2" —
-because that is intelligible through a helmet and "NY215072" is not. Outside
-Great Britain you get spoken decimal coordinates with "north" and "west"
-instead of a minus sign.
+On the **Where am I?** screen a grid reference is also spelled out for
+speaking: "November Yankee, two one five, zero seven two" - because that is clear
+down a bad phone line and "NY215072" is not.
 
 ---
 
@@ -1483,7 +1478,7 @@ Press a button, or hold it for a moment (600 ms) where it says so.
   take you out of the app.
 - **Zoom** works on the map. Hold the arrow and it keeps zooming.
 - **Mark this spot** drops a waypoint where you are and says which one -
-  "Marked, Waypoint 3" - exactly as the mic does, and shows it on screen too.
+  "Marked, Waypoint 3" - and shows it on screen too.
   If the GPS has stopped giving fixes it marks nothing and says why. Held, it
   marks and opens the waypoint so you can write what is there - except on a
   locked screen, where nothing can be typed: there it just marks, and you can
@@ -1493,11 +1488,10 @@ Press a button, or hold it for a moment (600 ms) where it says so.
   a stray Enter keeps the ride; Right then Enter throws it away.
 - **Spoken guidance on or off** silences the byway ends and rights, "Byway
   ahead", the steep ground warnings, the spoken directions and the closure
-  warnings, until you press it again or the app restarts. Closures still show on the map. The mic still
-  answers you, and another rider's call for help is never silenced. While it
-  is off, the mic button wears a crossed-out speaker (the mic button is
-  hidden while the screen is locked), and Settings says so above the voice
-  switches with a button to turn it back on.
+  warnings, until you press it again or the app restarts. Closures still show on the map, and
+  another rider's call for help is never silenced. While it is off, the
+  corner of the map says **Spoken guidance off**, locked or not, and Settings
+  says so above the voice switches with a button to turn it back on.
 - Media Next, Media Previous, Play/Pause and the volume buttons are left to
   your music and the phone unless you teach them with Learn: untaught, the
   skip button on a music remote skips the song and the screen stays where it
@@ -1507,43 +1501,31 @@ Press a button, or hold it for a moment (600 ms) where it says so.
 
 - **In a text box, the remote does nothing at all**, so the arrows move the
   cursor and nothing is marked while you type.
-<!-- android -->
-- If the on-screen keyboard stops appearing while the remote is connected,
+- **On Android:** If the on-screen keyboard stops appearing while the remote is connected,
   that is Android treating the remote as a keyboard. Turn on **Show
   on-screen keyboard** (on some phones **Show virtual keyboard**) in your
   phone's physical keyboard settings.
-<!-- /android -->
-<!-- ios
-- If the on-screen keyboard stops appearing while the remote is connected,
+- **On iPhone:** If the on-screen keyboard stops appearing while the remote is connected,
   that is the iPhone treating the remote as a keyboard. Disconnect the remote
   in Settings > Bluetooth while you type.
--->
 - On any screen other than the map, the Dashboard and the road book - and
   whenever a box or a sheet is open - the arrows move between the buttons on
   screen, Enter presses the one picked out and Escape closes. F1 to F5 still
   work there.
-<!-- android -->
-- With TalkBack on, the arrows, Enter and Escape are left to TalkBack. F1 to
+- **On Android:** With TalkBack on, the arrows, Enter and Escape are left to TalkBack. F1 to
   F5 still work.
-<!-- /android -->
-<!-- ios
-- With VoiceOver on, the arrows, Enter and Escape are left to VoiceOver. F1 to
+- **On iPhone:** With VoiceOver on, the arrows, Enter and Escape are left to VoiceOver. F1 to
   F5 still work.
--->
 - It keeps working while the screen is locked with the padlock: the lock
   stops touches, and a button on the bars is not an accident.
-<!-- android -->
-- It only works while Trail Blazer is on screen. With the phone's screen off,
+- **On Android:** It only works while Trail Blazer is on screen. With the phone's screen off,
   at the phone's own lock screen or with another app in front, Android gives
   the buttons to something else, so they do nothing in the app while you
   ride with the screen off.
-<!-- /android -->
-<!-- ios
-- It only works while Trail Blazer is on screen. With the phone's screen off,
+- **On iPhone:** It only works while Trail Blazer is on screen. With the phone's screen off,
   at the phone's own lock screen or with another app in front, the iPhone
   gives the buttons to something else, so they do nothing in the app while
   you ride with the screen off.
--->
 
 ### Learn, and checking a remote
 
@@ -1580,15 +1562,17 @@ Rain is a stream of taps. So is a wet glove, a branch on a narrow lane, and a
 cuff resting on a tank bag. Any of them can switch tabs, stop a recording or
 throw away a route, and you would find out miles later.
 
-<!-- android -->
+
+**On Android:**
 Tap the padlock on the map to lock the screen. **Every touch in the app is
 blocked**, including the Android back button and the back gesture, until you
 deliberately undo it.
-<!-- /android -->
-<!-- ios
+
+
+**On iPhone:**
 Tap the padlock on the map to lock the screen. **Every touch in the app is
 blocked** until you deliberately undo it.
--->
+
 
 Locking is the app's cue that you're riding, so it sets the map up for it:
 
@@ -1619,7 +1603,9 @@ A ring fills so you can see how long is long enough. A tap won't do it,
 because a tap is exactly what rain produces.
 
 While locked, the map hides its controls. Nothing on screen could be pressed
-anyway.
+anyway. To take the turn, journey and notice cards off the locked map too,
+turn on **Hide route cards while locked** in Settings → User choices → Map
+view.
 
 Locking does not survive a restart, and that is deliberate — nothing is lost by
 starting unlocked.
@@ -1686,7 +1672,7 @@ gloves on - a press anywhere on a 48dp patch counts.
 
 ## The dashboard
 
-Say "dashboard", or open it from the map. Twelve gauges to start with,
+Open it from the map, or with Next screen on a handlebar remote. Twelve gauges to start with,
 glove-sized and high-contrast, that survive doubled system text:
 
 Speed · Clock · Trip · Moving time · Altitude · Heading · Grid reference ·
@@ -1761,13 +1747,9 @@ Settings is a list of shut sections, in this order. Tap one to open it.
   until it answers; nothing you have already downloaded stops working.
 - **Manage subscription** opens your subscription in the store, to cancel it
   or check when it renews.
-<!-- android -->
-- **Restore purchases from Google Play**, if a subscription you've paid for
+- **On Android:** **Restore purchases from Google Play**, if a subscription you've paid for
   isn't showing.
-<!-- /android -->
-<!-- ios
-- **Restore purchases**, if a subscription you've paid for isn't showing.
--->
+- **On iPhone:** **Restore purchases**, if a subscription you've paid for isn't showing.
 
 **Map updates**
 
@@ -1782,19 +1764,15 @@ Settings is a list of shut sections, in this order. Tap one to open it.
 **Group ride**
 
 - **Your name on the map** — the name the others in your group see beside you.
-<!-- android -->
-- **Start a group**, then **Show the code** for the riders you are with to
+- **On Android:** **Start a group**, then **Show the code** for the riders you are with to
   scan. To join someone else's, **Scan a code**, or **Paste a code** for one
   sent to you as text. Phones talk to each other directly over Bluetooth and
   Wi-Fi; nothing goes through a server of ours, and it is free.
-<!-- /android -->
-<!-- ios
-- **Start a group**, then **Show the code** for the riders you are with to
+- **On iPhone:** **Start a group**, then **Show the code** for the riders you are with to
   scan. To join someone else's, **Scan a code**, or **Paste a code** for one
   sent to you as text. On iPhone your position goes through a relay one of you
   runs, over mobile data, so the group needs one and you need a signal; nothing
   goes through a server of ours, and it is free.
--->
 - Once you are in a group: **Share my position on this ride** and **I need
   help** (these are at the top of the dashboard too; **When someone in the
   group needs help**, under Sharing with other riders, says what the others'
@@ -1802,17 +1780,13 @@ Settings is a list of shut sections, in this order. Tap one to open it.
   **Start a new group** and **Leave the group**. Nobody can be removed from a
   group — there is no server to remove them from — so to leave someone out,
   start a new group and have everyone else scan its code.
-<!-- android -->
-- **Use your own relay** — optional: an internet relay one of you runs, for
+- **On Android:** **Use your own relay** — optional: an internet relay one of you runs, for
   riders out of radio range. It goes into the group's code, so the others get
   it by scanning. **Setting up a group relay**, under Help, says how.
-<!-- /android -->
-<!-- ios
-- **Use your own relay** — needed on iPhone: an internet relay one of you runs,
+- **On iPhone:** **Use your own relay** — needed on iPhone: an internet relay one of you runs,
   which carries everyone's position. It goes into the group's code, so the
   others get it by scanning. Sharing is refused in a group whose code has no
   relay. **Setting up a group relay**, under Help, says how.
--->
 - **Share a plan with the group** — in the group card, under the share switch.
   See **To your group ride** under Sharing with other riders.
 
@@ -1830,7 +1804,7 @@ Settings is a list of shut sections, in this order. Tap one to open it.
   lane** under Accessibility keeps your night vision, and this section says
   so. While **Unlit lane** is on the screen stays dark whatever this says, and
   the section tells you so.
-- **Voice** — **What you can say**, and a switch for each thing the app says
+- **Voice** — a switch for each thing the app says
   aloud, including **Warn of steep ground ahead** (on by default, but it
   starts off if you updated from a version where you had turned all three
   earlier warning voices off - **Say when the route leaves your downloaded
@@ -1851,10 +1825,16 @@ Settings is a list of shut sections, in this order. Tap one to open it.
   you rather than pretending), **Lock the screen when you set off** (off by
   default; see above) and **Start recording when you ride off** (off by
   default; see **Recording a ride**).
-- **Map view** — Auto, Always show or Minimal, the speed, trip and clock strip
-  on the map, and which numbers the dashboard shows. The chooser edits the
-  layout that is showing (Lanes or Road); swap on the dashboard to edit the
-  other.
+- **Map view** — Choose Auto, Always show or Minimal for the map's controls.
+  **Hide route cards while locked** (off by default) takes the turn, journey
+  and notice cards off the locked map. The route line stays, and so does your
+  speed: the speed, trip and clock stay in the corners when they are switched
+  on. Notices that explain a missing map stay. A closure ahead still flashes up
+  for a few seconds, and is spoken if spoken guidance and Warn of closures
+  ahead are both on. You can also switch the speed, trip and clock strip on the
+  map on or off, and choose which
+  numbers the dashboard shows. The chooser edits the layout that is showing
+  (Lanes or Road); swap on the dashboard to edit the other.
 
 **Accessibility**
 
@@ -1874,16 +1854,14 @@ Settings is a list of shut sections, in this order. Tap one to open it.
   the conditions** — Normal, Bright sun or Unlit lane.
 - **Lane colours** — the standard pair, or a colour-blind-friendly pair. The
   samples are drawn the way the map draws them.
-<!-- android -->
-- **Text size** follows your phone rather than having its own slider here. Turn
+- **Road and lane thickness** — drag to make the roads, lanes, closures and
+  your route thicker or thinner on the map. The map changes as you drag.
+- **On Android:** **Text size** follows your phone rather than having its own slider here. Turn
   it up in Android Settings under Display and everything follows, including the
   speed on the map.
-<!-- /android -->
-<!-- ios
-- **Text size** follows your phone rather than having its own slider here. Turn
+- **On iPhone:** **Text size** follows your phone rather than having its own slider here. Turn
   it up in Settings under Display & Brightness, Text Size, and everything
   follows, including the speed on the map.
--->
 
 **Your own data**
 
@@ -1929,7 +1907,8 @@ following a route or have the screen locked; it waits for another time you
 open the app instead. Tap **Got it**, or swipe it away, and it's gone. Read it
 again any time from **What's new**, under About at the foot of Settings.
 
-<!-- android -->
+
+**On Android:**
 When a new version of Trail Blazer is on Google Play, a note appears at the
 top of the map: "A new version of Trail Blazer is ready." Tap **Update** and
 it downloads in the background while you carry on using the app. When it's
@@ -1940,10 +1919,11 @@ You don't have to do it there and then. Close the note with its cross and it
 stays away until you next open the app, and you can always update from the
 Play Store instead. The note isn't shown while you're recording a ride or the
 screen is locked, so it stays out of the way on the move. It only appears if you installed Trail Blazer from Google Play.
-<!-- /android -->
-<!-- ios
+
+
+**On iPhone:**
 Trail Blazer updates through the App Store, like any other app.
--->
+
 
 ---
 
@@ -1962,23 +1942,21 @@ publish it, and your closures keep refreshing. The price is shown in **Settings
   **Start free month**. The store asks you to confirm it, as it does for any
   subscription. You're not charged for the free month.
 - **Then it renews every month until you cancel.**
-  <!-- android -->
+
+  **On Android:**
   Cancel before the free month ends and you won't be charged at all.
-  <!-- /android -->
-  <!-- ios
+
+
+  **On iPhone:**
   Cancel at least 24 hours before the free month ends and you won't be
   charged at all.
-  -->
+
   Cancel later and you keep updates until the end of the month you've paid
   for. **Manage subscription** in Settings → Subscription takes you straight
   there.
 - **One free month per account.** The free month belongs to your
-  <!-- android -->
-  Google account,
-  <!-- /android -->
-  <!-- ios
-  Apple ID,
-  -->
+  Google account (on Android)
+  or Apple ID (on iPhone),
   so reinstalling the app or changing phone doesn't start another one, and a
   subscription you've paid for comes with you to a new phone.
 - **The store takes the payment**, so we never see your card details.
@@ -1990,14 +1968,15 @@ refreshed** when you're not subscribed: they stay as they were when they last
 came in, and **Map updates** in Settings says how old
 they are. Fresher closures are what the subscription pays for.
 
-<!-- ios
+
+**On iPhone:**
 Your maps, rides, notes and saved plans are kept out of iCloud Backup (**Back up what you have put in** is how you
 move those), and so are where you are and the number a safety check-in would
 text. The app's settings, and a few small things it remembers between runs,
 such as a plan you are still drawing or the route you are following, are kept
 where iOS keeps every app's settings, and iCloud Backup takes those with the
 rest.
--->
+
 
 **Your rides are yours.** Any ride exports as GPX from Tracks, and **Back up
 what you have put in** in Settings writes out your rides, waypoints, plans and
@@ -2013,16 +1992,12 @@ lane notes in one file.
   The app shows a banner with a button straight to the right settings screen.
 - Indoors or in a valley a first fix can take several minutes. The dashboard
   keeps your last known position and labels how old it is.
-<!-- android -->
-- If you refused location permanently, Android will not ask again. Use the
+- **On Android:** If you refused location permanently, Android will not ask again. Use the
   **Open settings** button on the banner.
-- Recording still works without the notification permission. You lose the
+- **On Android:** Recording still works without the notification permission. You lose the
   ongoing indicator, not the ride.
-<!-- /android -->
-<!-- ios
-- If you refused location, your iPhone will not ask again. Use the
+- **On iPhone:** If you refused location, your iPhone will not ask again. Use the
   **Open settings** button on the banner.
--->
 
 ### The map is blank
 
@@ -2090,15 +2065,21 @@ downloaded file, not a lost signal.
 ### No signal
 
 Almost everything works. With the area downloaded you get the map, the lanes,
-lane detail, routing, recording, the dashboard, the voice button and your own
-tracks.
+lane detail, routing, recording, the dashboard, the spoken warnings and your
+own tracks.
 
 Two things need a connection:
 
-- **Address search.** Grid references, coordinates, your own marks, rides and
+- **On Android:** **Address search.** Grid references, coordinates, your own marks, rides and
   plans, and the names of lanes in the packs you carry are all searched on the
-  phone. Only typed place names and addresses need the network, and the app
-  says so rather than showing an empty list.
+  phone. Addresses and places are looked up online only when you press search
+  on your keyboard or speak a search, not as you type. Until then, the app
+  tells you so instead of showing an empty list.
+- **On iPhone:** **Address search.** Grid references, coordinates, your own marks, rides and
+  plans, and the names of lanes in the packs you carry are all searched on the
+  phone. Addresses and places are looked up online only when you press search
+  on your keyboard, not as you type. Until then, the app tells you so instead
+  of showing an empty list.
 - **Downloading anything new.**
 
 The rain and river readings need a signal to update. With none, the last ones
@@ -2119,9 +2100,9 @@ Downloads are checked against a hash before they are published to the app. A
 file that fails is discarded rather than opened. Try it again on a better
 connection.
 
-<!-- android -->
 ### The ride, the voice or the group stopped with the screen off
 
+**On Android:**
 A ride recorded as a straight line across country, or ended by itself; spoken
 directions that go quiet when the screen does; a group that stops seeing you,
 or a help call your phone never sounded; a check-in alarm that came late or not
@@ -2166,7 +2147,6 @@ Blazer away from recent apps, or **Clear all**, stops it as a force-stop does:
 the recording, the group link and the check-in alarm go with it until you open
 the app again. Lock it in recent apps first. On Samsung, Pixel and stock
 Android a swipe from recent apps is not a force-stop.
-<!-- /android -->
 
 ### Something else
 
@@ -2174,16 +2154,18 @@ If your problem is not here, or one of these answers did not fix it, please
 report it: the app has no crash reporting and no analytics, so a fault you do
 not tell us about is one nobody will know of.
 
-<!-- android -->
+
+**On Android:**
 Use **Settings → Help → Report a problem**. **Write report** opens your share
 sheet with a report already started: the app's version, your phone's make and
 model, and its Android version.
-<!-- /android -->
-<!-- ios
+
+
+**On iPhone:**
 Use **Settings → Help → Report a problem**. **Write report** opens your share
 sheet with a report already started: the app's version and your iPhone's iOS
 version.
--->
+
 
 Pick your email app, send it to the address the screen shows, and say what went
 wrong and what you were doing just before. Nothing is sent until you send it.
